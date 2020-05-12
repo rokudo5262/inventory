@@ -18,7 +18,6 @@ export class CalendarsService {
     calendarCookiesString = 'CALENDARS_COOKIES';
     calendar: Calendar;
     calendars: Calendar[];
-
     constructor(
         private http: HttpClient
     ) {

@@ -1,5 +1,5 @@
-import * as CalendarsApiActions from './calendars-api.acitons';
-import * as CalendarCollectionApiActions from './collection-api.actions';
+import * as CalendarsApiActions from './calendars.acitons';
+import * as CalendarCollectionApiActions from './calendars-api.actions';
 
 export {
     CalendarsApiActions,

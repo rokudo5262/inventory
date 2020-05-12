@@ -36,7 +36,7 @@ import { UomsModule } from './UOMs';
 import { SalesTeamModule } from './salesteam/salesteam.module';
 import { ProductGroupModule } from './product-group';
 import { CodeMasterModule } from './code-master';
-import { CalendarsModule } from './calendars';
+import { CalendarModule } from './calendars/calendar.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -92,10 +92,10 @@ import { CalendarsModule } from './calendars';
     UomsModule,
     ProductGroupModule,
     CodeMasterModule,
-    CalendarsModule,
+    CalendarModule,
   ],
   providers: [
-    NbDialogService
+    NbDialogService,
   ],
   bootstrap: [
     AppComponent

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'ngx-calendars',
+    selector: 'ngx-calendar',
     template: `
         <router-outlet></router-outlet>
     `,
 })
 
-export class CalendarsComponent { }
+export class CalendarComponent { }

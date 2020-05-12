@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { NbDialogService } from '@nebular/theme';
 import { Calendar } from '@app/@core/data/calendar';
-import { CalendarAddComponent } from '@app/calendars/containers/calendar-add/calendar-add.omponent';
+import { CalendarAddComponent } from '../calendar-add/calendar-add.omponent';
 
 @Component({
     selector: 'ngx-calendar-review',
@@ -23,11 +23,9 @@ export class CalendarReviewComponent implements OnInit {
     ngOnInit() {
 
     }
-
     back() {
         this.route.navigate(['dashboard/Calendars']);
     }
-
     edit() {
         this.dialogService.open(CalendarAddComponent, {
             context: {

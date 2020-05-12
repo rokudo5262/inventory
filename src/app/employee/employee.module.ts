@@ -12,6 +12,7 @@ import {
     NbSpinnerModule,
     NbTabsetModule,
     NbSelectModule,
+    NbTooltipModule,
 } from '@nebular/theme';
 import { ThemeModule } from '../@theme/theme.module';
 import { CommonModule } from '@angular/common';
@@ -62,6 +63,7 @@ import { ResponsibilityList2Component } from './components/responsibility-list-2
         NbSpinnerModule,
         NbTabsetModule,
         NbSelectModule,
+        NbTooltipModule,
         // -------------------------------------------------------------
         ReactiveFormsModule,
         FormsModule,

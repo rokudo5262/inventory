@@ -2,10 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Calendar } from '@app/@core/data/calendar';
 import { Store, select } from '@ngrx/store';
-import { NbDialogService } from '@nebular/theme';
 import { CalendarSelectors } from '@app/calendars/selectors/calendar.selectors';
 import { CalendarsApiActions } from '@app/calendars/actions';
-import { CalendarAddComponent } from '../calendar-add/calendar-add.omponent';
 import { Update } from '@ngrx/entity';
 
 @Component({
@@ -81,19 +79,12 @@ export class CalendarViewComponent implements OnInit {
 
     constructor(
         private store: Store<Calendar>,
-        private dialogService: NbDialogService,
     ) {
         this.calendars$ = this.store.pipe(select(CalendarSelectors.selectAllCalendars));
     }
-
     ngOnInit() {
         this.store.dispatch(CalendarsApiActions.getCalendars({ calendars: [] }));
     }
-
-    add() {
-        this.dialogService.open(CalendarAddComponent);
-    }
-
     close() {
         this.dialogRef.reject();
     }

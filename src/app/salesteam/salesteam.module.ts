@@ -12,6 +12,7 @@ import {
     NbSpinnerModule,
     NbTabsetModule,
     NbSelectModule,
+    NbTooltipModule,
 } from '@nebular/theme';
 import { ThemeModule } from '../@theme/theme.module';
 import { CommonModule } from '@angular/common';
@@ -63,6 +64,7 @@ import { BinDetail2Component } from './components/bin-detail-2/bin-detail-2.comp
         NbSpinnerModule,
         NbTabsetModule,
         NbSelectModule,
+        NbTooltipModule,
         // -------------------------------------------------------------
         ReactiveFormsModule,
         FormsModule,

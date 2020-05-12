@@ -44,7 +44,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Calendars',
     icon: 'calendar-outline',
-    link: './calendars',
+    link: './calendars/library',
   },
   {
     title: 'Room Group',
@@ -53,27 +53,27 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'RoomGroup',
         icon: 'shopping-cart-outline',
-        link: '/dashboard/roomgroups/library',
+        link: './roomgroups/library',
       },
       {
         title: 'SalesTeam',
         icon: 'shopping-cart-outline',
-        link: '/dashboard/salesteams/salesteam',
+        link: './salesteams/salesteam',
       },
       {
         title: 'SalesTeamBin',
         icon: 'shopping-cart-outline',
-        link: '/dashboard/salesteambins/salesteambin',
+        link: './salesteambins/salesteambin',
       },
       {
         title: 'Employee',
         icon: 'shopping-cart-outline',
-        link: '/dashboard/employees/employee',
+        link: './employees/employee',
       },
       {
         title: 'EmployeeResponsibility',
         icon: 'shopping-cart-outline',
-        link: '/dashboard/employeeresponsibilities/employeeresponsibility',
+        link: './employeeresponsibilities/employeeresponsibility',
       },
     ],
   },
@@ -127,10 +127,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Structure',
         link: './structure/structure',
       },
-      // {
-      //   title: 'Structure-value',
-      //   link: './structure/structure-value',
-      // }
     ]
   },
   {
@@ -157,4 +153,3 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
 ];
-

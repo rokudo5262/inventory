@@ -30,7 +30,7 @@ namespace inventoryserver
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      var connection = Configuration.GetConnectionString("InventoryDatabase_4");
+      var connection = Configuration.GetConnectionString("InventoryDatabase");
       services.AddDbContext<inventoryContext>(options => options.UseSqlServer(connection));
       services.AddCors(options => options.AddPolicy("MyPolicy", builder => {
         builder.WithOrigins("http://localhost:4200")

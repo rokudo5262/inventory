@@ -16,16 +16,18 @@ import { StoreModule } from '@ngrx/store';
 import { FeatureKey, reducer } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { CalendarEffects } from './effects/calendar.effects';
-import { CalendarsRoutingModule } from './calendars-routing.module';
-import { CalendarsComponent } from './calendars.component';
-import { CalendarAddComponent } from './containers/calendar-add/calendar-add.omponent';
-import { CalendarViewComponent } from './containers/calendar-view/calendar-view.component';
-import { CalendarDetailComponent } from './containers/calendar-detail/calendar-detail.component';
+import { CalendarRoutingModule } from './calendar-routing.module';
+import { CalendarComponent } from './calendar.component';
+import { CalendarPageComponent } from './containers/calendar-page.component';
+import { CalendarAddComponent } from './components/calendar-add/calendar-add.omponent';
+import { CalendarViewComponent } from './components/calendar-view/calendar-view.component';
+import { CalendarDetailComponent } from './components/calendar-detail/calendar-detail.component';
 import { CalendarReviewComponent } from './components/calendar-review/calendar-review.component';
 
 @NgModule({
     declarations: [
-        CalendarsComponent,
+        CalendarComponent,
+        CalendarPageComponent,
         CalendarAddComponent,
         CalendarViewComponent,
         CalendarDetailComponent,
@@ -43,7 +45,7 @@ import { CalendarReviewComponent } from './components/calendar-review/calendar-r
         ReactiveFormsModule,
         NbDatepickerModule,
         Ng2SmartTableModule,
-        CalendarsRoutingModule,
+        CalendarRoutingModule,
         StoreModule.forFeature(FeatureKey, reducer),
         EffectsModule.forFeature([CalendarEffects]),
     ],
@@ -54,4 +56,4 @@ import { CalendarReviewComponent } from './components/calendar-review/calendar-r
         CalendarAddComponent,
     ]
 })
-export class CalendarsModule { }
+export class CalendarModule { }

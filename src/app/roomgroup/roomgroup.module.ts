@@ -12,6 +12,7 @@ import {
     NbSpinnerModule,
     NbTabsetModule,
     NbSelectModule,
+    NbTooltipModule,
 } from '@nebular/theme';
 import { ThemeModule } from '../@theme/theme.module';
 import { RoomGroupRoutingModule } from '@app/roomgroup/roomgroup-routing.module';
@@ -49,6 +50,7 @@ import { RoomGroupDeleteComponent } from './components/roomgroup-delete/roomgrou
         NbSpinnerModule,
         NbTabsetModule,
         NbSelectModule,
+        NbTooltipModule,
         // -------------------------------------------------------------
         ReactiveFormsModule,
         FormsModule,

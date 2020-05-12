@@ -4,4 +4,4 @@ import { Component } from '@angular/core';
   selector: 'ngx-roomgroup',
   template: `<router-outlet></router-outlet>`,
 })
-export class RoomGroupComponent {}
+export class RoomGroupComponent { }

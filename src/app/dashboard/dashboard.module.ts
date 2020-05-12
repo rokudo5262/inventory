@@ -21,9 +21,9 @@ import { UomsModule } from '@app/UOMs';
 import { CodeMasterModule } from '@app/code-master/code-master.module';
 import { SalesTeamModule } from '@app/salesteam/salesteam.module';
 import { ProductGroupModule } from '@app/product-group';
-import { CalendarsModule } from '@app/calendars';
 import { ApplyForModule } from '@appapplyfor';
 import { EmployeeModule } from '@app/employee/employee.module';
+import { CalendarModule } from '@app/calendars/calendar.module';
 
 @NgModule({
   imports: [
@@ -49,7 +49,7 @@ import { EmployeeModule } from '@app/employee/employee.module';
     StoreModule,
     LocationsModule,
     UomsModule,
-    CalendarsModule,
+    CalendarModule,
     ApplyForModule,
     CodeMasterModule,
     ProductGroupModule
