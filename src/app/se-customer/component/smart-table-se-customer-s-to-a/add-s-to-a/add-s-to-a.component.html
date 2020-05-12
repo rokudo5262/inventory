@@ -1,0 +1,103 @@
+<nb-card>
+    <nb-card-header>Add Secondary Customer Ship To Address</nb-card-header>
+    <nb-card-body>
+     <form [formGroup]="addsecustomerstoaForm" method="POST">
+        <div class="sc" *ngIf="(secondarycustomers$ | async) as secondarycustomers">
+            <ng-container>
+                <div class="col-xs-12 col-md-12">
+                <label for="companyCode">Company Code</label>
+                <br>
+                <nb-select [formControl]="scForm" [(ngModel)]="scSelected.companyCode"
+                    placeholder="Select companyCode">
+                    <nb-option *ngFor="let sc of secondarycustomers" [value]="sc.companyCode">
+                        {{sc.companyCode}}
+                    </nb-option>
+                </nb-select>
+                </div>
+                
+                <div class="col-xs-12 col-md-12">
+                <label for="customerCode">Customer Code</label>
+                <br>
+                <nb-select [formControl]="scForm" [(ngModel)]="scSelected.customerCode"
+                    placeholder="Select customerCode">
+                    <nb-option *ngFor="let sc of secondarycustomers" [value]="sc.customerCode">
+                        {{sc.customerCode}}
+                    </nb-option>
+                </nb-select>
+            </div>
+        
+          
+            <div class="col-xs-12 col-md-12">
+                <label for="secondaryCustomerCode">Secondary Customer Code</label>
+                <br>
+                <nb-select [formControl]="scForm" [(ngModel)]="scSelected.secondaryCustomerCode"
+                    placeholder="Select secondaryCustomerCode">
+                    <nb-option *ngFor="let sc of secondarycustomers" [value]="sc.secondaryCustomerCode">
+                        {{sc.secondaryCustomerCode}}
+                    </nb-option>
+                </nb-select>
+            </div>
+            </ng-container>
+        </div>
+         <!-- <input type="hidden" formControlName="id" class="form-control" name="id"> -->
+            <div class="col-xs-12 col-md-12">
+                <label for="companyCode">Company Code</label>
+                <input  type="text" formControlName="companyCode" class="form-control" name="companyCode"
+                    [(ngModel)]="scSelected.companyCode">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="customerCode">Customer Code</label>
+                <input  type="text" formControlName="customerCode" class="form-control" name="customerCode"
+                    [(ngModel)]="scSelected.customerCode">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="secondaryCustomerCode">Secondary Customer Code</label>
+                <input  type="text" formControlName="secondaryCustomerCode" class="form-control" name="secondaryCustomerCode"
+                    [(ngModel)]="scSelected.secondaryCustomerCode">
+            </div>
+           
+        <div class="col-xs-12 col-md-12">
+        <input type="hidden" formControlName="id" class="form-control" name="id">
+             <div class="col-xs-12 col-md-12">
+                 <label for="shipToCode">Ship To Code</label>
+                 <input nbInput type="text" formControlName="shipToCode" class="form-control" name="shipToCode" 
+                     >
+             </div>
+             <div class="col-xs-12 col-md-12">
+                 <label for="shipToName">Ship To Name</label>
+                 <input nbInput type="text" formControlName="shipToName" class="form-control" name="shipToName">
+             </div>
+             <div class="col-xs-12 col-md-12">
+                 <label for="shipToAddress">Ship To Address</label>
+                 <input nbInput type="text" formControlName="shipToAddress" class="form-control" name="shipToAddress" >
+             </div>
+             <div class="col-xs-12 col-md-12">
+                 <label for="contact">Contact</label>
+                 <input nbInput type="text" formControlName="contact" class="form-control" name="contact" >
+             </div>
+             <div class="col-xs-12 col-md-12">
+                 <label for="deliveryCondition">Delivery Condition</label>
+                 <input nbInput type="text" formControlName="deliveryCondition" class="form-control" name="deliveryCondition" >
+             </div>
+             <div class="col-xs-12 col-md-12">
+                 <label for="deliveryTime">Delivery Time</label>
+                 <input nbInput type="text" formControlName="deliveryTime" class="form-control" name="deliveryTime" >
+             </div>
+             <div class="col-xs-12 col-md-12">
+                <label for="otherRequest">Other Request</label>
+                <input nbInput type="text" formControlName="otherRequest" class="form-control" name="otherRequest" >
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="attachedDocument">Attached Document</label>
+                <input nbInput type="text" formControlName="attachedDocument" class="form-control" name="attachedDocument" >
+            </div>
+             <!-- <input type="hidden" formControlName="status" class="form-control" name="status" value="new"> -->
+                 <input type="hidden" formControlName="deleted" class="form-control" name="deleted " value="false">
+             </div>
+             </form>
+         </nb-card-body>
+         <nb-card-footer>
+             <button class="cancel" nbButton status="danger" (click)="close()" md-dialog-close>Close</button>
+             <button nbButton status="success" (click)="submit(addsecustomerstoaForm.value)">Save</button>
+         </nb-card-footer>
+ </nb-card>

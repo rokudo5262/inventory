@@ -1,0 +1,30 @@
+<nb-card>
+    <nb-card-header>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h3>UOMs</h3>
+            </div>
+        </div>
+    </nb-card-header>
+    <nb-card-body>
+        <p>
+            ID: {{ uom?uom.id:'' }}
+        </p>
+        <p>
+            Company Code: {{ uom?uom.companyCode:'' }}
+        </p>
+        <p>
+            UOM Code: {{ uom?uom.uomCode:'' }}
+        </p>
+        <p>
+            UOM Name: {{ uom?uom.uomName:'' }}
+        </p>
+        <p>
+            Deleted: {{ uom?uom.deleted:'' }}
+        </p>
+    </nb-card-body>
+    <nb-card-footer>
+        <button class="cancel" nbButton status="info" (click)="back()" md-dialog-close><i
+                class="fas fa-undo-alt"></i>&nbsp;Back</button>
+    </nb-card-footer>
+</nb-card>

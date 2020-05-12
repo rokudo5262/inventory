@@ -1,0 +1,62 @@
+<nb-card>
+  <nb-card-header><label>Update Employee Responsibility</label></nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="updateEmployeeResponsibilityForm">
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <input type="hidden" formControlName="lineId" class="form-control" name="lineId" placeholder="lineId">
+          <input type="hidden" formControlName="source" class="form-control" name="source" placeholder="source">
+          <input type="hidden" formControlName="createdBy" class="form-control" name="createdBy"
+            placeholder="createdBy">
+          <input type="hidden" formControlName="lastUpdatedBy" class="form-control" name="lastUpdatedBy"
+            placeholder="lastUpdatedBy">
+          <input type="hidden" formControlName="role" class="form-control" name="role" placeholder="role">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Location Code</label>
+          <input type="text" formControlName="locationCode" class="form-control" name="locationCode"
+            placeholder="locationCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Employee Code</label>
+          <input type="text" formControlName="employeeCode" class="form-control" name="employeeCode"
+            placeholder="employeeCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Company Code</label>
+          <input type="text" formControlName="companyCode" class="form-control" name="companyCode"
+            placeholder="companyCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Employee Code</label>
+          <div *ngIf="(employees$ | async) as employees">
+            <nb-select formControlName="employeeCode" placeholder="employeeCode" fullWidth>
+              <nb-option *ngFor="let employee of employees" value="{{employee.employeeCode}}">
+                {{employee.employeeCode}}
+              </nb-option>
+            </nb-select>
+          </div>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Customer Code</label>
+          <input type="text" formControlName="customerCode" class="form-control" name="customerCode"
+            placeholder="customerCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Sales Region Code</label>
+          <input type="text" formControlName="salesRegionCode" class="form-control" name="salesRegionCode"
+            placeholder="salesRegionCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Sales Region Level</label>
+          <input type="text" formControlName="salesRegionLevel" class="form-control" name="salesRegionLevel"
+            placeholder="salesRegionLevel">
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button class="cancel" nbButton status="danger" (click)="close()" md-dialog-close>Close</button>
+    <button nbButton status="success" (click)="submit(updateEmployeeResponsibilityForm.value)">Save</button>
+  </nb-card-footer>
+</nb-card>

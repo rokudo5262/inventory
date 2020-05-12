@@ -1,0 +1,52 @@
+<nb-card>
+    <nb-card-header>Structure Detail</nb-card-header>
+    <nb-card-body>
+        <!-- // <input type="hidden" formControlName="id" class="form-control" name="id"> -->
+        <div class="col-xs-12 col-md-12">
+            <label for="companyCode">Company Code</label>
+            <input nbInput type="text" class="form-control" name="companyCode" readonly
+                [(ngModel)]="structure.companyCode">
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <label for="structureCode">Structure Code</label>
+            <input nbInput type="text" class="form-control" name="structureCode" readonly
+                [(ngModel)]="structure.structureCode">
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <label for="structureName">Structure Name</label>
+            <input nbInput type="text" class="form-control" name="structureName" readonly
+                [(ngModel)]="structure.structureName">
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <label for="level">Level</label>
+            <input nbInput type="number" class="form-control" name="level" readonly [(ngModel)]="structure.level">
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <label for="type">Type</label>
+            <input nbInput type="text" class="form-control" name="type" readonly [(ngModel)]="structure.type">
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <label for="parentCode">Parent Code</label>
+            <input nbInput type="string" class="form-control" name="parentCode" readonly
+                [(ngModel)]="structure.parentCode">
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <label for="remark">Remark</label>
+            <input nbInput type="string" class="form-control" name="remark" readonly [(ngModel)]="structure.remark">
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <label for="source">Source</label>
+            <input nbInput type="string" class="form-control" name="source" readonly [(ngModel)]="structure.source">
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <label for="status">status</label>
+            <input nbInput type="string" class="form-control" name="status" readonly [(ngModel)]="structure.status">
+        </div>
+        <!-- <input type="hidden" formControlName="status" class="form-control" name="status" value="A"> -->
+        <!-- <input type="hidden" formControlName="delete1" class="form-control" name="delete1" value="false"> -->
+    </nb-card-body>
+    <nb-card-footer>
+        <button class="cancel" nbButton status="danger" (click)="back()">Back</button>
+        <button nbButton status="success" (click)="edit()">Edit</button>
+    </nb-card-footer>
+</nb-card>

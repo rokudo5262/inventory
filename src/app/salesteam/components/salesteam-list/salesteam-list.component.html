@@ -1,0 +1,3 @@
+<ng2-smart-table [settings]="settings" [source]="salesteams$ | async" (userRowSelect)="navigateToSalesTeam($event)"
+  (editConfirm)="edit($event)" (deleteConfirm)="delete($event)">
+</ng2-smart-table>

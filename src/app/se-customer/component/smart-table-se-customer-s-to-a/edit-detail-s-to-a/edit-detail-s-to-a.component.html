@@ -1,0 +1,106 @@
+<nb-card>
+    <nb-card-header> Secondary Customer Ship To Address</nb-card-header>
+    <nb-card-body>
+     <!-- <form [formGroup]="addsecustomerstoaForm" method="POST"> -->
+        <!-- <div class="secustomer" *ngIf="(secondarycustomers$ | async) as secondarycustomers">
+            <ng-container>
+                <div class="col-xs-12 col-md-12">
+                <label for="companyCode">Company Code</label>
+                <br>
+                <nb-select [formControl]="secusForm" [(ngModel)]="secusSelected.companyCode"
+                    placeholder="Select companyCode">
+                    <nb-option *ngFor="let secus of secondarycustomers" [value]="secus.companyCode">
+                        {{secus.companyCode}}
+                    </nb-option>
+                </nb-select>
+                </div>
+                
+                <div class="col-xs-12 col-md-12">
+                <label for="customerCode">Customer Code</label>
+                <br>
+                <nb-select [formControl]="secusForm" [(ngModel)]="secusSelected.customerCode"
+                    placeholder="Select customerCode">
+                    <nb-option *ngFor="let secus of secondarycustomers" [value]="secus.customerCode">
+                        {{secus.customerCode}}
+                    </nb-option>
+                </nb-select>
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="secondaryCustomerCode">Secondary Customer Code</label>
+                <br>
+                <nb-select [formControl]="secusForm" [(ngModel)]="secusSelected.secondaryCustomerCode"
+                    placeholder="Select secondaryCustomerCode">
+                    <nb-option *ngFor="let secus of secondarycustomers" [value]="secus.secondaryCustomerCode">
+                        {{secus.secondaryCustomerCode}}
+                    </nb-option>
+                </nb-select>
+            </div>
+            </ng-container>
+        </div> -->
+        <!-- <input type="hidden" formControlName="id" class="form-control" name="id"> -->
+          <!-- <input type="hidden" formControlName="id" class="form-control" name="id"> -->
+          <div class="col-xs-12 col-md-12">
+            <label for="companyCode">Company Code</label>
+            <input nbInput disabled type="text"  class="form-control" name="companyCode"
+               [(ngModel)]="secustomerstoa.companyCode">
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <label for="customerCode">Customer Code</label>
+            <input nbInput disabled type="text"  class="form-control" name="customerCode"
+            [(ngModel)]="secustomerstoa.customerCode">
+        </div>
+        <div class="col-xs-12 col-md-12">
+            <label for="secondaryCustomerCode">Secondary Customer Code</label>
+            <input nbInput disabled type="text"  class="form-control" name="secondaryCustomerCode"
+             [(ngModel)]="secustomerstoa.secondaryCustomerCode">
+        </div>
+             <div class="col-xs-12 col-md-12">
+                 <label for="shipToCode">Ship To Code</label>
+                 <input nbInput type="text"  class="form-control" name="shipToCode" 
+                 readonly  [(ngModel)]="secustomerstoa.shipToCode"> 
+             </div>
+             <div class="col-xs-12 col-md-12">
+                 <label for="shipToName">Ship To Name</label>
+                 <input nbInput type="text" class="form-control" name="shipToName"
+                 readonly [(ngModel)]="secustomerstoa.shipToName"> 
+             </div>
+             <div class="col-xs-12 col-md-12">
+                <label for="shipToAddress">Ship To Address</label>
+                <input nbInput type="text" class="form-control" name="shipToAddress"
+                readonly [(ngModel)]="secustomerstoa.shipToAddress"> 
+            </div>
+             <div class="col-xs-12 col-md-12">
+                 <label for="contact">Contact</label>
+                 <input nbInput type="text" class="form-control" name="contact" 
+                 readonly  [(ngModel)]="secustomerstoa.contact">
+             </div>
+             <div class="col-xs-12 col-md-12">
+                 <label for="deliveryCondition">Delivery Condition</label>
+                 <input nbInput type="text" class="form-control" name="deliveryCondition" 
+                 readonly [(ngModel)]="secustomerstoa.deliveryCondition">
+             </div>
+             <div class="col-xs-12 col-md-12">
+                 <label for="deliveryTime">Delivery Time</label>
+                 <input nbInput type="text"  class="form-control" name="deliveryTime" 
+                 readonly  [(ngModel)]="secustomerstoa.deliveryTime">
+             </div>
+             <div class="col-xs-12 col-md-12">
+                <label for="otherRequest">Other Request</label>
+                <input nbInput type="text"  class="form-control" name="otherRequest"
+                readonly  [(ngModel)]="secustomerstoa.otherRequest" >
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="attachedDocument">Attached Document</label>
+                <input nbInput type="text"  class="form-control" name="attachedDocument" 
+                readonly [(ngModel)]="secustomerstoa.attachedDocument">
+            </div>
+             <!-- <input type="hidden" formControlName="status" class="form-control" name="status" value="new"> -->
+                 <!-- <input type="hidden" formControlName="deleted" class="form-control" name="deleted " value="false"> -->
+             
+             <!-- </form> -->
+            </nb-card-body>
+            <nb-card-footer>
+                <button class="cancel" nbButton status="danger" (click)="back()" >Back</button>
+                <button nbButton status="success" (click)="edit()">Edit</button>
+            </nb-card-footer>
+        </nb-card>

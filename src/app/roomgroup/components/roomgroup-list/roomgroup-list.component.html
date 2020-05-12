@@ -1,0 +1,3 @@
+<ng2-smart-table [settings]="settings" [source]="roomgroups$ | async" (userRowSelect)="navigateToRoomGroup($event)"
+  (editConfirm)="edit($event)" (deleteConfirm)="delete($event)">
+</ng2-smart-table>

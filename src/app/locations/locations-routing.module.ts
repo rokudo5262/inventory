@@ -1,0 +1,17 @@
+import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { LocationListComponent } from '@app/locations/containers/location-list/location-list.component';
+import { LocationDetailComponent } from '@app/locations/containers/location-detail/location-detail.component';
+import { LocationAddComponent } from './containers/location-add/location-add.component';
+
+const routes: Routes = [
+  { path: '', component: LocationListComponent },
+  { path: 'location/add', component: LocationAddComponent },
+  { path: 'location/:id', component: LocationDetailComponent },
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class LocationsRoutingModule { }

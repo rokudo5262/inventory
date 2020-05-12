@@ -1,0 +1,59 @@
+<nb-card>
+    <nb-card-header>
+        <h3>Sales Team Bin Detail</h3>
+    </nb-card-header>
+    <nb-card-body>
+        <div class="row">
+            <div class="col-xs-6 col-md-6">
+                <label>Line Id</label>
+                <input type="text" name="lineId" class="form-control" placeholder="lineId" nbInput readonly
+                    [(ngModel)]="salesteambin.lineId">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>salesTeamBin Code</label>
+                <input type="text" name="binCode" class="form-control" placeholder="binCode" nbInput readonly
+                    [(ngModel)]="salesteambin.binCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>salesTeamBin Name</label>
+                <input type="text" name="binName" class="form-control" placeholder="binName" nbInput readonly
+                    [(ngModel)]="salesteambin.binName">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>salesTeamBin Type</label>
+                <input type="text" name="binType" class="form-control" placeholder="binType" nbInput readonly
+                    [(ngModel)]="salesteambin.binType">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Location Code</label>
+                <input type="text" name="locationCode" class="form-control" placeholder="locationCode" nbInput readonly
+                    [(ngModel)]="salesteambin.locationCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>company Code</label>
+                <input type="text" name="companyCode" class="form-control" placeholder="companyCode" nbInput readonly
+                    [(ngModel)]="salesteambin.companyCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>customer Code</label>
+                <input type="text" name="customerCode" class="form-control" placeholder="customerCode" nbInput readonly
+                    [(ngModel)]="salesteambin.customerCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>salesTeam Code</label>
+                <input type="text" name="salesTeamCode" class="form-control" placeholder="salesTeamCode" nbInput
+                    readonly [(ngModel)]="salesteambin.salesTeamCode">
+            </div>
+            <!-- <div class="col-xs-6 col-md-6">
+                <label>Deleted</label>
+                <input type="text" name="deleted" class="form-control" placeholder="deleted" nbInput readonly
+                    [(ngModel)]="salesteambin.deleted">
+            </div> -->
+        </div>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton outline status="danger"  (click)="back()">Back</button>
+        <button nbButton outline status="success" (click)="edit()">Edit</button>
+        <!-- <button nbButton outline status="warning" (click)="delete()">Delete</button> -->
+    </nb-card-footer>
+<nb-card>

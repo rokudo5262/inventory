@@ -1,0 +1,63 @@
+<nb-card>
+    <nb-card-header>
+        <h3>Employee Responsibility Detail</h3>
+    </nb-card-header>
+    <nb-card-body>
+        <div class="row">
+            <div class="col-xs-6 col-md-6">
+                <label>Employee Responsibility Id</label>
+                <input nbInput fullWidth type="text" name="lineId" class="form-control" readonly
+                    [(ngModel)]="employeeresponsibility.lineId">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Location Code</label>
+                <input nbInput fullWidth type="text" name="locationCode" class="form-control" readonly
+                    [(ngModel)]="employeeresponsibility.locationCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Employee Code</label>
+                <input nbInput fullWidth type="text" name="employeeCode" class="form-control" readonly
+                    [(ngModel)]="employeeresponsibility.employeeCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Sales Region Code</label>
+                <input nbInput fullWidth type="text" name="salesRegionCode" class="form-control" readonly
+                    [(ngModel)]="employeeresponsibility.salesRegionCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Sales Region Level</label>
+                <input nbInput fullWidth type="text" name="salesRegionLevel" class="form-control" readonly
+                    [(ngModel)]="employeeresponsibility.salesRegionLevel">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Sales Route Code</label>
+                <input nbInput fullWidth type="text" name="salesRouteCode" class="form-control" readonly
+                    [(ngModel)]="employeeresponsibility.salesRouteCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Company Code</label>
+                <input nbInput fullWidth type="text" name="companyCode" class="form-control" readonly
+                    [(ngModel)]="employeeresponsibility.companyCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Customer Code</label>
+                <input nbInput fullWidth type="text" name="customer" class="form-control" readonly
+                    [(ngModel)]="employeeresponsibility.customer">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Role</label>
+                <input nbInput fullWidth type="text" name="role" class="form-control" readonly
+                    [(ngModel)]="employeeresponsibility.role">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Source</label>
+                <input nbInput fullWidth type="text" name="source" class="form-control" readonly
+                    [(ngModel)]="employeeresponsibility.source">
+            </div>
+        </div>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton outline status="danger" (click)="back()">Back</button>
+        <button nbButton outline status="success" (click)="edit()">Edit</button>
+    </nb-card-footer>
+</nb-card>

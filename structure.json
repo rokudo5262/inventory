@@ -1,0 +1,56 @@
+{
+ "structure" :[
+  {
+    "id": 1,
+    "companyCode": "1",
+    "structureCode": "1",
+    "structureName": "structure1",
+    "level": 1,
+    "type": "type1",
+    "parentCode": "1",
+    "status": "1",
+    "remark": "1",
+    "source": "1",
+    "delete1": null
+    },
+    {
+    "id": 2,
+    "companyCode": "2",
+    "structureCode": "2",
+    "structureName": "structure2",
+    "level": 2,
+    "type": "type2",
+    "parentCode": "2",
+    "status": "2",
+    "remark": "2",
+    "source": "2",
+    "delete1": null
+    },
+    {
+    "id": 3,
+    "companyCode": "3",
+    "structureCode": "3",
+    "structureName": "structure3",
+    "level": 3,
+    "type": "type3",
+    "parentCode": "3",
+    "status": "3",
+    "remark": "3",
+    "source": "3",
+    "delete1": null
+    },
+    {
+    "id": 4,
+    "companyCode": "4",
+    "structureCode": "4",
+    "structureName": "structure4",
+    "level": 4,
+    "type": "type4",
+    "parentCode": "4",
+    "status": "4",
+    "remark": "4",
+    "source": "4",
+    "delete1": null
+    }
+  ]
+}

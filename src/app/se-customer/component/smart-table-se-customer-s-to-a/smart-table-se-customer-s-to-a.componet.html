@@ -1,0 +1,22 @@
+<nb-card>
+  <nb-card-header>
+    <div class="row">
+      <div class="col-md-6" style="height: 30px;">Structure List</div>
+      <div class="col-md-6" style="justify-content: flex-end;">
+        <button nbButton status="success" (click)="open(dialog)">
+          <i class="fas fa-plus"></i>
+          <span>Ship To Address</span> </button>
+        <button nbButton status="danger" (click)="onClick()">
+          <i class="fas fa-trash-alt"></i>
+          <span>Delete</span> </button>
+        <button nbButton status="primary" (click)="secondarycustomer()">Secondary Customer</button>
+      </div>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]=" secustomerstoas$ | async" (deleteConfirm)="delete($event)"
+      (userRowSelect)="onUserRowSelect($event)" (custom)="onCustomAction($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>
+<!-- (userRowSelect)="onUserRowSelect($event)" -->

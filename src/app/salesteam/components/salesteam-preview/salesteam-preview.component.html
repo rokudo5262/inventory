@@ -1,0 +1,64 @@
+<nb-card>
+  <!-- <nb-card-header>
+    <h3>Sales Team Detail</h3>
+  </nb-card-header> -->
+  <nb-card-body>
+    <div class="row">
+      <div class="col-xs-6 col-md-6">
+        <label>salesTeam Code</label>
+        <input type="text" name="salesTeamCode" class="form-control" placeholder="salesTeamCode" nbInput readonly
+          [(ngModel)]="salesteam.salesTeamCode">
+      </div>
+      <div class="col-xs-6 col-md-6">
+        <label>salesTeam Name</label>
+        <input type="text" name="salesTeamName" class="form-control" placeholder="salesTeamName" nbInput readonly
+          [(ngModel)]="salesteam.salesTeamName">
+      </div>
+      <div class="col-xs-6 col-md-6">
+        <label>salesTeam Type</label>
+        <input type="text" name="salesTeamType" class="form-control" placeholder="salesTeamType" nbInput readonly
+          [(ngModel)]="salesteam.salesTeamType">
+      </div>
+      <div class="col-xs-6 col-md-6">
+        <label>Channel Code</label>
+        <input type="text" name="channelCode" class="form-control" placeholder="channelCode" nbInput readonly
+          [(ngModel)]="salesteam.channelCode">
+      </div>
+      <div class="col-xs-6 col-md-6">
+        <label>channel Name</label>
+        <input type="text" name="channelName" class="form-control" placeholder="channelName" nbInput readonly
+          [(ngModel)]="salesteam.channelName">
+      </div>
+      <div class="col-xs-6 col-md-6">
+        <label>company Code</label>
+        <input type="text" name="companyCode" class="form-control" placeholder="companyCode" nbInput readonly
+          [(ngModel)]="salesteam.companyCode">
+      </div>
+      <div class="col-xs-6 col-md-6">
+        <label>Customer Code Name</label>
+        <input type="text" name="customerCode" class="form-control" placeholder="customerCode" nbInput readonly
+          [(ngModel)]="salesteam.customerCode">
+      </div>
+      <div class="col-xs-6 col-md-6">
+        <label>salesTeam Status</label>
+        <input type="text" name="status" class="form-control" placeholder="status" nbInput readonly
+          [(ngModel)]="salesteam.status">
+      </div>
+      <div class="col-xs-6 col-md-6">
+        <label>salesTeam Remark</label>
+        <input type="text" name="remark" class="form-control" placeholder="remark" nbInput readonly
+          [(ngModel)]="salesteam.remark">
+      </div>
+      <!-- <div class="col-xs-6 col-md-6">
+        <label>salesTeam deleted</label>
+        <input type="text" name="deleted" class="form-control" placeholder="deleted" nbInput readonly
+          [(ngModel)]="salesteam.deleted">
+      </div> -->
+    </div>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton outline status="danger" (click)="back()">Back</button>
+    <button nbButton outline status="success" (click)="edit()">Edit</button>
+    <!-- <button nbButton outline status="warning" (click)="delete()">Delete</button> -->
+  </nb-card-footer>
+</nb-card>

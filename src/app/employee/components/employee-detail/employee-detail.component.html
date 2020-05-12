@@ -1,0 +1,14 @@
+<nb-tabset>
+    <nb-tab tabTitle="Employee Detail">
+        <ngx-employee-preview [employee]="employee$ | async">
+        </ngx-employee-preview>
+    </nb-tab>
+    <nb-tab tabTitle="Employee Responsibility List">
+        <ngx-responsibility-list-detail [employee]="employee$ | async">
+        </ngx-responsibility-list-detail>
+    </nb-tab>
+    <nb-tab tabTitle="Employee Responsibility List">
+        <ngx-responsibility-list-2-detail [employee]="employee$ | async">
+        </ngx-responsibility-list-2-detail>
+    </nb-tab>
+</nb-tabset>

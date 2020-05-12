@@ -1,0 +1,95 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "baseUrl": "./",
+    "rootDir": "./",
+    "paths": {
+      "@angular/*": [
+        "../node_modules/@angular/*"
+      ],
+      "@nebular/*": [
+        "../node_modules/@nebular/*"
+      ],
+      "@app/*": [
+        "./app/*"
+      ],
+      "@dashboard": [
+        "./app/dashboard"
+      ],
+      "@dashboard/*": [
+        "./app/dashboard/*"
+      ],
+      "@appbooks": [
+        "./app/books"
+      ],
+      "@appbooks/*": [
+        "./app/books/*"
+      ],
+      "@appdata": [
+        "./app/@core/data"
+      ],
+      "@appdata/*": [
+        "./app/@core/data/*"
+      ],
+      "@apptheme": [
+        "./app/@theme"
+      ],
+      "@apptheme/*": [
+        "./app/@theme/*"
+      ],
+      "@apporders": [
+        "./app/orders"
+      ],
+      "@apporders/*": [
+        "./app/orders/*"
+      ],
+      "@appexchanges": [
+        "./app/exchanges"
+      ],
+      "@appexchanges/*": [
+        "./app/exchanges/*"
+      ],
+      "@appmerchandise": [
+        "./app/merchandise"
+      ],
+      "@appmerchandise/*": [
+        "./app/merchandise/*"
+      ],
+      "@apppartners": [
+        "./app/partners"
+      ],
+      "@apppartners/*": [
+        "./app/partners/*"
+      ],
+      "@appwarehouse": [
+        "./app/warehouse"
+      ],
+      "@appwarehouse/*": [
+        "./app/warehouse/*"
+      ],
+      "@appcodeMaster": [
+        "./app/code-master"
+      ],
+      "@appcodeMaster/*": [
+        "./app/code-master/*"
+      ],
+      "@appapplyfor": [
+        "./app/apply-for"
+      ],
+      "@appapplyfor/*": [
+        "./app/apply-for/*"
+      ],
+    }
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts",
+    "../node_modules/@nebular/**/*.spec.ts"
+  ],
+  "include": [
+    "../src/*.ts",
+    "../src/**/*.ts",
+    "../node_modules/@nebular/**/*.ts"
+  ]
+}

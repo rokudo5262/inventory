@@ -1,0 +1,39 @@
+<nb-card>
+    <nb-card-header>
+        <h3>RoomGroup Detail</h3>
+    </nb-card-header>
+    <nb-card-body>
+        <div class="row">
+            <div class="col-xs-6 col-md-6">
+                <label>RoomGroup Id</label>
+                <input type="text" name="id" class="form-control" placeholder="id" nbInput readonly [(ngModel)]="roomgroup.id">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>RoomGroup Name</label>
+                <input type="text" name="name" class="form-control" placeholder="name" nbInput readonly
+                    [(ngModel)]="roomgroup.name">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>RoomGroup Note</label>
+                <input type="text" name="name" class="form-control" placeholder="note" nbInput readonly
+                    [(ngModel)]="roomgroup.note">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6">
+                <label>RoomGroup Status</label>
+                <input type="text" name="status" class="form-control" placeholder="status" nbInput readonly
+                    [(ngModel)]="roomgroup.status">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>RoomGroup Deleted</label>
+                <input type="text" name="deleted" class="form-control" placeholder="deleted" nbInput readonly
+                    [(ngModel)]="roomgroup.deleted">
+            </div>
+        </div>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton outline status="danger" (click)="back()">Back</button>
+        <button nbButton outline status="success" (click)="edit()">Edit</button>
+    </nb-card-footer>
+</nb-card>

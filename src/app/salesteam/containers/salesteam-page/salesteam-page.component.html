@@ -1,0 +1,16 @@
+<nb-card>
+    <nb-card-header>
+        <div class="row">
+            <div class="title">Sales Team List</div>
+            <div class="button">
+                <button nbButton outline status="primary" (click)="open()">Add</button>
+            </div>
+        </div>
+    </nb-card-header>
+    <nb-card-body>
+        <ngx-salesteam-smart-table></ngx-salesteam-smart-table>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton outline status="primary" (click)="navigate()">SalesTeamBin List</button>
+    </nb-card-footer>
+</nb-card>

@@ -1,0 +1,48 @@
+<nb-card>
+  <nb-card-header>
+    <label>Add Employee Responsibility</label>
+  </nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="addEmployeeResponsibilityForm">
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <input type="hidden" formControlName="lineId" class="form-control" name="lineId" placeholder="lineId">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Location Code</label>
+          <input type="text" required formControlName="locationCode" class="form-control" name="locationCode" placeholder="locationCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Employee Code</label>
+          <div *ngIf="(employees$ | async) as employees">
+            <nb-select formControlName="employeeCode" placeholder="employeeCode" fullWidth>
+              <nb-option *ngFor="let employee of employees" value="{{employee.employeeCode}}">
+                {{employee.employeeName}}
+              </nb-option>
+            </nb-select>
+          </div>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Company Code</label>
+          <input type="text" formControlName="companyCode" class="form-control" name="companyCode" placeholder="companyCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Customer Code</label>
+          <input type="text" formControlName="customerCode" class="form-control" name="customerCode" placeholder="customerCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Sales Region Code</label>
+          <input type="text" formControlName="salesRegionCode" class="form-control" name="salesRegionCode" placeholder="salesRegionCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Sales Region Level</label>
+          <input type="text" formControlName="salesRegionLevel" class="form-control" name="salesRegionLevel" placeholder="salesRegionLevel">
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton status="danger" (click)="close()">Close</button>
+    <button nbButton status="success" (click)="submit(addEmployeeResponsibilityForm.value)">Save</button>
+  </nb-card-footer>
+</nb-card>

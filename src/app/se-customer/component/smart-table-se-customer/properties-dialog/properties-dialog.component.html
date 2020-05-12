@@ -1,0 +1,59 @@
+<nb-card>
+    <nb-card-header>Update Properties</nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="addSecondaryCustomerForm" method="POST">
+            <!-- <span>Properties</span> -->
+            <div class="row">
+                <div class="col-xs-5 col-md-5">
+                    <label for="secondaryCustomerType">Secondary Customer Type</label>
+                    <input nbInput type="text" formControlName="secondaryCustomerType" class="form-control"
+                        name="secondaryCustomerType">
+                    <label for="secondaryCustomerTypeDescription">Secondary Customer Type Description</label>
+                    <input nbInput type="text" formControlName="secondaryCustomerTypeDescription" class="form-control"
+                        name="secondaryCustomerTypeDescription">
+                    <!-- <div class="col-xs-12 col-md-12"> -->
+                    <label for="secondaryCustomerClass">Secondary Customer Class</label>
+                    <input nbInput type="text" formControlName="secondaryCustomerClass" class="form-control"
+                        name="secondaryCustomerClass">
+                    <!-- <div class="col-xs-12 col-md-12"> -->
+                    <label for="secondaryCustomerClassDescription">Secondary Customer Class Description</label>
+                    <input nbInput type="text" formControlName="secondaryCustomerClassDescription" class="form-control"
+                        name="secondaryCustomerClassDescription">
+                    <label for="customerSegment">Secondary Customer Segment</label>
+                    <input nbInput type="text" formControlName="customerSegment" class="form-control"
+                        name="customerSegment">
+                    <label for="customerSegmentDescription">Secondary Customer Segment Description</label>
+                    <input nbInput type="text" formControlName="customerSegmentDescription" class="form-control"
+                        name="customerSegmentDescription">
+                    <label for="parentSecondaryCustomerCode">Secondary Customer Group</label>
+                    <input nbInput type="text" formControlName="parentSecondaryCustomerCode" class="form-control"
+                        name="parentSecondaryCustomerCode">
+                    <label for="parentSecondaryCustomerCodeDescription">Secondary Customer Group Description</label>
+                    <input nbInput type="text" formControlName="parentSecondaryCustomerCodeDescription"
+                        class="form-control" name="parentSecondaryCustomerCodeDescription">
+                </div>
+                <div class="col-xs-5 col-md-5">
+                    <label for="attribute1">Traditional Trade</label>
+                    <input nbInput type="text" formControlName="attribute1" class="form-control" name="attribute1">
+                    <label for="attribute2">Modern Trade</label>
+                    <input nbInput type="text" formControlName="attribute2" class="form-control" name="attribute2">
+                    <label for="attribute3">Food Service</label>
+                    <input nbInput type="text" formControlName="attribute3" class="form-control" name="attribute3">
+                    <label for="attribute4">Industrial Food Service</label>
+                    <input nbInput type="text" formControlName="attribute4" class="form-control" name="attribute4">
+                    <label for="attribute5">Others</label>
+                    <input nbInput type="text" formControlName="attribute5" class="form-control" name="attribute5">
+                    <label for="attribute6">One-time Secondary Customer</label>
+                    <input nbInput type="text" formControlName="attribute6" class="form-control" name="attribute6">
+                    <label for="secondaryCustomerGroup">Secondary Customer Discount Group Code</label>
+                    <input nbInput type="text" formControlName="secondaryCustomerGroup" class="form-control"
+                        name="secondaryCustomerGroup">
+                </div>
+            </div>
+        </form>
+    </nb-card-body>
+    <nb-card-footer>
+        <button class="cancel" nbButton status="danger" (click)="close()" md-dialog-close>Close</button>
+        <button nbButton status="success" (click)="submit(addSecondaryCustomerForm.value)">Save</button>
+    </nb-card-footer>
+</nb-card>

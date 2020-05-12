@@ -1,0 +1,60 @@
+<nb-card>
+  <nb-card-header><label>Add SalesTeam Bin</label></nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="addSalesTeamBinForm">
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <input nbInput fullWidth type="hidden" formControlName="lineId" class="form-control" name="lineId" placeholder="lineId">
+          <input nbInput fullWidth type="hidden" formControlName="createdBy" class="form-control" name="createdBy">
+          <input nbInput fullWidth type="hidden" formControlName="lastUpdatedBy" class="form-control"
+            name="lastUpdatedBy">
+            <input nbInput fullWidth type="hidden" formControlName="source" class="form-control"
+            name="source">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Bin Code</label>
+          <input nbInput fullWidth  type="text" formControlName="binCode" class="form-control" name="binCode" placeholder="binCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Bin Name</label>
+          <input nbInput fullWidth type="text" name="binName" formControlName="binName" class="form-control" placeholder="binName">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Bin Type</label>
+          <input nbInput fullWidth type="text" name="binType" formControlName="binType" class="form-control" placeholder="binType">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Location Code</label>
+          <input nbInput fullWidth type="text" name="locationCode" formControlName="locationCode" class="form-control"
+            placeholder="locationCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Company Code</label>
+          <input nbInput fullWidth type="text" name="companyCode" formControlName="companyCode" class="form-control"
+            placeholder="companyCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Customer Code</label>
+          <input nbInput fullWidth type="text" name="customerCode" formControlName="customerCode" class="form-control"
+            placeholder="customerCode">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-6">
+          <label>Sales Team Code</label>
+          <div *ngIf="(salesteams$ | async) as salesteams">
+            <nb-select formControlName="salesTeamCode" placeholder="salesTeamCode" fullWidth>
+              <nb-option *ngFor="let salesteam of salesteams" value="{{salesteam.salesTeamCode}}">
+                {{salesteam.salesTeamName}}
+              </nb-option>
+            </nb-select>
+          </div>
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button class="cancel" nbButton status="danger" (click)="close()" md-dialog-close>Close</button>
+    <button nbButton status="success" (click)="submit(addSalesTeamBinForm.value)">Save</button>
+  </nb-card-footer>
+</nb-card>

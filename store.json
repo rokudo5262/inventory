@@ -1,0 +1,37 @@
+{
+  "storeinformation": [
+    {
+      "id": 2,
+      "codeStore": 2,
+      "codeLocation": 2,
+      "codeStaff": 2,
+      "openTime": {
+        "hours": 1,
+        "minutes": 20
+      },
+      "closeTime": {
+        "hours": 2,
+        "minutes": 20
+      },
+      "address": "123A"
+    },
+    {
+      "id": 3,
+      "codeStore": 3,
+      "codeLocation": 3,
+      "codeStaff": 3,
+      "openTime": "11:11",
+      "closeTime": "14:22",
+      "address": "11111111"
+    },
+    {
+      "id": 4,
+      "codeStore": 1,
+      "codeLocation": 1,
+      "codeStaff": 1,
+      "openTime": "11:11",
+      "closeTime": "14:22",
+      "address": "11111"
+    }
+  ]
+}

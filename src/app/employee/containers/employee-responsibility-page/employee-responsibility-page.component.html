@@ -1,0 +1,16 @@
+<nb-card>
+    <nb-card-header>
+        <div class="row">
+            <div class="title">Employee Responsibility List</div>
+            <div class="button">
+                <button nbButton outline status="primary" (click)="open()">Add</button>
+            </div>
+        </div>
+    </nb-card-header>
+    <nb-card-body>
+        <ngx-employee-responsibility-list></ngx-employee-responsibility-list>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton outline status="primary" (click)="navigate()">Employee List</button>
+    </nb-card-footer>
+</nb-card>

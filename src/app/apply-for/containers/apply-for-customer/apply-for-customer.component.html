@@ -1,0 +1,21 @@
+<nb-card>
+    <nb-card-header>
+        <div class="row">
+            <div class="title">
+                <span>Apply For Customer</span>
+                <div class="btn">
+                    <button nbButton (click)="open()">
+                        <i class="fas fa-plus"></i>&nbsp; Apply For Customer
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </nb-card-header>
+    <nb-card-body>
+        <ng2-smart-table [settings]="settings" [source]="applyForCustomers$ | async"
+
+        (custom)="navigateToDetail($event)">
+        </ng2-smart-table>
+    </nb-card-body>
+</nb-card>

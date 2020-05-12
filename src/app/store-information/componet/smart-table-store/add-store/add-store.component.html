@@ -1,0 +1,37 @@
+<nb-card>
+    <nb-card-header>Add Store</nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="addStoreForm">
+            <input type="hidden" formControlName="id" class="form-control" name="id">
+            <div class="col-xs-12 col-md-12">
+                <label for="codeStore">Code Store</label>
+                <input nbInput type="number" formControlName="codeStore" class="form-control" name="codeStore">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="codeLocation">Code Location</label>
+                <input nbInput type="number" formControlName="codeLocation" class="form-control" name="codeLocation">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="codeStaff">Code Staff</label>
+                <input nbInput type="number" formControlName="codeStaff" class="form-control" name="codeStaff">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="openTime">Time Open</label>
+                <input nbInput type="time" formControlName="openTime" class="form-control" name="openTime">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="closeTime">Time Close</label>
+                <input nbInput type="time" formControlName="closeTime" class="form-control" name="closeTime">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="address">Address</label>
+                <input nbInput type="string" formControlName="address" class="form-control" name="address">
+            </div>
+            <!-- <input type="hidden" formControlName="status" class="form-control" name="status" value="on"> -->
+        </form>
+    </nb-card-body>
+    <nb-card-footer>
+        <button class="cancel" nbButton status="danger" (click)="close()" md-dialog-close>Close</button>
+        <button nbButton status="success" (click)="submit(addStoreForm.value)">Save</button>
+    </nb-card-footer>
+</nb-card>

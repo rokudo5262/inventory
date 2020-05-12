@@ -1,0 +1,82 @@
+<nb-card>
+    <nb-card-header>Add Structure Value</nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="addStructureValueForm">
+            <div class="st" *ngIf="(structures$ | async) as structures">
+                <ng-container>
+                    <div class="col-xs-12 col-md-12">
+                        <label for="companyCode">Company Code</label>
+                        <br>
+                        <nb-select [formControl]="stForm" [(ngModel)]="stSelected.companyCode"
+                            placeholder="Select companyCode">
+                            <nb-option *ngFor="let st of structures" [value]="st.companyCode">
+                                {{st.companyCode}}
+                            </nb-option>
+                        </nb-select>
+                    </div>
+                    <div class="col-xs-12 col-md-12">
+                        <label for="structureCode">Structure Code</label>
+                        <br>
+                        <nb-select [formControl]="stForm" [(ngModel)]="stSelected.structureCode"
+                            placeholder="Select structureCode">
+                            <nb-option *ngFor="let st of structures" [value]="st.structureCode">
+                                {{st.structureCode}}
+                            </nb-option>
+                        </nb-select>
+                    </div>
+                </ng-container>
+            </div>
+            <!-- <input type="hidden" formControlName="id" class="form-control" name="id">
+            <div class="col-xs-12 col-md-12">
+                <label for="companyCode">Company Code</label>
+                <input disabled type="text" formControlName="companyCode" class="form-control" name="companyCode"
+                    [(ngModel)]="stSelected.companyCode">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="structureCode">Structure Code</label>
+                <input disabled type="text" formControlName="structureCode" class="form-control" name="structureCode"
+                    [(ngModel)]="stSelected.structureCode">
+            </div> -->
+            <div class="col-xs-12 col-md-12">
+                <label for="structureValueCode">structure Value Code</label>
+                <input nbInput type="text" formControlName="structureValueCode" class="form-control"
+                    name="structureValueCode">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="structureValueName">structure Value Name</label>
+                <input nbInput type="text" formControlName="structureValueName" class="form-control"
+                    name="structureValueName">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="level">Level</label>
+                <input nbInput type="number" formControlName="level" class="form-control" name="level">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="type">Type</label>
+                <input nbInput type="text" formControlName="type" class="form-control" name="type">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="parentCode">Parent Code</label>
+                <input nbInput type="string" formControlName="parentCode" class="form-control" name="parentCode">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="parentValue">Parent Value</label>
+                <input nbInput type="string" formControlName="parentValue" class="form-control" name="parentValue">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="ordinal">ordinal</label>
+                <input nbInput type="number" formControlName="ordinal" class="form-control" name="ordinal">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="source">Source</label>
+                <input nbInput type="string" formControlName="source" class="form-control" name="source">
+            </div>
+            <input type="hidden" formControlName="delete2" class="form-control" name="delete2" value="false">
+            <input type="hidden" formControlName="status" class="form-control" name="status" value="A">
+        </form>
+    </nb-card-body>
+    <nb-card-footer>
+        <button class="cancel" nbButton status="danger" (click)="close()" md-dialog-close>Close</button>
+        <button nbButton status="success" (click)="submit(addStructureValueForm.value)">Save</button>
+    </nb-card-footer>
+</nb-card>

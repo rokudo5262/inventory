@@ -1,0 +1,110 @@
+<nb-card style="height: 400px;">
+    <nb-card-header>
+        New Apply For Header
+    </nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="addApplyCustomerForm">
+            <div class="customer" *ngIf="(applyForHeaders$ | async) as applyForHeaders">
+                <ng-container>
+                    <label for="companyCode">Company Code</label> <br>
+                    <nb-select [formControl]="customerForm" [(ngModel)]="headerSelected.companyCode"
+                        placeholder="Select Company Code">
+                        <nb-option *ngFor="let customer of applyForHeaders" [value]="customer.companyCode">
+                            {{customer.companyCode}}
+                        </nb-option>
+                    </nb-select> <br>
+                    <input type="text" hidden formControlName="companyCode" class="form-control"
+                        [(ngModel)]="headerSelected.companyCode" name="companyCode" required>
+
+                    <label for="applyForCode">Apply For Code</label> <br>
+                    <nb-select [formControl]="customerForm" [(ngModel)]="headerSelected.applyForCode"
+                        placeholder="Select Apply For Code">
+                        <nb-option *ngFor="let customer of applyForHeaders" [value]="customer.applyForCode">
+                            {{customer.applyForCode}}
+                        </nb-option>
+                    </nb-select> <br>
+                    <input type="text" hidden formControlName="applyForCode" class="form-control"
+                        [(ngModel)]="headerSelected.applyForCode" name="applyForCode" required>
+
+                </ng-container>
+            </div>
+            <label for="applyForCustomerCode">Apply For Customer Code</label>
+            <input type="text" formControlName="applyForCustomerCode" class="form-control" name="applyForCustomerCode"
+                required>
+
+            <label for="customerCode">Customer Code</label>
+            <input type="text" formControlName="customerCode" class="form-control" name="customerCode" required>
+
+            <label for="salesTeamCode">Sales Team Code</label>
+            <input type="text" formControlName="salesTeamCode" class="form-control" name="salesTeamCode" required>
+
+            <label for="type">Type</label>
+            <!-- <nb-select placeholder="Type">
+                        <nb-option value="0">Other</nb-option>
+                        <nb-option value="1">Location</nb-option>
+                        <nb-option value="2">All</nb-option>
+                    </nb-select> -->
+            <input type="text" formControlName="type" class="form-control" name="type" required>
+            <br>
+
+            <label for="primaryCustomerHierarchyCode">Primary Customer Hierarchy Code</label>
+            <input formControlName="primaryCustomerHierarchyCode" class="form-control"
+                name="primaryCustomerHierarchyCode" required>
+
+            <label for="primaryCustomerHierarchyLevel">Primary Customer Hierarchy Level</label>
+            <input type="number" formControlName="primaryCustomerHierarchyLevel" class="form-control"
+                name="primaryCustomerHierarchyLevel" required>
+
+            <label for="regionCode">Region Code</label>
+            <input formControlName="regionCode" class="form-control" name="regionCode" required>
+
+            <label for="regionLevel">Region Level</label>
+            <input type="number" formControlName="regionLevel" class="form-control" name="regionLevel" required>
+
+            <label for="salesRegionL1">Branch Code</label>
+            <input type="text" formControlName="salesRegionL1" class="form-control" name="salesRegionL1" required>
+
+            <label for="salesRegionL2">Area Code</label>
+            <input type="text" formControlName="salesRegionL2" class="form-control" name="salesRegionL2" required>
+
+            <label for="salesRegionL3">Province Code</label>
+            <input type="text" formControlName="salesRegionL3" class="form-control" name="salesRegionL3" required>
+
+            <label for="salesRegionL4">Ship To Code</label>
+            <input type="text" formControlName="salesRegionL4" class="form-control" name="salesRegionL4" required>
+
+            <label for="salesRegionL5">Sales Region</label>
+            <input type="text" formControlName="salesRegionL5" class="form-control" name="salesRegionL5" required>
+
+            <label for="depotCode">Depot Code</label>
+            <input type="text" formControlName="depotCode" class="form-control" name="depotCode" required>
+
+            <label for="description">Description</label>
+            <input type="text" formControlName="description" class="form-control" name="description" required>
+
+            <label for="source">Source</label>
+            <input type="text" formControlName="source" class="form-control" name="source" required>
+
+            <label for="createdBy">Created By</label>
+            <input type="text" formControlName="createdBy" class="form-control" name="createdBy" required>
+
+            <label for="lastUpdatedBy">Last Updated By</label>
+            <input type="text" formControlName="lastUpdatedBy" class="form-control" name="lastUpdatedBy" required>
+
+            <input hidden formControlName="createdDateTime" class="form-control" name="createdDateTime" required>
+            <input hidden formControlName="lastUpdatedDateTime" class="form-control" name="lastUpdatedDateTime"
+                required>
+
+            <label for="salesRouteCode">Sales Route Code</label>
+            <input formControlName="salesRouteCode" class="form-control" name="salesRouteCode" required>
+
+        </form>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton class="btn btn-success" type="submit" status="success"
+            (click)="onSubmit(addApplyCustomerForm.value)">Save</button>
+        <button nbButton id="cancel" (click)="close()" status="danger">
+            <i class="fas fa-ban"></i>&nbsp; Cancel
+        </button>
+    </nb-card-footer>
+</nb-card>

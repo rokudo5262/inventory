@@ -1,0 +1,183 @@
+<nb-card>
+    <nb-card-header> Secondary Customer Detail
+        <button class="cancel" nbButton status="primary" (click)="back()">Back</button>
+        <button class="cancel" nbButton status="success" (click)="secondarycustomershiptoaddress()">Ship To
+            Address</button>
+    </nb-card-header>
+    <nb-card-body>
+        <!-- <form [formGroup]="addSecondaryCustomerForm" > -->
+        <nb-tabset fullWidth>
+            <nb-tab tabTitle="General Information">
+                <div class="row">
+                    <div class="col-xs-5 col-md-5">
+                        <label for="secondaryCustomerCode">Secondary Customer Code</label>
+                        <input nbInput type="text" class="form-control" name="secondaryCustomerCode" readonly
+                            [(ngModel)]="secondarycustomer.secondaryCustomerCode">
+                        <label for="secondaryCustomerName">Secondary Customer Name</label>
+                        <input nbInput type="text" class="form-control" name="secondaryCustomerName" readonly
+                            [(ngModel)]="secondarycustomer.secondaryCustomerName">
+                        <!-- <div class="col-xs-12 col-md-12"> -->
+                        <label for="secondaryCustomerName2">Short name</label>
+                        <input nbInput type="text" class="form-control" name="secondaryCustomerName2" readonly
+                            [(ngModel)]="secondarycustomer.secondaryCustomerName2">
+                        <!-- <div class="col-xs-12 col-md-12"> -->
+                        <label for="address">Address</label>
+                        <input nbInput type="text" class="form-control" name="address" readonly
+                            [(ngModel)]="secondarycustomer.address">
+                    </div>
+                    <div class="col-xs-5 col-md-5">
+                        <label for="phone">Phone</label>
+                        <input nbInput type="text" class="form-control" name="phone" readonly
+                            [(ngModel)]="secondarycustomer.phone">
+                        <label for="postCode">Post Code</label>
+                        <input nbInput type="text" class="form-control" name="postCode" readonly
+                            [(ngModel)]="secondarycustomer.postCode">
+                        <!-- <label for="status">Status</label>
+                        <input nbInput type="text" formControlName="status" class="form-control" name="status" > -->
+                    </div>
+                </div>
+                <button nbButton status="success" (click)="edit1()">Edit</button>
+            </nb-tab>
+            <nb-tab tabTitle="Other Information">
+                <div class="row ">
+                    <div class="col-xs-5 col-md-5">
+                        <label for="phone2">Phone 2</label>
+                        <input nbInput type="text" class="form-control" name="phone2" readonly
+                            [(ngModel)]="secondarycustomer.phone2">
+                        <label for="contactName">Contact Name</label>
+                        <input nbInput type="text" class="form-control" name="contactName" readonly
+                            [(ngModel)]="secondarycustomer.contactName">
+                        <!-- <div class="col-xs-12 col-md-12"> -->
+                        <label for="email">Email</label>
+                        <input nbInput type="text" class="form-control" name="email" readonly
+                            [(ngModel)]="secondarycustomer.email">
+                        <!-- <div class="col-xs-12 col-md-12"> -->
+                        <label for="dateOfBirth">Date Of Birth</label>
+                        <input nbInput type="date" class="form-control" name="dateOfBirth" readonly
+                            [(ngModel)]="secondarycustomer.dateOfBirth">
+                    </div>
+                    <div class="col-xs-6 col-md-6 ">
+                        <label for="shipToAddress">Ship To Address</label>
+                        <input nbInput type="text" class="form-control" name="shipToAddress" readonly
+                            [(ngModel)]="secondarycustomer.shipToAddress">
+                        <label for="shipToPhone">Ship To Phone</label>
+                        <input nbInput type="text" class="form-control" name="shipToPhone" readonly
+                            [(ngModel)]="secondarycustomer.shipToPhone">
+                        <label for="remark">Remark</label>
+                        <input nbInput type="text" class="form-control" name="remark" readonly
+                            [(ngModel)]="secondarycustomer.remark">
+                    </div>
+                </div>
+                <button nbButton status="success" (click)="edit2()">Edit</button>
+            </nb-tab>
+            <nb-tab tabTitle="Properties">
+                <div class="row">
+                    <div class="col-xs-5 col-md-5">
+                        <label for="secondaryCustomerType">Secondary Customer Type</label>
+                        <input nbInput type="text" class="form-control" name="secondaryCustomerType" readonly
+                            [(ngModel)]="secondarycustomer.secondaryCustomerType">
+                        <label for="secondaryCustomerTypeDescription">Secondary Customer Type Description</label>
+                        <input nbInput type="text" class="form-control" name="secondaryCustomerTypeDescription" readonly
+                            [(ngModel)]="secondarycustomer.secondaryCustomerTypeDescription">
+                        <!-- <div class="col-xs-12 col-md-12"> -->
+                        <label for="secondaryCustomerClass">Secondary Customer Class</label>
+                        <input nbInput type="text" class="form-control" name="secondaryCustomerClass" readonly
+                            [(ngModel)]="secondarycustomer.secondaryCustomerClass">
+                        <!-- <div class="col-xs-12 col-md-12"> -->
+                        <label for="secondaryCustomerClassDescription">Secondary Customer Class Description</label>
+                        <input nbInput type="text" class="form-control" name="secondaryCustomerClassDescription"
+                            readonly [(ngModel)]="secondarycustomer.secondaryCustomerClassDescription">
+                        <label for="customerSegment">Secondary Customer Segment</label>
+                        <input nbInput type="text" class="form-control" name="customerSegment" readonly
+                            [(ngModel)]="secondarycustomer.customerSegment">
+                        <label for="customerSegmentDescription">Secondary Customer Segment Description</label>
+                        <input nbInput type="text" class="form-control" name="customerSegmentDescription" readonly
+                            [(ngModel)]="secondarycustomer.customerSegmentDescription">
+                        <label for="parentSecondaryCustomerCode">Secondary Customer Group</label>
+                        <input nbInput type="text" class="form-control" name="parentSecondaryCustomerCode" readonly
+                            [(ngModel)]="secondarycustomer.parentSecondaryCustomerCode">
+                        <label for="parentSecondaryCustomerCodeDescription">Secondary Customer Group Description</label>
+                        <input nbInput type="text" class="form-control" name="parentSecondaryCustomerCodeDescription"
+                            readonly [(ngModel)]="secondarycustomer.parentSecondaryCustomerCodeDescription">
+                    </div>
+                    <div class="col-xs-5 col-md-5">
+                        <label for="attribute1">Traditional Trade</label>
+                        <input nbInput type="text" class="form-control" name="attribute1" readonly
+                            [(ngModel)]="secondarycustomer.attribute1">
+                        <label for="attribute2">Modern Trade</label>
+                        <input nbInput type="text" class="form-control" name="attribute2" readonly
+                            [(ngModel)]="secondarycustomer.attribute2">
+                        <label for="attribute3">Food Service</label>
+                        <input nbInput type="text" class="form-control" name="attribute3" readonly
+                            [(ngModel)]="secondarycustomer.attribute3">
+                        <label for="attribute4">Industrial Food Service</label>
+                        <input nbInput type="text" class="form-control" name="attribute4" readonly
+                            [(ngModel)]="secondarycustomer.attribute4">
+                        <label for="attribute5">Others</label>
+                        <input nbInput type="text" class="form-control" name="attribute5" readonly
+                            [(ngModel)]="secondarycustomer.attribute5">
+                        <label for="attribute6">One-time Secondary Customer</label>
+                        <input nbInput type="text" class="form-control" name="attribute6" readonly
+                            [(ngModel)]="secondarycustomer.attribute6">
+                        <label for="secondaryCustomerGroup">Secondary Customer Discount Group Code</label>
+                        <input nbInput type="text" class="form-control" name="secondaryCustomerGroup" readonly
+                            [(ngModel)]="secondarycustomer.secondaryCustomerGroup">
+                    </div>
+                </div>
+                <button nbButton status="success" (click)="edit3()">Edit</button>
+            </nb-tab>
+            <nb-tab tabTitle=" Invoice & Payment">
+                <div class="row ">
+                    <div class="col-xs-5 col-md-5">
+                        <label for="paymentTerm">Payment Term Code</label>
+                        <input nbInput type="text" class="form-control" name="paymentTerm" readonly
+                            [(ngModel)]="secondarycustomer.paymentTerm">
+                        <label for="paymentTermDescription">Payment Term Description</label>
+                        <input nbInput type="text" class="form-control" name="paymentTermDescription" readonly
+                            [(ngModel)]="secondarycustomer.paymentTermDescription">
+                        <label for="paymentMethod">Payment Method Code</label>
+                        <input nbInput type="text" class="form-control" name="paymentMethod" readonly
+                            [(ngModel)]="secondarycustomer.paymentMethod">
+                        <label for="paymentMethodDescription">Payment Method Description</label>
+                        <input nbInput type="text" class="form-control" name="paymentMethodDescription" readonly
+                            [(ngModel)]="secondarycustomer.paymentMethodDescription">
+                        <label for="taxCode">Secondary Customer Tax Code</label>
+                        <input nbInput type="text" class="form-control" name="taxCode" readonly
+                            [(ngModel)]="secondarycustomer.taxCode">
+                        <label for="businessType">Business Type</label>
+                        <input nbInput type="text" class="form-control" name="businessType" readonly
+                            [(ngModel)]="secondarycustomer.businessType">
+                    </div>
+                    <div class="col-xs-5 col-md-5">
+                        <label for="pricePaymentTermCode">Price Payment Term Code</label>
+                        <input nbInput type="text" class="form-control" name="pricePaymentTermCode" readonly
+                            [(ngModel)]="secondarycustomer.pricePaymentTermCode">
+                        <label for="billToSecondaryCustomerCode">Bill To Secondary Customer Code</label>
+                        <input nbInput type="text" class="form-control" name="billToSecondaryCustomerCode" readonly
+                            [(ngModel)]="secondarycustomer.billToSecondaryCustomerCode">
+                        <label for="billToSecondaryCustomerName">Bill To Secondary Customer Name</label>
+                        <input nbInput type="text" class="form-control" name="attribute3" readonly
+                            [(ngModel)]="secondarycustomer.attribute3">
+                        <label for="vatregistrationId">VAT Registration ID</label>
+                        <input nbInput type="text" class="form-control" name="vatregistrationId" readonly
+                            [(ngModel)]="secondarycustomer.vatregistrationId">
+                        <label for="secondaryCustomerNameInvoice">Secondary Customer Name Invoice</label>
+                        <input nbInput type="text" class="form-control" name="secondaryCustomerNameInvoice" readonly
+                            [(ngModel)]="secondarycustomer.secondaryCustomerNameInvoice">
+                        <label for="creditLimit">Credit Limit</label>
+                        <input nbInput type="number" class="form-control" name="creditLimit" readonly
+                            [(ngModel)]="secondarycustomer.creditLimit">
+                    </div>
+                </div>
+                <button nbButton status="success" (click)="edit4()">Edit</button>
+            </nb-tab>
+        </nb-tabset>
+        <!-- <input type="hidden" formControlName="status" class="form-control" name="status" value="I">
+                 <input type="hidden" formControlName="deleted" class="form-control" name="deleted" value="false"> -->
+        <!-- </form> -->
+    </nb-card-body>
+    <nb-card-footer>
+        <!-- <button class="cancel" nbButton status="primary" (click)="back()" >Back</button> -->
+        <!-- <button nbButton status="success" (click)="submit(addSecondaryCustomerForm.value)">Save</button> -->
+    </nb-card-footer>
+</nb-card>

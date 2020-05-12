@@ -1,0 +1,123 @@
+<nb-card >
+<nb-card-header>
+    <span>Suppliers</span>
+    <button (click)="openCreateForm()" nbButton class="appearance-outline"><i class="fas fa-plus"></i> &nbsp; Supplier</button>
+    <button ngFor="let status of statuses" nbButton class="appearance-outline"><i class="fas fa-file-import"></i> &nbsp; Import</button>
+    <button ngFor="let status of statuses" nbButton class="appearance-outline" ><i class="fas fa-file-export"></i> &nbsp; Export file</button>
+    
+</nb-card-header>
+<nb-card-body >
+    <label class="search-label" for="search">Search:</label>
+    <input nbInput [nbFilterInput]="dataSource" id="search" class="search-input">
+
+    <table [nbTreeGrid]="dataSource" [nbSort]="dataSource" (sort)="updateSort($event)">
+
+        <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>
+        <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns"></tr>
+
+        <ng-container [nbTreeGridColumnDef]="customColumn">
+        <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(customColumn)" *nbTreeGridHeaderCellDef>
+            Supplier code
+        </th>
+        
+        <td nbTreeGridCell *nbTreeGridCellDef="let row">
+            {{row.data[customColumn]}}
+        </td>
+        </ng-container>
+
+        <ng-container *ngFor="let column of defaultColumns; let index = index"
+                    [nbTreeGridColumnDef]="column"
+                    [showOn]="getShowOn(index)">
+            <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(column)" *nbTreeGridHeaderCellDef>Supplier Name</th>
+        <td nbTreeGridCell *nbTreeGridCellDef="let row">
+            {{row.data[column] || '-'}}
+        </td>
+        </ng-container>
+    </table>
+</nb-card-body>
+</nb-card>
+<div class="row">
+
+    <div class="col-12">
+      <nb-card >
+        <nb-tabset fullWidth>
+          <nb-tab tabTitle="Information">
+              <div class=" from group row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                  <label class="label">Supplier Code</label>
+                  <input type="id" nbInput disabled id="inputId" class="info"/><br>
+                  <label class="label">Supplier Name</label>
+                  <input type="name" nbInput id="inputName" class="info"/><br>
+                  <label class="label">Address</label>
+                  <input type="address" nbInput id="inputAddress" class="info"/><br>
+                  <label class="label">Distric/Ward</label>
+                  <input type="district" nbInput id="inputDistric" class="info"/><br>
+                  <label class="label">City/Province</label>
+                  <input type="city" nbInput id="inputCity" list="cityList" class="info"/><br>
+                  <datalist id="cityList" >
+                    <option>Ha Noi</option>
+                    <option>Ho Chi Minh</option>
+                    <option>Da Nang</option>
+                  </datalist>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                  <label class="label">Phone number</label>
+                  <input type="phone" nbInput class="info" id="inputPhone"/><br>
+                  <label class="label">Email</label>
+                  <input type="email" nbInput class="info" id="inputEmail"/><br>
+                  <label class="label">Company</label>
+                  <input type="company" nbInput class="info" id="inputCompany"/><br>
+                  <label class="label">Tax Identification Number </label>
+                  <input type="tin" nbInput class="info" id="inputTIN"/><br>
+                  <label class="label">Supplier Catalog</label>
+                  <input type="catalog" nbInput class="info" id="inputCatalog"/><br>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                  <textarea nbInput placeholder="Note"></textarea>
+                </div>
+                <div class="button" style="text-align: right">
+                <button ngFor="let status of statuses" nbButton class="appearance-outline" status="success"><i class="fas fa-check-square"></i> &nbsp; Update</button>
+                <button nbButton class="appearance-outline" status="danger"><i class="fas fa-lock"></i> &nbsp; Deactivate</button>
+                <button nbButton class="appearance-outline" status="danger"><i class="fas fa-trash-alt"></i> &nbsp; Delete</button>
+              </div></div>
+          </nb-tab>
+
+          <nb-tab tabTitle="Merchandise received/returned History">
+            <table [nbTreeGrid]="dataSource2" [nbSort]="dataSource2" (sort)="updateSort($event)">
+
+              <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>
+              <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns"></tr>
+      
+              <ng-container [nbTreeGridColumnDef]="customColumn">
+              <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(customColumn)" *nbTreeGridHeaderCellDef>
+                  Form code
+              </th>
+              
+              <td nbTreeGridCell *nbTreeGridCellDef="let row">
+                  {{row.data[customColumn]}}
+              </td>
+              </ng-container>
+      
+              <ng-container *ngFor="let column of defaultColumns; let index = index"
+                          [nbTreeGridColumnDef]="column"
+                          [showOn]="getShowOn(index)">
+                  <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(column)" *nbTreeGridHeaderCellDef>Time</th>
+              <td nbTreeGridCell *nbTreeGridCellDef="let row">
+                  {{row.data[column] || '-'}}
+              </td>
+              </ng-container>
+          </table>
+            <button ngFor="let status of statuses" nbButton class="appearance-outline" ><i class="fas fa-file-export"></i> &nbsp; Export file</button>
+          </nb-tab>
+
+          <nb-tab tabTitle="Liabilities to Suppliers">
+            <span>Content #3</span>
+            <button ngFor="let status of statuses" nbButton class="appearance-outline" status="success"><i class="fas fa-sync-alt"></i> &nbsp; Adjust</button>
+            <button ngFor="let status of statuses" nbButton class="appearance-outline" status="success"><i class="fas fa-calculator"></i> &nbsp; Pay</button>
+            <button ngFor="let status of statuses" nbButton class="appearance-outline" ><i class="fas fa-file-export"></i> &nbsp; Export file</button>
+          </nb-tab>
+        </nb-tabset>
+      </nb-card>
+    </div>
+  </div>
+  

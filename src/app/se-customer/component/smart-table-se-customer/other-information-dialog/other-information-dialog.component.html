@@ -1,0 +1,39 @@
+<nb-card>
+    <nb-card-header>Update Other Information</nb-card-header>
+    <nb-card-body>
+<form [formGroup]="addSecondaryCustomerForm" method="POST">
+<!-- <span>Other Information</span> -->
+<div class="row ">
+   <div class="col-xs-5 col-md-5">
+       <label for="phone2">Phone 2</label>
+        <input nbInput type="text" formControlName="phone2" class="form-control" name="phone2">
+    
+        <label for="contactName">Contact Name</label>
+        <input nbInput type="text" formControlName="contactName" class="form-control" name="contactName">
+    
+    <!-- <div class="col-xs-12 col-md-12"> -->
+       <label for="email">Email</label>
+       <input nbInput type="text" formControlName="email" class="form-control" name="email">
+   
+    <!-- <div class="col-xs-12 col-md-12"> -->
+        <label for="dateOfBirth">Date Of Birth</label>
+        <input nbInput type="date" formControlName="dateOfBirth" class="form-control" name="dateOfBirth">
+    </div>
+    <div class="col-xs-6 col-md-6 ">
+       <label for="shipToAddress">Ship To Address</label>
+        <input nbInput type="text" formControlName="shipToAddress" class="form-control" name="shipToAddress" >
+        
+        <label for="shipToPhone">Ship To Phone</label>
+        <input nbInput type="text" formControlName="shipToPhone" class="form-control" name="shipToPhone" >
+        
+        <label for="remark">Remark</label>
+        <input nbInput type="text" formControlName="remark" class="form-control" name="remark" >
+    </div>
+    </div>
+    </form>
+</nb-card-body>
+<nb-card-footer>
+    <button class="cancel" nbButton status="danger" (click)="close()" md-dialog-close>Close</button>
+    <button nbButton status="success" (click)="submit(addSecondaryCustomerForm.value)">Save</button>
+</nb-card-footer>
+</nb-card>

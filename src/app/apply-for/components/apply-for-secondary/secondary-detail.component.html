@@ -1,0 +1,37 @@
+<nb-card>
+    <nb-card-header>
+        <div class="row">
+            <div class="title">
+                <span>Apply For Secondary Customer detail</span>
+            </div>
+            <div class="btn">
+                <button nbButton status="success" (click)="onSubmit(editApplyForSecondaryCustomerForm.value)">
+                    <i class="fas fa-pencil-alt"></i>&nbsp; Save
+                </button>
+                <button nbButton status="danger" (click)="delete()">
+                    <i class="fas fa-trash-alt"></i>&nbsp; Delete
+                </button>
+                <button nbButton status="primary" (click)="navigateToSecondaryCustomer($event)">
+                    <i class="fas fa-arrow-left"></i>&nbsp; Back
+                </button>
+            </div>
+        </div>
+    </nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="editApplyForSecondaryCustomerForm">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <label>Apply Code: </label>
+                <input formControlName="applyForCode" class="form-control" name="applyForCode"
+                [(ngModel)]="applyForSecondaryCustomer.applyForCode">
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <label>Apply For Customer Code: </label>
+                <input formControlName="applyForSecondaryCustomerCode" class="form-control" name="applyForSecondaryCustomerCode"
+                [(ngModel)]="applyForSecondaryCustomer.applyForSecondaryCustomerCode">
+            </div>
+        </div>
+        </form>
+        <br>
+    </nb-card-body>
+</nb-card>

@@ -1,0 +1,21 @@
+<nb-card>
+    <nb-card-header>Edit Apply For Header</nb-card-header>
+    <nb-card-body>
+
+        <form [formGroup]="editApplyForHeaderForm">
+            <label>Apply Code</label>
+            <input type="text" formControlName="applyForCode" class="form-control" name="applyForCode" readonly [(ngModel)]="applyForHeader.applyForCode">
+
+            <label>Description</label>
+            <input type="text" formControlName="applyForName" class="form-control" name="applyForName" readonly [(ngModel)]="applyForHeader.applyForName">
+        </form>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton class="btn btn-success" type="submit" status="success"
+            (click)="onSubmit(editApplyForHeaderForm.value)">Save</button>
+
+        <button nbButton id="cancel" (click)="close()" status="danger">
+            <i class="fas fa-ban"></i>&nbsp; Cancel
+        </button>
+    </nb-card-footer>
+</nb-card>

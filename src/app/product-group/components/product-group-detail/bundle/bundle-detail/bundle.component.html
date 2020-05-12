@@ -1,0 +1,52 @@
+<nb-card>
+  <nb-card-header><label>Bundle Detail</label></nb-card-header>
+  <nb-card-body>
+    <form method="POST">
+        <div>
+        <input nbInput fullWidth type="hidden" class="form-control" name="id">
+      </div>
+        <div>
+          <label>Company Code</label>
+          <input nbInput fullWidth type="text" name="companyCode" class="form-control"
+            placeholder="Company Code">
+        </div>
+        <div>
+          <label>Product Group Code</label>
+          <input nbInput fullWidth type="text" name="productGroupCode" class="form-control"
+            placeholder="Product Group Code">
+        </div>
+        <div>
+          <label>Customer Code</label>
+          <input nbInput fullWidth type="text" name="customerCode" class="form-control"
+            placeholder="Customer Code">
+        </div>
+        <div>
+          <label>Product Group Name</label>
+          <input nbInput fullWidth type="text" name="productGroupName" class="form-control"
+            placeholder="productGroupName">
+        </div>
+        <div>
+          <label>Group Type</label>
+          <nb-select placeholder="Group Type" fullWidth>
+            <nb-option value="Bundle">Bundle</nb-option>
+            <nb-option value="Group">Group</nb-option>
+            <nb-option value="Product">Product</nb-option>
+          </nb-select>
+        </div>
+        <div>
+          <label>Description</label>
+          <input nbInput fullWidth type="text" name="description" class="form-control"
+            placeholder="Description" >
+        </div>
+          <!-- <input type="hidden" formControlName="createdBy" class="form-control" name="status" value="on">
+          <input type="hidden" formControlName="lastUpdatedBy" class="form-control" name="status" value="on">
+          <input type="hidden" formControlName="createdDateTime" class="form-control" name="status" value="on">
+          <input type="hidden" formControlName="deleted" class="form-control" name="status" value="on"> -->
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button class="cancel" nbButton status="danger" (click)="navigateToProductGroup()" md-dialog-close>Back</button>
+    <button class="cancel" nbButton status="danger" (click)="close()" md-dialog-close>Edit</button>
+    <button nbButton status="success">Save</button>
+  </nb-card-footer>
+</nb-card>

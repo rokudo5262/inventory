@@ -1,0 +1,13 @@
+<nb-card>
+    <nb-card-header>
+      <div class="row">
+        <div class="col-6"><h3>Goods Group</h3></div>
+        <div class="col-6"><button nbButton status="success" size="medium" (click)="open()" class="btnAdd"><i class="fas fa-user-plus"></i></button></div>
+      </div>   
+    </nb-card-header>
+
+    <nb-card-body>
+      <ng2-smart-table [settings]="settings" [source]="goodsgroups$ | async" (editConfirm)="edit($event)" (deleteConfirm)="delete($event)" (userRowSelect)="navigateToDetail(event)">
+      </ng2-smart-table>
+    </nb-card-body>
+</nb-card>

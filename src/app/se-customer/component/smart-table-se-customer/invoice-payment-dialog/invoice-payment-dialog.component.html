@@ -1,0 +1,49 @@
+<nb-card>
+    <nb-card-header>Update Invoice & Payment</nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="addSecondaryCustomerForm" method="POST">
+            <!-- <span> Invoice & Payment</span> -->
+            <div class="row ">
+                <div class="col-xs-5 col-md-5">
+                    <label for="paymentTerm">Payment Term Code</label>
+                    <input nbInput type="text" formControlName="paymentTerm" class="form-control" name="paymentTerm">
+                    <label for="paymentTermDescription">Payment Term Description</label>
+                    <input nbInput type="text" formControlName="paymentTermDescription" class="form-control"
+                        name="paymentTermDescription">
+                    <label for="paymentMethod">Payment Method Code</label>
+                    <input nbInput type="text" formControlName="paymentMethod" class="form-control"
+                        name="paymentMethod">
+                    <label for="paymentMethodDescription">Payment Method Description</label>
+                    <input nbInput type="text" formControlName="paymentMethodDescription" class="form-control"
+                        name="paymentMethodDescription">
+                    <label for="taxCode">Secondary Customer Tax Code</label>
+                    <input nbInput type="text" formControlName="taxCode" class="form-control" name="taxCode">
+                    <label for="businessType">Business Type</label>
+                    <input nbInput type="text" formControlName="businessType" class="form-control" name="businessType">
+                </div>
+                <div class="col-xs-5 col-md-5">
+                    <label for="pricePaymentTermCode">Price Payment Term Code</label>
+                    <input nbInput type="text" formControlName="pricePaymentTermCode" class="form-control"
+                        name="pricePaymentTermCode">
+                    <label for="billToSecondaryCustomerCode">Bill To Secondary Customer Code</label>
+                    <input nbInput type="text" formControlName="billToSecondaryCustomerCode" class="form-control"
+                        name="billToSecondaryCustomerCode">
+                    <label for="billToSecondaryCustomerName">Bill To Secondary Customer Name</label>
+                    <input nbInput type="text" formControlName="attribute3" class="form-control" name="attribute3">
+                    <label for="vatregistrationId">VAT Registration ID</label>
+                    <input nbInput type="text" formControlName="vatregistrationId" class="form-control"
+                        name="vatregistrationId">
+                    <label for="secondaryCustomerNameInvoice">Secondary Customer Name Invoice</label>
+                    <input nbInput type="text" formControlName="secondaryCustomerNameInvoice" class="form-control"
+                        name="secondaryCustomerNameInvoice">
+                    <label for="creditLimit">Credit Limit</label>
+                    <input nbInput type="number" formControlName="creditLimit" class="form-control" name="creditLimit">
+                </div>
+            </div>
+        </form>
+    </nb-card-body>
+    <nb-card-footer>
+        <button class="cancel" nbButton status="danger" (click)="close()" md-dialog-close>Close</button>
+        <button nbButton status="success" (click)="submit(addSecondaryCustomerForm.value)">Save</button>
+    </nb-card-footer>
+</nb-card>

@@ -1,0 +1,7 @@
+<input #search nbInput class="search" type="text" placeholder="Warehouse Code"
+    (keydown.enter)="onSearchId(search.value)">
+<input #search2 nbInput class="search" type="text" placeholder="Warehouse Name"
+    (keydown.enter)="onSearchName(search2.value)">
+<ng2-smart-table [settings]="settings" [source]="warehouses$ | async" (deleteConfirm)="onDeleteConfirm($event)"
+    (editConfirm)="onSaveConfirm($event)" (userRowSelect)="navigateToWarehouse($event)">
+</ng2-smart-table>

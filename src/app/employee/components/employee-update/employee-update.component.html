@@ -1,0 +1,181 @@
+<nb-card>
+  <nb-card-header>
+    <label>Update Employee</label>
+  </nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="updateEmployeeForm" method="POST">
+      <nb-tabset>
+        <nb-tab tabTitle="General Information">
+          <div class="row">
+            <div class="col-xs-12 col-md-12">
+              <input nbInput fullWidth type="hidden" formControlName="employeeCode" class="form-control"
+                name="employeeCode" placeholder="employeeCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Employee Name</label>
+              <input nbInput fullWidth type="text" formControlName="employeeName" class="form-control"
+                name="employeeName" placeholder="employeeName">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Employee Group</label>
+              <input nbInput fullWidth type="text" formControlName="employeeGroup" class="form-control"
+                name="employeeGroup" placeholder="employeeGroup">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Employee Type</label>
+              <input nbInput fullWidth type="text" formControlName="employeeType" class="form-control"
+                name="employeeType" placeholder="employeeType">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Gender</label>
+              <input nbInput fullWidth type="text" formControlName="gender" class="form-control" name="gender"
+                placeholder="gender">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Date Of Birth</label>
+              <input nbInput fullWidth type="text" formControlName="dateOfBirth" class="form-control" name="dateOfBirth"
+                placeholder="dateOfBirth">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Job Title</label>
+              <input nbInput fullWidth type="text" formControlName="jobTitle" class="form-control" name="jobTitle"
+                placeholder="jobTitle">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Employee Status</label>
+              <nb-select placeholder="status" formControlName="status" name="status" fullWidth>
+                <nb-option value="Active">Active</nb-option>
+                <nb-option value="Inactive">Inative</nb-option>
+              </nb-select>
+            </div>
+          </div>
+        </nb-tab>
+        <nb-tab tabTitle="Employee Address">
+          <div class="row">
+            <div class="col-xs-6 col-md-6">
+              <label>Address</label>
+              <input nbInput fullWidth type="text" formControlName="address" class="form-control" name="address"
+                placeholder="address">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Ward</label>
+              <input nbInput fullWidth type="text" formControlName="ward" class="form-control" name="ward"
+                placeholder="ward">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>District</label>
+              <input nbInput fullWidth type="text" formControlName="district" class="form-control" name="district"
+                placeholder="district">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Province</label>
+              <input nbInput fullWidth type="text" formControlName="province" class="form-control" name="province"
+                placeholder="province">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>State</label>
+              <input nbInput fullWidth type="text" formControlName="state" class="form-control" name="state"
+                placeholder="state">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Country</label>
+              <input nbInput fullWidth type="text" formControlName="country" class="form-control" name="country"
+                placeholder="country">
+            </div>
+          </div>
+        </nb-tab>
+        <nb-tab tabTitle="Identity Card">
+          <div class="row">
+            <div class="col-xs-6 col-md-6">
+              <label>Identity Card</label>
+              <input nbInput fullWidth type="text" formControlName="identityCard" class="form-control"
+                name="identityCard" placeholder="identityCard">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Identity Card Place</label>
+              <input nbInput fullWidth type="text" formControlName="identityCardPlace" class="form-control"
+                name="identityCardPlace" placeholder="identityCardPlace">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Identity Card Address</label>
+              <input nbInput fullWidth type="text" formControlName="identityCardAddress" class="form-control"
+                name="identityCardAddress" placeholder="identityCardAddress">
+            </div>
+            <!-- <div class="col-xs-6 col-md-6">
+              <label>Identity Card Date</label>
+              <input nbInput fullWidth type="text" name="identityCardDate" class="form-control" readonly
+                  [(ngModel)]="employee.identityCardDate">
+          </div> -->
+          </div>
+        </nb-tab>
+        <nb-tab tabTitle="Contract Detail">
+          <div class="row">
+            <div class="col-xs-6 col-md-6">
+              <label>Contract Code</label>
+              <input nbInput fullWidth type="text" formControlName="contractCode" class="form-control"
+                name="contractCode" placeholder="contractCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Contract Type</label>
+              <input nbInput fullWidth type="text" formControlName="contractType" class="form-control"
+                name="contractType" placeholder="contractType">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Health Assurance Number</label>
+              <input nbInput fullWidth type="text" formControlName="healthAssuranceNumber" class="form-control"
+                name="healthAssuranceNumber" placeholder="healthAssuranceNumber">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Education Degree</label>
+              <input nbInput fullWidth type="text" formControlName="educationDegree" class="form-control"
+                name="educationDegree" placeholder="educationDegree">
+            </div>
+            <!-- <div class="col-xs-6 col-md-6">
+              <label>Contract Expired Date</label>
+              <input nbInput fullWidth type="text" formControlName="contractExpiredDate" class="form-control"
+                name="contractExpiredDate" placeholder="contractExpiredDate">
+            </div> -->
+            <div class="col-xs-6 col-md-6">
+              <label>Hired Date</label>
+              <input nbInput fullWidth type="text" formControlName="hiredDate" class="form-control" name="hiredDate"
+                placeholder="hiredDate">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>End Date</label>
+              <input nbInput fullWidth type="text" formControlName="endDate" class="form-control" name="endDate"
+                placeholder="endDate">
+            </div>
+          </div>
+        </nb-tab>
+        <nb-tab tabTitle="Other Information">
+          <div class="row">
+            <div class="col-xs-6 col-md-6">
+              <label>Location Code</label>
+              <input nbInput fullWidth type="text" formControlName="locationCode" class="form-control"
+                name="locationCode" placeholder="locationCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Location Name</label>
+              <input nbInput fullWidth type="text" formControlName="locationName" class="form-control"
+                name="locationName" placeholder="locationName">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Customer Code</label>
+              <input nbInput fullWidth type="text" formControlName="customerCode" class="form-control"
+                name="customerCode" placeholder="customerCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <label>Customer Name</label>
+              <input nbInput fullWidth type="text" formControlName="customerName" class="form-control"
+                name="customerName" placeholder="customerName">
+            </div>
+          </div>
+        </nb-tab>
+      </nb-tabset>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button class="cancel" nbButton status="danger" (click)="close()" md-dialog-close>Close</button>
+    <button nbButton status="success" (click)="submit(updateEmployeeForm.value)">Save</button>
+  </nb-card-footer>
+</nb-card>

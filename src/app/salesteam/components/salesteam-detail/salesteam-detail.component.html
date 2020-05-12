@@ -1,0 +1,12 @@
+<nb-tabset>
+    <nb-tab tabTitle="SalesTeam Deatail">
+        <ngx-salesteam-preview [salesteam]="salesteam$ | async">
+        </ngx-salesteam-preview>
+    </nb-tab>
+    <nb-tab tabTitle="SalesTeamBin Deatail">
+        <ngx-bin-detail [salesteam]="salesteam$ | async"></ngx-bin-detail>
+    </nb-tab>
+    <nb-tab tabTitle="SalesTeamBin Deatail">
+        <ngx-bin-detail-2 [salesteam]="salesteam$ | async"></ngx-bin-detail-2>
+    </nb-tab>
+</nb-tabset>

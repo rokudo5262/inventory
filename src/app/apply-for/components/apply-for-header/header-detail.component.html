@@ -1,0 +1,53 @@
+<nb-card>
+    <nb-card-header>
+        <div class="row">
+            <div class="title">
+                <span>Apply Code detail</span>
+            </div>
+            <div class="btn">
+                <button nbButton status="success" (click)="onSubmit(editApplyForHeaderForm.value)">
+                    <i class="fas fa-pencil-alt"></i>&nbsp; Save
+                </button>
+                <button nbButton status="danger" (click)="delete()">
+                    <i class="far fa-trash-alt"></i>&nbsp; Delete
+                </button>
+                <button nbButton status="primary" (click)="navigateToHeader($event)">
+                    <i class="fas fa-arrow-left"></i>&nbsp; Back
+                </button>
+            </div>
+
+        </div>
+    </nb-card-header>
+    <nb-card-body>
+        <div class="afheader">
+            <form [formGroup]="editApplyForHeaderForm">
+                <label>Apply Code</label>
+                <input formControlName="applyForCode" class="form-control" name="applyForCode"
+                    [(ngModel)]="applyForHeader.applyForCode">
+
+                <label>Description</label>
+                <input formControlName="applyForName" class="form-control" name="applyForName"
+                    [(ngModel)]="applyForHeader.applyForName">
+            </form>
+        </div>
+        <br>
+        <div class="detail">
+            <div class="title">
+                <span>Detail</span>
+            </div>
+            <div class="btn">
+                <!-- <button nbButton (click)="openNew()">
+                    <i class="fas fa-plus"></i>&nbsp; New
+                </button> -->
+
+                <button nbButton status="danger" (click)="onDelete($event)">
+                    <i class="far fa-trash-alt"></i>&nbsp; Delete
+                </button>
+
+            </div>
+            <div class="af-customer">
+                <ng2-smart-table [settings]="settings" [source]="data" (userRowSelect)="onUserRowSelect($event)"></ng2-smart-table>
+            </div>
+        </div>
+    </nb-card-body>
+</nb-card>

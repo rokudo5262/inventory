@@ -1,0 +1,98 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  span {
+    font-size: 30px;
+  }
+  .buttons-row {
+    margin: -0.5rem;
+  }
+  button[nbButton] {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    justify-content: right;
+    float: right;
+  }
+  .action-icon {
+    @include nb-ltr(margin-right, 0.5rem);
+    @include nb-rtl(margin-left, 0.5rem);
+  }
+  .actions-card {
+    height: 8rem;
+  }
+  button[nbTreeGridRowToggle] {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .search-label {
+    display: block;
+  }
+  .search-input {
+    margin-bottom: 1rem;
+  }
+  .nb-column-name {
+    width: 100%;
+  }
+  ::ng-deep .row-toggle-button {
+    color: nb-theme(text-basic-color);
+  }
+  .nb-tree-grid-header-cell,
+  .nb-tree-grid-header-cell button {
+    text-transform: capitalize;
+    background-color: #f1f9f9;
+  }
+  
+  @media screen and (min-width: 400px) {
+    .nb-column-name,
+    .nb-column-size {
+      width: 50%;
+    }
+  }
+  @media screen and (min-width: 500px) {
+    .nb-column-name,
+    .nb-column-size,
+    .nb-column-kind {
+      width: 33.333%;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .nb-column-name {
+      width: 31%;
+    }
+    .nb-column-size,
+    .nb-column-kind,
+    .nb-column-items {
+      width: 23%;
+    }
+  }
+  nb-tabset {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  :host ::ng-deep ngx-tab1, :host ::ng-deep ngx-tab2 {
+    display: block;
+    padding: 1rem 2rem;
+  }
+  .col-sm-4 {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .label {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    width: 30%;
+  }
+  .info {
+    margin-bottom: 7px;
+    margin-top: 7px;
+    margin-left: 8px;
+    margin-right: 8px;
+    width: auto;
+  }
+}

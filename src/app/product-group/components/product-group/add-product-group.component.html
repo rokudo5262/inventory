@@ -1,0 +1,51 @@
+<nb-card>
+  <nb-card-header><label>Add Product Group</label></nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="addProductGroupForm" method="POST">
+      <div>
+        <input nbInput fullWidth type="hidden" formControlName="id" class="form-control" name="id">
+      </div>
+      <div>
+        <label>Company Code</label>
+        <input nbInput fullWidth type="text" name="companyCode" formControlName="companyCode" class="form-control"
+          placeholder="Company Code">
+      </div>
+      <div>
+        <label>Product Group Code</label>
+        <input nbInput fullWidthtype="text" name="productGroupCode" formControlName="productGroupCode"
+          class="form-control" placeholder="product Group Code">
+      </div>
+      <div>
+        <label>Customer Code</label>
+        <input nbInput fullWidthtype="text" name="customerCode" formControlName="customerCode" class="form-control"
+          placeholder="Customer Code">
+      </div>
+      <div>
+        <label>Product Group Name</label>
+        <input nbInput fullWidthtype="text" name="productGroupName" formControlName="productGroupName"
+          class="form-control" placeholder="productGroupName">
+      </div>
+      <div>
+        <label>groupType</label>
+        <nb-select placeholder="Group Type" formControlName="groupType" fullWidth>
+          <nb-option value="Bundle">Bundle</nb-option>
+          <nb-option value="Group">Group</nb-option>
+          <nb-option value="Product">Product</nb-option>
+        </nb-select>
+      </div>
+      <div>
+        <label>Description</label>
+        <input nbInput fullWidth type="text" name="description" formControlName="description" class="form-control"
+          placeholder="Description">
+      </div>
+      <input type="hidden" formControlName="createdBy" class="form-control" name="status" value="on">
+      <input type="hidden" formControlName="lastUpdatedBy" class="form-control" name="status" value="on">
+      <input type="hidden" formControlName="createdDateTime" class="form-control" name="status" value="on">
+      <input type="hidden" formControlName="deleted" class="form-control" name="status" value="on">
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button class="cancel" nbButton status="danger" (click)="close()" md-dialog-close>Close</button>
+    <button nbButton status="success" (click)="submit(addProductGroupForm.value)">Save</button>
+  </nb-card-footer>
+</nb-card>

@@ -1,0 +1,74 @@
+<nb-card>
+  <nb-card-header><label>Add Sales Team</label></nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="addSalesTeamForm" method="POST">
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <input nbInput fullWidth type="hidden" formControlName="salesTeamCode" class="form-control"
+            name="salesTeamCode">
+          <input nbInput fullWidth type="hidden" formControlName="createdBy" class="form-control" name="createdBy">
+          <input nbInput fullWidth type="hidden" formControlName="lastUpdatedBy" class="form-control"
+            name="lastUpdatedBy">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Sales Team Name</label>
+          <input nbInput fullWidth type="text" name="salesTeamName" formControlName="salesTeamName" class="form-control"
+            placeholder="salesTeamName">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Sales Team Type</label>
+          <input nbInput fullWidth type="text" name="salesTeamType" formControlName="salesTeamType" class="form-control"
+            placeholder="salesTeamType">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Channel Code</label>
+          <input nbInput fullWidth type="text" name="channelCode" formControlName="channelCode" class="form-control"
+            placeholder="channelCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Channel Name</label>
+          <input nbInput fullWidth type="text" name="channelName" formControlName="channelName" class="form-control"
+            placeholder="channelName">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Company Code</label>
+          <input nbInput fullWidth type="text" name="companyCode" formControlName="companyCode" class="form-control"
+            placeholder="companyCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Customer Code</label>
+          <input nbInput fullWidth type="text" name="customerCode" formControlName="customerCode" class="form-control"
+            placeholder="customerCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Location Code</label>
+          <input nbInput fullWidth type="text" name="locationCode" formControlName="locationCode" class="form-control"
+            placeholder="locationCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Location Name</label>
+          <input nbInput fullWidth type="text" name="locationName" formControlName="locationName" class="form-control"
+            placeholder="locationName">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Remark</label>
+          <input nbInput fullWidth type="text" name="remark" formControlName="remark" class="form-control"
+            placeholder="remark">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-6">
+          <label>Status</label>
+          <nb-select placeholder="Status" formControlName="status" fullWidth>
+            <nb-option value="Active">Active</nb-option>
+            <nb-option value="Inactive">Inactive</nb-option>
+          </nb-select>
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button class="cancel" nbButton status="danger" (click)="close()" md-dialog-close>Close</button>
+    <button nbButton status="success" (click)="submit(addSalesTeamForm.value)">Save</button>
+  </nb-card-footer>
+</nb-card>

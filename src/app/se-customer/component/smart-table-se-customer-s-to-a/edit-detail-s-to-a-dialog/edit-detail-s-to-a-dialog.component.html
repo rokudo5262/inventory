@@ -1,0 +1,88 @@
+<nb-card>
+    <nb-card-header>Update Secondary Customer Ship To Address</nb-card-header>
+    <nb-card-body>
+     <form [formGroup]="addsecustomerstoaForm" >
+        <!-- <div class="secustomer" *ngIf="(secondarycustomers$ | async) as secondarycustomers">
+            <ng-container>
+                <div class="col-xs-12 col-md-12">
+                <label for="companyCode">Company Code</label>
+                <br>
+                <nb-select [formControl]="secusForm" [(ngModel)]="secusSelected.companyCode"
+                    placeholder="Select companyCode">
+                    <nb-option *ngFor="let secus of secondarycustomers" [value]="secus.companyCode">
+                        {{secus.companyCode}}
+                    </nb-option>
+                </nb-select>
+                </div>
+                
+                <div class="col-xs-12 col-md-12">
+                <label for="customerCode">Customer Code</label>
+                <br>
+                <nb-select [formControl]="secusForm" [(ngModel)]="secusSelected.customerCode"
+                    placeholder="Select customerCode">
+                    <nb-option *ngFor="let secus of secondarycustomers" [value]="secus.customerCode">
+                        {{secus.customerCode}}
+                    </nb-option>
+                </nb-select>
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="secondaryCustomerCode">Secondary Customer Code</label>
+                <br>
+                <nb-select [formControl]="secusForm" [(ngModel)]="secusSelected.secondaryCustomerCode"
+                    placeholder="Select secondaryCustomerCode">
+                    <nb-option *ngFor="let secus of secondarycustomers" [value]="secus.secondaryCustomerCode">
+                        {{secus.secondaryCustomerCode}}
+                    </nb-option>
+                </nb-select>
+            </div>
+            </ng-container>
+        </div> -->
+        <!-- <input type="hidden" formControlName="id" class="form-control" name="id"> -->
+             <div class="col-xs-12 col-md-12">
+                 <label for="shipToCode">Ship To Code</label>
+                 <input nbInput type="text" formControlName="shipToCode" class="form-control" name="shipToCode" 
+                     >
+             </div>
+             <div class="col-xs-12 col-md-12">
+                 <label for="shipToName">Ship To Name</label>
+                 <input nbInput type="text" formControlName="shipToName" class="form-control" name="shipToName">
+             </div>
+             <div class="col-xs-12 col-md-12">
+                <label for="shipToAddress">Ship To Address</label>
+                <input nbInput type="text" formControlName="shipToAddress" class="form-control" name="shipToAddress">
+            </div>
+             <div class="col-xs-12 col-md-12">
+                 <label for="contact">Contact</label>
+                 <input nbInput type="text" formControlName="contact" class="form-control" name="contact" >
+             </div>
+             <div class="col-xs-12 col-md-12">
+                 <label for="deliveryCondition">Delivery Condition</label>
+                 <input nbInput type="text" formControlName="deliveryCondition" class="form-control" name="deliveryCondition" >
+             </div>
+             <div class="col-xs-12 col-md-12">
+                 <label for="deliveryTime">Delivery Time</label>
+                 <input nbInput type="text" formControlName="deliveryTime" class="form-control" name="deliveryTime" >
+             </div>
+             <div class="col-xs-12 col-md-12">
+                <label for="otherRequest">Other Request</label>
+                <input nbInput type="text" formControlName="otherRequest" class="form-control" name="otherRequest" >
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="attachedDocument">Attached Document</label>
+                <input nbInput type="text" formControlName="attachedDocument" class="form-control" name="attachedDocument" >
+            </div>
+             <input type="hidden" formControlName="deleted" class="form-control" name="deleted " value="false">
+            <!-- <input type="hidden" formControlName="source" class="form-control" name="source " value= null>
+            <input type="hidden" formControlName="createdBy" class="form-control" name="createdBy " value= null>
+            <input type="hidden" formControlName="createdDateTime" class="form-control" name="createdDateTime " value= null>
+            <input type="hidden" formControlName="lastUpdatedBy" class="form-control" name="lastUpdatedBy " value= null>
+            <input type="hidden" formControlName="rowVersion" class="form-control" name="rowVersion " value= null>
+            <input type="hidden" formControlName="lastUpdatedDateTime" class="form-control" name="lastUpdatedDateTime " value= null>  -->
+
+             </form>
+         </nb-card-body>
+         <nb-card-footer>
+             <button class="cancel" nbButton status="danger" (click)="close()" md-dialog-close>Close</button>
+             <button nbButton status="success" (click)="submit(addsecustomerstoaForm.value)">Save</button>
+         </nb-card-footer>
+ </nb-card>

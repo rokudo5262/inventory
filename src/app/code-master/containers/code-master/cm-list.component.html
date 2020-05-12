@@ -1,0 +1,27 @@
+<nb-card>
+    <nb-card-header>
+        <div class="row">
+            <div class="title">
+                <span>Code Master</span>
+            </div>
+            <div class="btn">
+                <button nbButton (click)="onCreated()">
+                    <i class="fas fa-plus"></i>&nbsp; Code Master
+                </button>
+
+                <button nbButton status="danger" (click)="onDelete($event)">
+                    <i class="far fa-trash-alt"></i>&nbsp; Delete
+                </button>
+
+                <button nbButton status="success" (click)="onSystem($event)">
+                    <i class="fas fa-sync-alt"></i>&nbsp; System
+                </button>                
+            </div>
+        </div>
+    </nb-card-header>
+    <nb-card-body>
+        <ng2-smart-table [settings]="settings" [source]="codeMasters$ | async" (edit)="onEdit($event)"
+            (userRowSelect)="onUserRowSelect($event)">
+        </ng2-smart-table>
+    </nb-card-body>
+</nb-card>

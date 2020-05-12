@@ -1,0 +1,29 @@
+export interface ApplyForSecondaryCustomer {
+    id: number;
+    companyCode?: string;
+    applyForCode: string;
+    applyForCustomerCode: string;
+    applyForSecondaryCustomerCode: string;
+    customerCode?: string;
+    type: string;
+    secondaryCustomerHierarchyCode: string;
+    secondaryCustomerHierarchyLevel: number;
+    secondaryCustomerRegionCode: string;
+    secondaryCustomerRegionLevel: number;
+    secondaryCustomerClass: string;
+    secondaryCustomerGroup: string;
+    secondaryCustomerType: string;
+    secondaryCustomerSegment: string;
+    secondaryCustomerCode: string;
+    source: string;
+    createdBy?: string;
+    createdDateTime?: Date;
+    lastUpdatedBy?: string;
+    lastUpdatedDateTime?: Date;
+    deleted: boolean;
+    rowVersion?: [];
+    secondaryCustomerCategory: string;
+    excludeSecondaryCustomer: boolean;
+    description: string;
+    parentSecondaryCustomerCode: string;
+}

@@ -1,0 +1,191 @@
+<nb-card>
+    <nb-card-body>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h5>General Infomation</h5>
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Employee Code</label>
+                <input nbInput fullWidth type="text" name="employeeCode" class="form-control" readonly
+                    [(ngModel)]="employee.employeeCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Employee Name</label>
+                <input nbInput fullWidth type="text" name="employeeName" class="form-control" readonly
+                    [(ngModel)]="employee.employeeName">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Employee Type</label>
+                <input nbInput fullWidth type="text" name="employeeType" class="form-control" readonly
+                    [(ngModel)]="employee.employeeType">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Employee Group</label>
+                <input nbInput fullWidth type="text" name="employeeGroup" class="form-control" readonly
+                    [(ngModel)]="employee.employeeGroup">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Employee Phone Number </label>
+                <input nbInput fullWidth type="text" name="phone" class="form-control" readonly
+                    [(ngModel)]="employee.phone">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Employee Job Title</label>
+                <input nbInput fullWidth type="text" name="jobTitle" class="form-control" readonly
+                    [(ngModel)]="employee.jobTitle">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Employee Gender</label>
+                <input nbInput fullWidth type="text" name="gender" class="form-control" readonly
+                    [(ngModel)]="employee.gender">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Date Of Birth</label>
+                <input nbInput fullWidth type="text" name="dateOfBirth" class="form-control" readonly
+                    [(ngModel)]="employee.dateOfBirth">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Status</label>
+                <input nbInput fullWidth type="text" name="status" class="form-control" readonly
+                    [(ngModel)]="employee.status">
+            </div>
+        </div>
+    </nb-card-body>
+    <nb-card-body>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h5>Employee Address</h5>
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Address</label>
+                <input nbInput fullWidth type="text" name="address" class="form-control" readonly
+                    [(ngModel)]="employee.address">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Ward</label>
+                <input nbInput fullWidth type="text" class="form-control" name="ward" readonly
+                    [(ngModel)]="employee.ward">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>District</label>
+                <input nbInput fullWidth type="text" class="form-control" name="district" readonly
+                    [(ngModel)]="employee.district">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Province</label>
+                <input nbInput fullWidth type="text" class="form-control" name="province" readonly
+                    [(ngModel)]="employee.province">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>State</label>
+                <input nbInput fullWidth type="text" class="form-control" name="state" readonly
+                    [(ngModel)]="employee.state">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Country</label>
+                <input nbInput fullWidth type="text" class="form-control" name="country" readonly
+                    [(ngModel)]="employee.country">
+            </div>
+        </div>
+    </nb-card-body>
+    <nb-card-body>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h5>Identity Card</h5>
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Identity Card</label>
+                <input nbInput fullWidth type="text" name="identityCard" class="form-control" readonly
+                    [(ngModel)]="employee.identityCard">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Identity Card Place</label>
+                <input nbInput fullWidth type="text" name="identityCardPlace" class="form-control" readonly
+                    [(ngModel)]="employee.identityCardPlace">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Identity Card Date</label>
+                <input nbInput fullWidth type="text" name="identityCardDate" class="form-control" readonly
+                    [(ngModel)]="employee.identityCardDate">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Identity Card Address</label>
+                <input nbInput fullWidth type="text" name="identityCardAddress" class="form-control" readonly
+                    [(ngModel)]="employee.identityCardAddress">
+            </div>
+        </div>
+    </nb-card-body>
+    <nb-card-body>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h5>Contract Detail</h5>
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Contract Code</label>
+                <input nbInput fullWidth type="text" name="contractCode" class="form-control" readonly
+                    [(ngModel)]="employee.contractCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Contract Type</label>
+                <input nbInput fullWidth type="text" name="contractType" class="form-control" readonly
+                    [(ngModel)]="employee.contractType">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Health Assurance Number</label>
+                <input nbInput fullWidth type="text" name="healthAssuranceNumber" class="form-control" readonly
+                    [(ngModel)]="employee.healthAssuranceNumber">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Education Degree</label>
+                <input nbInput fullWidth type="text" name="educationDegree" class="form-control" readonly
+                    [(ngModel)]="employee.educationDegree">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Hired Date</label>
+                <input nbInput fullWidth type="text" name="hiredDate" class="form-control" readonly
+                    [(ngModel)]="employee.hiredDate">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>End Date</label>
+                <input nbInput fullWidth type="text" name="endDate" class="form-control" readonly
+                    [(ngModel)]="employee.endDate">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Contract Expired Date</label>
+                <input nbInput fullWidth type="text" name="contractExpiredDate" class="form-control" readonly
+                    [(ngModel)]="employee.contractExpiredDate">
+            </div>
+        </div>
+    </nb-card-body>
+    <nb-card-body>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h5>Other Information</h5>
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Location Code</label>
+                <input nbInput fullWidth type="text" name="locationCode" class="form-control" readonly
+                    [(ngModel)]="employee.locationCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Location Name</label>
+                <input nbInput fullWidth type="text" name="locationName" class="form-control" readonly
+                    [(ngModel)]="employee.locationName">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Customer Code</label>
+                <input nbInput fullWidth type="text" name="customerCode" class="form-control" readonly
+                    [(ngModel)]="employee.customerCode">
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <label>Customer Name</label>
+                <input nbInput fullWidth type="text" name="customerName" class="form-control" readonly
+                    [(ngModel)]="employee.customerName">
+            </div>
+        </div>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton outline status="danger" (click)="back()">Back</button>
+        <button nbButton outline status="success" (click)="edit()">Edit</button>
+    </nb-card-footer>
+</nb-card>

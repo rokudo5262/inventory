@@ -1,0 +1,52 @@
+<nb-card>
+  <nb-card-header>
+    <label>Add Employee</label>
+  </nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="addEmployeeForm">
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <input type="hidden" formControlName="employeeCode" class="form-control" name="employeeCode"
+            placeholder="employeeCode">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Employee Name</label>
+          <input type="text" name="employeeName" formControlName="employeeName" class="form-control"
+            placeholder="employeeName">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Employee Email</label>
+          <input type="text" name="email" formControlName="email" class="form-control" placeholder="email">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Employee Phone Number</label>
+          <input nbInput fullWidth type="text" name="phone" formControlName="phone" class="form-control"
+            placeholder="phone">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Employee Addess</label>
+          <input nbInput fullWidth type="text" name="address" formControlName="address" class="form-control"
+            placeholder="address">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Job Title</label>
+          <input nbInput fullWidth type="text" name="jobTitle" formControlName="jobTitle" class="form-control"
+            placeholder="jobTitle">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-6">
+          <label>Employee Status</label>
+          <nb-select placeholder="status" formControlName="status" name="status" fullWidth>
+            <nb-option value="Active">Active</nb-option>
+            <nb-option value="Inactive">Inative</nb-option>
+          </nb-select>
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton status="danger" (click)="close()">Close</button>
+    <button nbButton status="success" (click)="submit(addEmployeeForm.value)">Save</button>
+  </nb-card-footer>
+</nb-card>

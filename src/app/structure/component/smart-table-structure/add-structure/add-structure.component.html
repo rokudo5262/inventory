@@ -1,0 +1,48 @@
+<nb-card>
+    <nb-card-header>Add Structure</nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="addStructureForm" method="POST">
+            <input type="hidden" formControlName="id" class="form-control" name="id">
+            <div class="col-xs-12 col-md-12">
+                <label for="companyCode">Company Code</label>
+                <input nbInput type="text" formControlName="companyCode" class="form-control" name="companyCode">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="structureCode">Structure Code</label>
+                <input nbInput type="text" formControlName="structureCode" class="form-control" name="structureCode">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="structureName">Structure Name</label>
+                <input nbInput type="text" formControlName="structureName" class="form-control" name="structureName">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="level">Level</label>
+                <input nbInput type="number" formControlName="level" class="form-control" name="level">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="type">Type</label>
+                <input nbInput type="text" formControlName="type" class="form-control" name="type">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="parentCode">Parent Code</label>
+                <input nbInput type="string" formControlName="parentCode" class="form-control" name="parentCode">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="remark">Remark</label>
+                <input nbInput type="string" formControlName="remark" class="form-control" name="remark">
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <label for="source">Source</label>
+                <input nbInput type="string" formControlName="source" class="form-control" name="source">
+            </div>
+
+            <input type="hidden" formControlName="status" class="form-control" name="status" value="A">
+            <input type="hidden" formControlName="delete1" class="form-control" name="delete1" value="false">
+
+        </form>
+    </nb-card-body>
+    <nb-card-footer>
+        <button class="cancel" nbButton status="danger" (click)="close()" md-dialog-close>Close</button>
+        <button nbButton status="success" (click)="submit(addStructureForm.value)">Save</button>
+    </nb-card-footer>
+</nb-card>

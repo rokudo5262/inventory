@@ -1,0 +1,13 @@
+<nb-card>
+  <nb-card-header><label>Delete SalesTeam</label></nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="deleteSalesTeamForm" method="POST">
+      <input type="hidden" formControlName="salesTeamCode" class="form-control" name="salesTeamCode"/>
+      <input type="hidden" formControlName="deleted" class="form-control" name="deleted" value="true" />
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button class="cancel" nbButton status="danger" (click)="close()" md-dialog-close>Close</button>
+    <button nbButton status="success" (click)="submit(deleteSalesTeamForm.value)">Delete</button>
+  </nb-card-footer>
+</nb-card>

@@ -1,0 +1,102 @@
+<nb-card style=" height: 400px">
+    <nb-card-header>New Apply For Secondary Customer</nb-card-header>
+    <nb-card-body>
+
+        <form [formGroup]="addApplyForSecondaryForm">
+            <div class="secondary" *ngIf="(applyForCustomers$ | async) as applyForCustomers">
+                <ng-container>
+                    <label for="companyCode">Company Code</label> <br>
+                    <nb-select [formControl]="secondaryForm" [(ngModel)]="secondarySelected.companyCode" placeholder="Select Company Code">
+                        <nb-option *ngFor="let secondary of applyForCustomers" [value]="secondary.companyCode">
+                            {{secondary.companyCode}}
+                        </nb-option>
+                    </nb-select> <br>
+                    <input type="text" hidden formControlName="companyCode" class="form-control" [(ngModel)]="secondarySelected.companyCode" name="companyCode"  required>
+
+                    <label for="applyForCode">Apply For Code</label> <br>
+                    <nb-select [formControl]="secondaryForm" [(ngModel)]="secondarySelected.applyForCode" placeholder="Select Apply For Code">
+                        <nb-option *ngFor="let secondary of applyForCustomers" [value]="secondary.applyForCode">
+                            {{secondary.applyForCode}}
+                        </nb-option>
+                    </nb-select> <br>
+                    <input type="text" hidden formControlName="applyForCode" class="form-control" [(ngModel)]="secondarySelected.applyForCode" name="applyForCode"  required>
+                    
+                    <label for="applyForCustomerCode">Apply For Customer Code</label> <br>
+                    <nb-select [formControl]="secondaryForm" [(ngModel)]="secondarySelected.applyForCustomerCode" placeholder="Select Apply For Customer Code">
+                        <nb-option *ngFor="let secondary of applyForCustomers" [value]="secondary.applyForCustomerCode">
+                            {{secondary.applyForCustomerCode}}
+                        </nb-option>
+                    </nb-select> <br>
+                    <input type="text" hidden formControlName="applyForCustomerCode" class="form-control" [(ngModel)]="secondarySelected.applyForCustomerCode" name="applyForCustomerCode"  required>
+
+                </ng-container>
+            </div>
+  
+            <label for="applyForSecondaryCustomerCode">Apply For Secondary Customer Code</label>
+            <input type="text" formControlName="applyForSecondaryCustomerCode" class="form-control" name="applyForSecondaryCustomerCode"  required>
+
+            <label for="customerCode">Customer Code</label>
+            <input type="text" formControlName="customerCode" class="form-control" name="customerCode"  required>
+
+            <label for="type">Type</label>
+            <input type="text" formControlName="type" class="form-control" name="type" required>
+            
+            <label for="secondaryCustomerHierarchyCode">Secondary Customer Hierarchy Code</label>
+            <input type="text" formControlName="secondaryCustomerHierarchyCode" class="form-control" name="secondaryCustomerHierarchyCode"  required>
+
+            <label for="secondaryCustomerHierarchyLevel">Secondary Customer Hierarchy Level</label>
+            <input type="number" formControlName="secondaryCustomerHierarchyLevel" class="form-control" name="secondaryCustomerHierarchyLevel"  required>
+            
+            <label for="secondaryCustomerRegionCode">Secondary Customer Region Code</label>
+            <input type="text" formControlName="secondaryCustomerRegionCode" class="form-control" name="secondaryCustomerRegionCode"  required>
+
+            <label for="secondaryCustomerRegionLevel">Secondary Customer Region Level</label>
+            <input type="number" formControlName="secondaryCustomerRegionLevel" class="form-control" name="secondaryCustomerRegionLevel"  required>
+
+            <label for="secondaryCustomerClass">Secondary Customer Class</label>
+            <input type="text" formControlName="secondaryCustomerClass" class="form-control" name="secondaryCustomerClass"  required>
+
+            <label for="secondaryCustomerGroup">Secondary Customer Group</label>
+            <input type="text" formControlName="secondaryCustomerGroup" class="form-control" name="secondaryCustomerGroup"  required>
+
+            <label for="secondaryCustomerType">Secondary Customer Type</label>
+            <input type="text" formControlName="secondaryCustomerType" class="form-control" name="secondaryCustomerType" required>
+            
+            <label for="secondaryCustomerSegment">Secondary Customer Segment</label>
+            <input type="text" formControlName="secondaryCustomerSegment" class="form-control" name="secondaryCustomerSegment"  required>
+
+            <label for="secondaryCustomerCode">Secondary Customer Code</label>
+            <input type="text" formControlName="secondaryCustomerCode" class="form-control" name="secondaryCustomerCode"  required>
+
+            <label for="source">Source</label>
+            <input type="text" formControlName="source" class="form-control" name="source"  required>
+
+            <label for="createdBy">Created By</label>
+            <input type="text" formControlName="createdBy" class="form-control" name="createdBy" required>
+            
+            <input type="text" hidden formControlName="createdDateTime" class="form-control" name="createdDateTime"  required>
+            
+            <label for="lastUpdatedBy">Last Updated By</label>
+            <input type="text" formControlName="lastUpdatedBy" class="form-control" name="lastUpdatedBy"  required>
+
+            <input type="text" hidden formControlName="lastUpdatedDateTime" class="form-control" name="lastUpdatedDateTime"  required>
+
+            <label for="secondaryCustomerCategory">Secondary Customer Category</label>
+            <input type="text" formControlName="secondaryCustomerCategory" class="form-control" name="secondaryCustomerCategory"  required>
+
+            <label for="description">Description</label>
+            <input type="text" formControlName="description" class="form-control" name="description" required>
+            
+            <label for="parentSecondaryCustomerCode">Parent Secondary Customer Code</label>
+            <input type="text" formControlName="parentSecondaryCustomerCode" class="form-control" name="parentSecondaryCustomerCode"  required>
+            
+        </form>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton class="btn btn-success" type="submit" status="success"
+        (click)="onSubmit(addApplyForSecondaryForm.value)">Save</button>
+        <button nbButton id="cancel" (click)="close()" status="danger">
+        <i class="fas fa-ban"></i>&nbsp; Cancel
+        </button>
+    </nb-card-footer>
+</nb-card>
