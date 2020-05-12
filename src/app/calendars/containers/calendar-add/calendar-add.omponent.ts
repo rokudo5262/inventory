@@ -7,71 +7,8 @@ import { CalendarsApiActions } from '@app/calendars/actions';
 
 @Component({
     selector: 'ngx-calendar-add',
-    template: `
-    <nb-card>
-        <nb-card-header>Add Calendar</nb-card-header>
-        <nb-card-body>
-            <form [formGroup]="addCalendarForm" method="POST">
-                <div class="form-group row">
-                    <label class="label col-sm-3 col-form-label">Recurring</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="recurring" formControlName="recurring" class="form-control" required>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="label col-sm-3 col-form-label">Working Date</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="workingDate" formControlName="workingDate" class="form-control" required>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="label col-sm-3 col-form-label">Working Day</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="workingDay" formControlName="workingDay" class="form-control" required>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="label col-sm-3 col-form-label">Description</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="description" formControlName="description" class="form-control" required>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="label col-sm-3 col-form-label">Non Working</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="nonWorking" formControlName="nonWorking" class="form-control" required>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="label col-sm-3 col-form-label">Status</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="status" formControlName="status" class="form-control" required>
-                    </div>
-                </div>
-            </form>
-            <div class="col-sm-9" class="button">
-                <button class="btn btnSave" type="button" nbButton status="success" nbTooltip="Save" nbTooltipPlacement="left" (click)="submit(addCalendarForm.value)"><i class="fas fa-save"></i><span>Save</span></button>
-                <button class="btn btnCancel" type="button" nbButton status="danger" nbTooltip="Cancel" nbTooltipPlacement="right" (click)="close()"><i class="fas fa-times-circle"></i><span>Cancel</span></button>
-            </div>
-        </nb-card-body>
-    </nb-card>
-    `,
-    styles: [`
-    input {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    .btn {
-        margin-left: 10px;
-        width: 100px;
-    }
-    .btn span {
-        margin-left: 5px;
-    }
-    .button {
-        float: right;
-    }
-    `]
+    templateUrl: './calendar-add.component.html',
+    styleUrls: ['./calendar-add.component.scss'],
 })
 export class CalendarAddComponent implements OnInit {
     public addCalendarForm: FormGroup;

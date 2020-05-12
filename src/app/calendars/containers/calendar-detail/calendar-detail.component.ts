@@ -6,16 +6,9 @@ import { CalendarSelectors } from '@app/calendars/selectors/calendar.selectors';
 import { CalendarsApiActions } from '@app/calendars/actions';
 
 @Component({
-    template: `
-    <nb-card>
-        <nb-card-header>
-            <h3>Calendar Details</h3>
-        </nb-card-header>
-        <nb-card-body>
-            <ngx-calendar-detail [calendar]="calendar$ | async"></ngx-calendar-detail>
-        </nb-card-body>
-    </nb-card>
-    `
+    selector: 'ngx-calendar-detail',
+    templateUrl: './calendar-detail.component.html',
+    styleUrls: ['./calendar-detail.component.scss'],
 })
 
 export class CalendarDetailComponent implements OnInit {

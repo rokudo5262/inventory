@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'ngx-employee-page',
     templateUrl: './employee-page.component.html',
-    styleUrls: ['./employee-page.component.scss']
+    styleUrls: ['./employee-page.component.scss'],
 })
 
 export class EmployeePageComponent implements OnInit {

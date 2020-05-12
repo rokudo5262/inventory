@@ -20,9 +20,8 @@ import { CalendarsRoutingModule } from './calendars-routing.module';
 import { CalendarsComponent } from './calendars.component';
 import { CalendarAddComponent } from './containers/calendar-add/calendar-add.omponent';
 import { CalendarViewComponent } from './containers/calendar-view/calendar-view.component';
-import { CalendarDetailComponent as CalendarDetailComponent1 } from './components/calendar-detail/calendar-detail.component';
 import { CalendarDetailComponent } from './containers/calendar-detail/calendar-detail.component';
-import { NonWorkingCheckboxComponent } from './components/checkbox/nonWorking-checkbox.component';
+import { CalendarReviewComponent } from './components/calendar-review/calendar-review.component';
 
 @NgModule({
     declarations: [
@@ -30,8 +29,7 @@ import { NonWorkingCheckboxComponent } from './components/checkbox/nonWorking-ch
         CalendarAddComponent,
         CalendarViewComponent,
         CalendarDetailComponent,
-        CalendarDetailComponent1,
-        NonWorkingCheckboxComponent,
+        CalendarReviewComponent,
     ],
     imports: [
         NbCheckboxModule,
@@ -54,7 +52,6 @@ import { NonWorkingCheckboxComponent } from './components/checkbox/nonWorking-ch
     ],
     entryComponents: [
         CalendarAddComponent,
-        NonWorkingCheckboxComponent,
     ]
 })
 export class CalendarsModule { }
