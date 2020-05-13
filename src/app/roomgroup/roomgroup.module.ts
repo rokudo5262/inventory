@@ -28,7 +28,7 @@ import { RoomGroupEffects } from '@app/roomgroup/effects';
 import {RoomGroupListComponent} from './components/roomgroup-list/roomgroup-list.component';
 import { RoomGroupAddComponent } from './components/roomgroup-add/Roomgroup-add.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { RoomGroupPageComponent } from './containers/roomgroup-page.component';
+import { RoomGroupPageComponent } from './containers/roomgroup-page/roomgroup-page.component';
 import { StoreModule } from '@ngrx/store';
 import { FeatureKey, reducer } from './reducers';
 import { RoomGroupDetailComponent } from './components/roomgroup-detail/roomgroup-detail.component';
@@ -74,7 +74,7 @@ import { RoomGroupDeleteComponent } from './components/roomgroup-delete/roomgrou
         RoomGroupUpdateComponent,
         RoomGroupDeleteComponent,
         RoomGroupListComponent,
-        RoomGroupPageComponent
+        RoomGroupPageComponent,
     ],
     entryComponents: [
         RoomGroupAddComponent,

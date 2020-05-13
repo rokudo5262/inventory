@@ -18,7 +18,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { CalendarEffects } from './effects/calendar.effects';
 import { CalendarRoutingModule } from './calendar-routing.module';
 import { CalendarComponent } from './calendar.component';
-import { CalendarPageComponent } from './containers/calendar-page.component';
+import { CalendarPageComponent } from './containers/calendar-page/calendar-page.component';
 import { CalendarAddComponent } from './components/calendar-add/calendar-add.omponent';
 import { CalendarViewComponent } from './components/calendar-view/calendar-view.component';
 import { CalendarDetailComponent } from './components/calendar-detail/calendar-detail.component';

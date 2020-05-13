@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RoomGroupComponent } from './roomgroup.component';
-import { RoomGroupPageComponent } from './containers/roomgroup-page.component';
+import { RoomGroupPageComponent } from './containers/roomgroup-page/roomgroup-page.component';
 import { RoomGroupDetailComponent } from './components/roomgroup-detail/roomgroup-detail.component';
 const routes: Routes = [{
   path: '',
