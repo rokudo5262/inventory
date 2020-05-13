@@ -11,18 +11,7 @@ import { SalesTeamSelectors } from '@app/salesteam/selectors/salesteams.selector
 @Component({
   selector: 'ngx-salesteambin-update',
   templateUrl: './salesteambin-update.component.html',
-  styles: [
-    `@include nb-install-component() {
-        input {
-          width: 100%;
-          margin-bottom: 20px;
-        }
-      }
-    button[nbButton]{
-      display: block;
-      float: right;
-      margin-left: 15px;
-    }`]
+  styleUrls: ['./salesteambin-update.component.scss'],
 })
 export class SalesTeamBinUpdateComponent implements OnInit {
   public updateSalesTeamBinForm: FormGroup;

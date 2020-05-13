@@ -1,0 +1,19 @@
+<nb-card>
+    <nb-card-header>
+        <p>UOMs
+        <p>
+        <div class="button">
+            <button class="btn btnAdd" (click)="add()" nbButton status="success" nbTooltip="Add New UOM"
+                nbTooltipPlacement="top"><i class="fa fa-plus" aria-hidden="true"></i><span>UOM</span></button>
+            <button class="btn btnSave" (click)="save()" nbButton status="info" nbTooltip="Save UOM"
+                nbTooltipPlacement="top"><i class="fas fa-save" aria-hidden="true"></i><span>Save</span></button>
+            <button class="btn btnDelete" (click)="delete()" nbButton status="danger" nbTooltip="Delete UOM"
+                nbTooltipPlacement="top"><i class="fas fa-trash" aria-hidden="true"></i><span>Delete</span></button>
+        </div>
+    </nb-card-header>
+    <nb-card-body>
+        <ng2-smart-table [settings]="settings" [source]="uoms$ | async" (userRowSelect)="onUserRowSelect($event)"
+            (editConfirm)="edit($event)">
+        </ng2-smart-table>
+    </nb-card-body>
+</nb-card>

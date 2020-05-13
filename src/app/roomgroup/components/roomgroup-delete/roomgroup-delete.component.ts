@@ -8,18 +8,7 @@ import { RoomGroupsActions } from '@app/roomgroup/actions';
 @Component({
   selector: 'ngx-roomgroup-delete',
   templateUrl: './roomgroup-delete.component.html',
-  styles: [
-    `@include nb-install-component() {
-        input {
-          width: 100%;
-          margin-bottom: 20px;
-        }
-      }
-    button[nbButton]{
-      display: block;
-      float: right;
-      margin-left: 15px;
-    }`]
+  styleUrls: ['./roomgroup-delete.component.scss'],
 })
 export class RoomGroupDeleteComponent implements OnInit {
   public deleteRoomGroupForm: FormGroup;

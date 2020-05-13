@@ -7,6 +7,7 @@ import { SalesTeamDeleteComponent } from '../salesteam-delete/salesteam-delete.c
 @Component({
   selector: 'ngx-salesteam-preview',
   templateUrl: './salesteam-preview.component.html',
+  styleUrls: ['./salesteam-preview.component.scss'],
 })
 
 export class SalesTeamPreviewComponent implements OnInit {

@@ -17,11 +17,8 @@ export class CalendarReviewComponent implements OnInit {
         private route: Router,
         private dialogService: NbDialogService,
     ) {
-
     }
-
     ngOnInit() {
-
     }
     back() {
         this.route.navigate(['dashboard/Calendars']);

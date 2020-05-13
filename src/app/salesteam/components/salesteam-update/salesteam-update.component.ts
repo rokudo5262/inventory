@@ -8,18 +8,7 @@ import { SalesTeamsActions } from '@app/salesteam/actions';
 @Component({
   selector: 'ngx-salesteam-update',
   templateUrl: './salesteam-update.component.html',
-  styles: [
-    `@include nb-install-component() {
-        input {
-          width: 100%;
-          margin-bottom: 20px;
-        }
-      }
-    button[nbButton]{
-      display: block;
-      float: right;
-      margin-left: 15px;
-    }`]
+  styleUrls: ['./salesteam-update.component.scss'],
 })
 export class SalesTeamUpdateComponent implements OnInit {
   public updateSalesTeamForm: FormGroup;

@@ -8,18 +8,7 @@ import { SalesTeamsActions } from '@app/salesteam/actions';
 @Component({
   selector: 'ngx-salesteam-delete',
   templateUrl: './salesteam-delete.component.html',
-  styles: [
-    `@include nb-install-component() {
-        input {
-          width: 100%;
-          margin-bottom: 20px;
-        }
-      }
-    button[nbButton]{
-      display: block;
-      float: right;
-      margin-left: 15px;
-    }`]
+  styleUrls: ['./salesteam-delete.component.scss']
 })
 export class SalesTeamDeleteComponent implements OnInit {
   public deleteSalesTeamForm: FormGroup;

@@ -1,7 +1,7 @@
+import * as UomsActions from './uoms.actions';
 import * as UomsApiActions from './uoms-api.actions';
-import * as UomCollectionApiActions from './collection-api.actions';
 
 export {
+    UomsActions,
     UomsApiActions,
-    UomCollectionApiActions,
 };

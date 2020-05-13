@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 // modules
 import { ThemeModule } from '../@theme/theme.module';
 import { WarehouseRoutingModule } from './warehouse-routing.module';
-
 // Components
 import { WarehouseComponent } from './warehouse.component';
 import { WarehousePageComponent } from './containers/warehouses.component';
 // import { FeatureKey, reducer } from './reducers';
-import { NbCardModule, NbButtonModule,
-    NbTabsetModule, NbInputModule } from '@nebular/theme';
-
+import {
+    NbCardModule, NbButtonModule,
+    NbTabsetModule, NbInputModule
+} from '@nebular/theme';
 import { StoreModule } from '@ngrx/store';
 import { FeatureKey, reducer } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
@@ -30,7 +29,6 @@ export const CONTAINERS = [
     ListComponent,
     WarehouseDetailComponent,
     WarehouseNewComponent,
-
 ];
 export const COMPONENTS = [
     WarehouseComponent,
@@ -39,7 +37,6 @@ export const COMPONENTS = [
     WarehouseSmartTableComponent,
     WarehouseDComponent,
 ];
-
 @NgModule({
     imports: [
         CommonModule,
@@ -56,11 +53,12 @@ export const COMPONENTS = [
         EffectsModule.forFeature([WarehouseEffects]),
     ],
     declarations: [CONTAINERS, COMPONENTS],
-    providers: [ CookieService ],
+    providers: [
+        CookieService
+    ],
     entryComponents: [
         WarehouseNewComponent,
-    ]
+    ],
 })
-
 export class WarehouseModule {
 }

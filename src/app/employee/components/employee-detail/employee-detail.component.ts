@@ -6,7 +6,9 @@ import { EmployeeSelectors } from '@app/employee/selectors';
 import { Employee } from '@app/@core/data';
 
 @Component({
+  selector: 'ngx-employee-detail',
   templateUrl: './employee-detail.component.html',
+  styleUrls: ['./employee-detail.component.scss'],
 })
 export class EmployeeDetailComponent implements OnInit {
   employee$;

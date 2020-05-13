@@ -5,10 +5,10 @@ import { SalesTeamBin } from '@app/@core/data/salesteambin';
 import { SalesTeamBinSelectors } from '@app/salesteam/selectors';
 import { SalesTeamBinsActions } from '@app/salesteam/actions';
 
-
-
 @Component({
+  selector: 'ngx-salesteambin-detail',
   templateUrl: './salesteambin-detail.component.html',
+  styleUrls: ['./salesteambin-detail.component.scss'],
 })
 export class SalesTeamBinDetailComponent implements OnInit {
   salesteambin$;

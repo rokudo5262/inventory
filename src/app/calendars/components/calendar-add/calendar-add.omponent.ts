@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Calendar } from '@app/@core/data/calendar';
 import { Store } from '@ngrx/store';
 import { NbDialogRef } from '@nebular/theme';
-import { CalendarsApiActions } from '@app/calendars/actions';
+import { CalendarsActions } from '@app/calendars/actions';
 
 @Component({
     selector: 'ngx-calendar-add',
@@ -24,6 +24,7 @@ export class CalendarAddComponent implements OnInit {
     }
     createForm = () => {
         this.addCalendarForm = this.fb.group({
+            id: [0, Validators.required],
             companyCode: ['', Validators.required],
             customerCode: ['', Validators.required],
             recurring: ['', Validators.required],
@@ -33,7 +34,6 @@ export class CalendarAddComponent implements OnInit {
             nonWorking: [false, Validators.required],
             status: ['', Validators.required],
             deleted: [false, Validators.required],
-            id: [0, Validators.required],
         });
     }
     close() {
@@ -52,9 +52,9 @@ export class CalendarAddComponent implements OnInit {
                     id: item.id,
                     changes: item,
                 };
-                this.store.dispatch(CalendarsApiActions.updateCalendar({ update: update }));
+                this.store.dispatch(CalendarsActions.updateCalendar({ update: update }));
             } else {
-                this.store.dispatch(CalendarsApiActions.addCalendar({ calendar: item })),
+                this.store.dispatch(CalendarsActions.addCalendar({ calendar: item })),
                     alert('Add new Calendar successfully!');
             }
             this.close();

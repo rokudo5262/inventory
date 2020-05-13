@@ -6,6 +6,7 @@ import { EmployeeResponsibilityUpdateComponent } from '../employee-responsibilit
 @Component({
   selector: 'ngx-employee-responsibility-preview',
   templateUrl: './employee-responsibility-preview.component.html',
+  styleUrls: ['./employee-responsibility-preview.component.scss'],
 })
 
 export class EmployeeResponsibilityPreviewComponent implements OnInit {

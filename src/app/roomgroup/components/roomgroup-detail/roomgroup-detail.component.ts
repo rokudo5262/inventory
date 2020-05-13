@@ -6,7 +6,9 @@ import { RoomGroupsActions } from '@app/roomgroup/actions';
 import { RoomGroupSelectors } from '@app/roomgroup/selectors';
 
 @Component({
+  selector: 'ngx-roomgroup-detail',
   templateUrl: './roomgroup-detail.component.html',
+  styleUrls: ['./roomgroup-detail.component.scss'],
 })
 export class RoomGroupDetailComponent implements OnInit {
   roomgroup$;

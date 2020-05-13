@@ -9,12 +9,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { UomsRoutingModule } from './uoms-routing.module';
 import { UomsComponent } from './uoms.component';
 import { UomEffects } from './effects/uom.effects';
-import { UomAddComponent } from './containers/UOM-add/UOM-add.component';
-import { UomListComponent } from './containers/UOM-list/UOM-list.component';
-import { UomDetailComponent } from './containers/UOM-detail/UOM-detail.component';
-import { UomDetailComponent as UomDetailComponent1 } from './components/UOM-detail/UOM-detail.component';
+import { UomAddComponent } from './containers/UOM-add/uom-add.component';
+import { UomListComponent } from './containers/UOM-list/uom-list.component';
+import { UomDetailComponent } from './containers/UOM-detail/uom-detail.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { FeatureKey, reducer } from './reducers';
+import { UomReviewComponent } from './components/uom-review/uom-review.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +22,7 @@ import { FeatureKey, reducer } from './reducers';
         UomAddComponent,
         UomListComponent,
         UomDetailComponent,
-        UomDetailComponent1,
+        UomReviewComponent,
     ],
     imports: [
         NbTooltipModule,

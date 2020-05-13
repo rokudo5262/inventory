@@ -10,18 +10,7 @@ import { EmployeeSelectors } from '@app/employee/selectors/employees.selectors';
 @Component({
   selector: 'ngx-employee-responsibility-update',
   templateUrl: './employee-responsibility-update.component.html',
-  styles: [
-    `@include nb-install-component() {
-        input {
-          width: 100%;
-          margin-bottom: 20px;
-        }
-      }
-    button[nbButton]{
-      display: block;
-      float: right;
-      margin-left: 15px;
-    }`]
+  styleUrls: ['./employee-responsibility-update.component.scss'],
 })
 export class EmployeeResponsibilityUpdateComponent implements OnInit {
   public updateEmployeeResponsibilityForm: FormGroup;

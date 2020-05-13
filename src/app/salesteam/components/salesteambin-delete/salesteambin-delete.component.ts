@@ -8,18 +8,7 @@ import { SalesTeamBinsActions } from '@app/salesteam/actions';
 @Component({
   selector: 'ngx-salesteambin-delete',
   templateUrl: './salesteambin-delete.component.html',
-  styles: [
-    `@include nb-install-component() {
-        input {
-          width: 100%;
-          margin-bottom: 20px;
-        }
-      }
-    button[nbButton]{
-      display: block;
-      float: right;
-      margin-left: 15px;
-    }`]
+  styleUrls: ['./salesteambin-delete.component.scss'],
 })
 export class SalesTeamBinDeleteComponent implements OnInit {
   public deleteSalesTeamBinForm: FormGroup;
@@ -44,7 +33,6 @@ export class SalesTeamBinDeleteComponent implements OnInit {
       salesTeamCode: [this.salesteambin ? this.salesteambin.salesTeamCode : '', Validators.required],
       deleted: [this.salesteambin ? this.salesteambin.deleted : '', Validators.required],
     });
-
   }
 
   close() {

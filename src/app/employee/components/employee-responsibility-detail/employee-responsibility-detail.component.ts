@@ -6,7 +6,9 @@ import { EmployeeResponsibilitySelectors } from '@app/employee/selectors';
 import { EmployeeResponsibility } from '@app/@core/data';
 
 @Component({
+  selector: 'ngx-employee-responsibility-detail',
   templateUrl: './employee-responsibility-detail.component.html',
+  styleUrls: ['./employee-responsibility-detail.component.scss'],
 })
 export class EmployeeResponsibilityDetailComponent implements OnInit {
   employeeresponsibility$;

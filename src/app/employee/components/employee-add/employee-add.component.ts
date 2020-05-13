@@ -9,18 +9,7 @@ import { v4 as uuid } from 'uuid';
 @Component({
   selector: 'ngx-employee-add',
   templateUrl: './employee-add.component.html',
-  styles: [
-    `@include nb-install-component() {
-        input {
-          width: 100%;
-          margin-bottom: 20px;
-        }
-      }
-    button[nbButton]{
-      display: block;
-      float: right;
-      margin-left: 15px;
-    }`]
+  styleUrls: ['./employee-add.component.scss'],
 })
 export class EmployeeAddComponent implements OnInit {
   public addEmployeeForm: FormGroup;

@@ -13,7 +13,6 @@ import { EmployeeResponsibilityAddComponent } from '../employee-responsibility-a
   selector: 'ngx-employee-responsibility-list',
   templateUrl: './employee-responsibility-list.component.html',
   styleUrls: ['./employee-responsibility-list.component.scss'],
-
 })
 export class EmployeeResponsibilityListComponent implements OnInit {
   settings = {

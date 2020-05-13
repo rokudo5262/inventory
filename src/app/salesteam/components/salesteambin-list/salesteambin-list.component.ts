@@ -13,8 +13,7 @@ import { SalesTeamBinSelectors } from '@app/salesteam/selectors/salesteambins.se
 @Component({
   selector: 'ngx-salesteambin-smart-table',
   templateUrl: './salesteambin-list.component.html',
-  styleUrls: ['./salesteambin-list.component.scss']
-
+  styleUrls: ['./salesteambin-list.component.scss'],
 })
 export class SalesTeamBinListComponent implements OnInit {
   settings = {

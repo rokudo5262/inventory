@@ -6,7 +6,9 @@ import { SalesTeamsActions } from '@app/salesteam/actions';
 import { SalesTeam } from '@app/@core/data/salesteam';
 
 @Component({
+  selector: 'ngx-salesteam-detail',
   templateUrl: './salesteam-detail.component.html',
+  styleUrls: ['./salesteam-detail.component.scss'],
 })
 export class SalesTeamDetailComponent implements OnInit {
   salesteam$;

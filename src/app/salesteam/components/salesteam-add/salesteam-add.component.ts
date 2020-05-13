@@ -9,18 +9,7 @@ import { v4 as uuid } from 'uuid';
 @Component({
   selector: 'ngx-salesteam-add',
   templateUrl: './salesteam-add.component.html',
-  styles: [
-    `@include nb-install-component() {
-        input {
-          width: 100%;
-          margin-bottom: 20px;
-        }
-      }
-    button[nbButton]{
-      display: block;
-      float: right;
-      margin-left: 15px;
-    }`]
+  styleUrls: ['./salesteam-add.component.scss'],
 })
 export class SalesTeamAddComponent implements OnInit {
   public addSalesTeamForm: FormGroup;

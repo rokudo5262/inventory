@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
   selector: 'ngx-responsibility-list-2-detail',
   templateUrl: './responsibility-list-2.component.html',
   styleUrls: ['./responsibility-list-2.component.scss'],
-
 })
 export class ResponsibilityList2Component implements OnInit {
   @Input() employee: Employee;

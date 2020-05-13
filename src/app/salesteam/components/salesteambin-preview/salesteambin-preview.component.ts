@@ -7,6 +7,7 @@ import { SalesTeamBinDeleteComponent } from '../salesteambin-delete/salesteambin
 @Component({
   selector: 'ngx-salesteambin-preview',
   templateUrl: './salesteambin-preview.component.html',
+  styleUrls: ['./salesteambin-preview.component.scss'],
 })
 
 export class SalesTeamBinPreviewComponent implements OnInit {

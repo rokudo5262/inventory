@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Calendar } from '@app/@core/data/calendar';
 import { CalendarSelectors } from '@app/calendars/selectors/calendar.selectors';
-import { CalendarsApiActions } from '@app/calendars/actions';
+import { CalendarsActions } from '@app/calendars/actions';
 
 @Component({
     selector: 'ngx-calendar-detail',
@@ -23,6 +23,6 @@ export class CalendarDetailComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.store.dispatch(CalendarsApiActions.getCalendars({ calendars: [] }));
+        this.store.dispatch(CalendarsActions.getCalendars({ calendars: [] }));
     }
 }

@@ -6,6 +6,7 @@ import { EmployeeUpdateComponent } from '../employee-update/employee-update.comp
 @Component({
   selector: 'ngx-employee-preview',
   templateUrl: './employee-preview.component.html',
+  styleUrls: ['./employee-preview.component.scss'],
 })
 
 export class EmployeePreviewComponent implements OnInit {

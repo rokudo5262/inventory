@@ -49,7 +49,6 @@ const routes: Routes =
     path: 'books',
     loadChildren: () =>
       import('./books').then(m => m.BooksModule),
-    // canActivate: [AuthGuard],
   },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: '**', redirectTo: 'dashboard' },

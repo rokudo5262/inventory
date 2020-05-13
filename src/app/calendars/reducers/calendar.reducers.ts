@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { CalendarsApiActions, CalendarCollectionApiActions } from '../actions';
+import { CalendarsApiActions, CalendarsActions } from '../actions';
 import { calendarInitialState, calendarAdapter } from '../states';
 
 export const calendarsFeatureKey = 'calendars';
@@ -7,25 +7,25 @@ export const calendarsFeatureKey = 'calendars';
 export const reducer = createReducer(
     calendarInitialState,
     on(
-        CalendarsApiActions.getCalendars,
-        CalendarCollectionApiActions.loadCalendarsSuccess,
+        CalendarsActions.getCalendars,
+        CalendarsApiActions.loadCalendarsSuccess,
         (state, { calendars }) => {
             calendars = calendars;
             return calendarAdapter.addMany(calendars, state);
         }
     ),
     on(
-        CalendarsApiActions.addCalendar,
-        CalendarCollectionApiActions.addCalendarSuccess,
+        CalendarsActions.addCalendar,
+        CalendarsApiActions.addCalendarSuccess,
         (state, { calendar }) => calendarAdapter.addOne(calendar, state)
     ),
     on(
-        CalendarsApiActions.updateCalendar,
+        CalendarsActions.updateCalendar,
         (state, { update }) => calendarAdapter.updateOne(update, state)
     ),
     on(
-        CalendarsApiActions.removeCalendar,
-        CalendarCollectionApiActions.removeCalendarSuccess,
+        CalendarsActions.removeCalendar,
+        CalendarsApiActions.removeCalendarSuccess,
         (state, { id }) => calendarAdapter.removeOne(id, state)
     ),
 );

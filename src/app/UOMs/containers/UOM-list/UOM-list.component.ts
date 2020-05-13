@@ -4,63 +4,14 @@ import { UOM } from '@app/@core/data';
 import { Store, select } from '@ngrx/store';
 import { NbDialogService } from '@nebular/theme';
 import { UomSelectors } from '@app/UOMs/selectors/uom.selectors';
-import { UomsApiActions } from '@app/UOMs/actions';
-import { UomAddComponent } from '../UOM-add/UOM-add.component';
+import { UomsActions } from '@app/UOMs/actions';
+import { UomAddComponent } from '../UOM-add/uom-add.component';
 import { Update } from '@ngrx/entity';
 
 @Component({
     selector: 'ngx-uom-list',
-    template: `
-    <nb-card>
-        <nb-card-header>
-            <p>UOMs<p>
-            <div class="button">
-                <button class="btn btnAdd" (click)="add()" nbButton status="success" nbTooltip="Add New UOM" nbTooltipPlacement="top"><i class="fa fa-plus" aria-hidden="true"></i><span>UOM</span></button>
-                <button class="btn btnSave" (click)="save()" nbButton status="info" nbTooltip="Save UOM" nbTooltipPlacement="top"><i class="fas fa-save" aria-hidden="true"></i><span>Save</span></button>
-                <button class="btn btnDelete" (click)="delete()" nbButton status="danger" nbTooltip="Delete UOM" nbTooltipPlacement="top"><i class="fas fa-trash" aria-hidden="true"></i><span>Delete</span></button>
-            </div>
-        </nb-card-header>
-        <nb-card-body>
-            <ng2-smart-table [settings]="settings" [source]="uoms$ | async"
-                (userRowSelect)="onUserRowSelect($event)"
-                (editConfirm)="edit($event)">
-            </ng2-smart-table>
-        </nb-card-body>
-    </nb-card>
-    `,
-    styles: [`
-    :host /deep/ .ng2-smart-action-multiple-select{
-        text-align: center;
-        width: 5%;
-        margin: auto;
-    }
-
-    :host /deep/ .ng2-smart-action-multiple-select > input{
-        width: 13px;
-        height: 13px;
-        display: unset;
-    }
-
-    p {
-        float: left;
-        font-size: 24px;
-        margin: 10px 0;
-        font-weight: bold;
-    }
-
-    .button {
-        float: right;
-    }
-
-    .btn {
-        width: 120px;
-        margin-left: 10px;
-    }
-
-    .btn span {
-        margin-left: 5px;
-    }
-    `],
+    templateUrl: './uom-list.component.html',
+    styleUrls: ['./uom-list.component.scss'],
 })
 
 export class UomListComponent implements OnInit {
@@ -111,7 +62,7 @@ export class UomListComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.store.dispatch(UomsApiActions.getUoms({ uoms: [] }));
+        this.store.dispatch(UomsActions.getUoms({ uoms: [] }));
     }
 
     add() {
@@ -129,7 +80,7 @@ export class UomListComponent implements OnInit {
             changes: changes
         };
         if (window.confirm('Are you sure you want to update?')) {
-            this.store.dispatch(UomsApiActions.updateUom({ update: update }));
+            this.store.dispatch(UomsActions.updateUom({ update: update }));
             event.confirm.resolve();
         } else {
             event.confirm.reject();
@@ -140,7 +91,7 @@ export class UomListComponent implements OnInit {
     }
     delete(event) {
         if (window.confirm('Are you sure you want to delete ' + this.selectedRows + '?')) {
-            this.store.dispatch(UomsApiActions.updateDeletes({ ids: this.selectedRows }));
+            this.store.dispatch(UomsActions.updateDeletes({ ids: this.selectedRows }));
             event.confirm.resolve();
         } else {
             event.confirm.reject();

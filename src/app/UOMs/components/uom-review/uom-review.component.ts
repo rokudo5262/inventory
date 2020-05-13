@@ -3,18 +3,12 @@ import { UOM } from '@app/@core/data';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'ngx-uom-detail',
-    templateUrl: './UOM-detail.component.html',
-    styles: [`
-    button[nbButton]{
-        display: block;
-        float: right;
-        margin-left: 15px;
-    }
-    `]
+    selector: 'ngx-uom-review',
+    templateUrl: './uom-review.component.html',
+    styleUrls: ['./uom-review.component.scss'],
 })
 
-export class UomDetailComponent implements OnInit {
+export class UomReviewComponent implements OnInit {
     @Input() uom: UOM;
 
     constructor(

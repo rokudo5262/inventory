@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'ngx-salesteambin-page',
     templateUrl: './salesteambin-page.component.html',
-    styleUrls: ['./salesteambin-page.component.scss']
+    styleUrls: ['./salesteambin-page.component.scss'],
 })
 
 export class SalesTeamBinPageComponent implements OnInit {

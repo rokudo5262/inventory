@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { UOM } from '@app/@core/data';
 import { UomSelectors } from '@app/UOMs/selectors/uom.selectors';
-import { UomsApiActions } from '@app/UOMs/actions';
+import { UomsActions } from '@app/UOMs/actions';
 
 @Component({
+    selector: 'ngx-uom-detail',
     template: `
-    <ngx-uom-detail [uom]="uom$ | async"></ngx-uom-detail>
+    <ngx-uom-review [uom]="uom$ | async"><ngx-uom-review>
     `
 })
 
@@ -22,6 +23,6 @@ export class UomDetailComponent implements OnInit {
         this.uom$ = this.store.pipe(select(UomSelectors.selectCurrentUom(this.id$)));
     }
     ngOnInit() {
-        this.store.dispatch(UomsApiActions.getUoms({ uoms: [] }));
+        this.store.dispatch(UomsActions.getUoms({ uoms: [] }));
     }
 }

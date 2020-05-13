@@ -7,6 +7,7 @@ import { RoomGroupDeleteComponent } from '../roomgroup-delete/roomgroup-delete.c
 @Component({
   selector: 'ngx-roomgroup-preview',
   templateUrl: './roomgroup-preview.component.html',
+  styleUrls: ['./roomgroup-preview.component.scss'],
 })
 
 export class RoomGroupPreviewComponent implements OnInit {

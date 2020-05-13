@@ -8,18 +8,8 @@ import { Employee } from '@app/@core/data';
 @Component({
   selector: 'ngx-employee-update',
   templateUrl: './employee-update.component.html',
-  styles: [
-    `@include nb-install-component() {
-        input {
-          width: 100%;
-          margin-bottom: 20px;
-        }
-      }
-    button[nbButton]{
-      display: block;
-      float: right;
-      margin-left: 15px;
-    }`]
+  styleUrls: ['./employee-update.component.scss'],
+
 })
 export class EmployeeUpdateComponent implements OnInit {
   public updateEmployeeForm: FormGroup;

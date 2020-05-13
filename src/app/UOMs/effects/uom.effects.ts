@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
 import { UomsService } from '../services/uoms.service';
-import { UomsApiActions, UomCollectionApiActions } from '../actions';
+import { UomsApiActions, UomsActions } from '../actions';
 import { mergeMap, map, catchError, switchMap } from 'rxjs/operators';
 import { UOM } from '@app/@core/data';
 import { of, EMPTY as empty } from 'rxjs';
@@ -9,77 +9,65 @@ import { of, EMPTY as empty } from 'rxjs';
 @Injectable()
 export class UomEffects {
     uoms$ = createEffect(() => this.action$.pipe(
-        ofType(UomsApiActions.getUoms),
+        ofType(UomsActions.getUoms),
         mergeMap(() => this.uomService.getUoms().pipe(
-            map((items: UOM[]) => UomCollectionApiActions
+            map((items: UOM[]) => UomsApiActions
                 .loadUomsSuccess({ uoms: items })),
-            catchError(error => of(UomCollectionApiActions
+            catchError(error => of(UomsApiActions
                 .loadUomsFailure({ errorMsg: error.message })))
         ))
     ));
     create$ = createEffect(() => this.action$.pipe(
-        ofType(UomsApiActions.addUom),
+        ofType(UomsActions.addUom),
         switchMap(({ uom }) => this.uomService.addUom(uom).pipe(
-            map((item: UOM) => UomCollectionApiActions
+            map((item: UOM) => UomsApiActions
                 .addUomSuccess({ uom: item })),
-            catchError(error => of(UomCollectionApiActions
+            catchError(error => of(UomsApiActions
                 .addUomFailure({ errorMsg: error.message })))
         ))
     ));
     update$ = createEffect(() => this.action$.pipe(
-        ofType(UomsApiActions.updateUom),
+        ofType(UomsActions.updateUom),
         switchMap(({ update }) => this.uomService.updateUom(update.changes).pipe(
-            map(item => UomCollectionApiActions
+            map(item => UomsApiActions
                 .updateUomSuccess()),
-            catchError(error => of(UomCollectionApiActions
+            catchError(error => of(UomsApiActions
                 .updateUomFailure({ errorMsg: error.message })))
         ))
     ));
-    // remove$ = createEffect(() => this.action$.pipe(
-    //     ofType(UomsApiActions.removeUom),
-    //     switchMap(({ id }) => {
-    //         if(id <= 0){
-    //             return empty;
-    //         }
-    //         return this.uomService.removeUom(id).pipe(
-    //             map((item: UOM) => UomCollectionApiActions.removeUomSuccess({ id: item?item.id:0 })),
-    //             catchError(error => of(UomCollectionApiActions.removeUomFailure({ errorMsg: error.message })))
-    //         );
-    //     })
-    // ))
     uom$ = createEffect(() => this.action$.pipe(
-        ofType(UomsApiActions.getUom),
+        ofType(UomsActions.getUom),
         mergeMap(() => this.uomService.getUom().pipe(
-            map((item: UOM) => UomCollectionApiActions
+            map((item: UOM) => UomsApiActions
                 .loadSelectedUomSuccess({ uom: item })),
-            catchError(error => of(UomCollectionApiActions
+            catchError(error => of(UomsApiActions
                 .loadSelectedUomFailure({ errorMsg: error.message })))
         ))
     ));
     updateDelete$ = createEffect(() => this.action$.pipe(
-        ofType(UomsApiActions.updateDelete),
+        ofType(UomsActions.updateDelete),
         switchMap(({ id }) => {
             if (id <= 0) {
                 return empty;
             }
             return this.uomService.updateDelete(id).pipe(
-                map((item: UOM) => UomCollectionApiActions
+                map((item: UOM) => UomsApiActions
                     .updateDeleteSuccess({ id: item ? item.id : 0 })),
-                catchError(error => of(UomCollectionApiActions
+                catchError(error => of(UomsApiActions
                     .updateDeleteFailure({ errorMsg: error.message })))
             );
         })
     ));
     updateDeletes$ = createEffect(() => this.action$.pipe(
-        ofType(UomsApiActions.updateDeletes),
+        ofType(UomsActions.updateDeletes),
         switchMap(({ ids }) => {
             if (ids <= []) {
                 return empty;
             }
             return this.uomService.updateDeletes(ids).pipe(
-                map((item: UOM) => UomCollectionApiActions
+                map((item: UOM) => UomsApiActions
                     .updateDeletesSuccess({ ids: [item ? item.id : 0] })),
-                catchError(error => of(UomCollectionApiActions
+                catchError(error => of(UomsApiActions
                     .updateDeletesFailure({ errorMsg: error.message })))
             );
         })

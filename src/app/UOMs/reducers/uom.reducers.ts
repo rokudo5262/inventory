@@ -1,44 +1,44 @@
 import { createReducer, on } from '@ngrx/store';
 import { uomInitialState, uomAdapter } from '../states';
-import { UomsApiActions, UomCollectionApiActions } from '../actions';
+import { UomsActions, UomsApiActions } from '../actions';
 
 export const uomsFeatureKey = 'uoms';
 
 export const reducer = createReducer(
     uomInitialState,
     on(
-        UomsApiActions.getUoms,
-        UomCollectionApiActions.loadUomsSuccess,
+        UomsActions.getUoms,
+        UomsApiActions.loadUomsSuccess,
         (state, { uoms }) => {
             uoms = uoms;
             return uomAdapter.addMany(uoms, state);
         }
     ),
     on(
-        UomsApiActions.addUom,
-        UomCollectionApiActions.addUomSuccess,
+        UomsActions.addUom,
+        UomsApiActions.addUomSuccess,
         (state, { uom }) => uomAdapter.addOne(uom, state)
     ),
     on(
-        UomsApiActions.updateUom,
+        UomsActions.updateUom,
         (state, { update }) => uomAdapter.updateOne(update, state)
     ),
     on(
-        UomsApiActions.getUom,
-        UomCollectionApiActions.loadSelectedUomSuccess,
+        UomsActions.getUom,
+        UomsApiActions.loadSelectedUomSuccess,
         (state, { uom }) => {
             uom = uom;
             return uomAdapter.addOne(uom, state);
         }
     ),
     on(
-        UomsApiActions.updateDelete,
-        UomCollectionApiActions.updateDeleteSuccess,
+        UomsActions.updateDelete,
+        UomsApiActions.updateDeleteSuccess,
         (state, { id }) => uomAdapter.removeOne(id, state)
     ),
     on(
-        UomsApiActions.updateDeletes,
-        UomCollectionApiActions.updateDeletesSuccess,
+        UomsActions.updateDeletes,
+        UomsApiActions.updateDeletesSuccess,
         (state, { ids }) => uomAdapter.removeMany(ids, state)
     ),
 );

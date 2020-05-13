@@ -10,8 +10,7 @@ import { Update } from '@ngrx/entity/src/models';
 @Component({
   selector: 'ngx-salesteam-smart-table',
   templateUrl: './salesteam-list.component.html',
-  styleUrls: ['./salesteam-list.component.scss']
-
+  styleUrls: ['./salesteam-list.component.scss'],
 })
 export class SalesTeamListComponent implements OnInit {
   settings = {

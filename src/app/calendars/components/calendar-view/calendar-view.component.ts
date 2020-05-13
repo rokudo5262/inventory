@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Calendar } from '@app/@core/data/calendar';
 import { Store, select } from '@ngrx/store';
 import { CalendarSelectors } from '@app/calendars/selectors/calendar.selectors';
-import { CalendarsApiActions } from '@app/calendars/actions';
+import { CalendarsActions } from '@app/calendars/actions';
 import { Update } from '@ngrx/entity';
 
 @Component({
@@ -76,31 +76,29 @@ export class CalendarViewComponent implements OnInit {
     calendars$: Observable<Calendar[]>;
     dialogRef: any;
     selectedRows: any;
-
     constructor(
         private store: Store<Calendar>,
     ) {
         this.calendars$ = this.store.pipe(select(CalendarSelectors.selectAllCalendars));
     }
     ngOnInit() {
-        this.store.dispatch(CalendarsApiActions.getCalendars({ calendars: [] }));
+        this.store.dispatch(CalendarsActions.getCalendars({ calendars: [] }));
     }
     close() {
         this.dialogRef.reject();
     }
-
     edit(event) {
         const changes = event.newData;
         const update: Update<Calendar> = {
             id: event.data.id,
             changes: changes
         };
-        this.store.dispatch(CalendarsApiActions.updateCalendar({ update: update }));
+        this.store.dispatch(CalendarsActions.updateCalendar({ update: update }));
         event.confirm.resolve();
     }
     delete(event) {
         if (window.confirm('Are you sure you want to delete?')) {
-            this.store.dispatch(CalendarsApiActions.removeCalendar({ id: event.data.id }));
+            this.store.dispatch(CalendarsActions.removeCalendar({ id: event.data.id }));
             event.confirm.resolve();
         } else {
             event.confirm.reject();

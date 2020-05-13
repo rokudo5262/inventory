@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { UomListComponent } from './containers/UOM-list/UOM-list.component';
-import { UomDetailComponent } from './containers/UOM-detail/UOM-detail.component';
+import { UomListComponent } from './containers/UOM-list/uom-list.component';
+import { UomDetailComponent } from './containers/UOM-detail/uom-detail.component';
 
 const routes: Routes = [
     { path: '', component: UomListComponent, },
