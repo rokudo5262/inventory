@@ -1,5 +1,5 @@
 import { createSelector } from '@ngrx/store';
-import { selectEmployeeResponsibilitiesState } from './features.selectors';
+import { selectEmployeeResponsibilitiesState } from './employee-features.selectors';
 import { EmployeeResponsibilityReducer } from '../reducers';
 import { employeeresponsibilityAdapter } from '../states';
 

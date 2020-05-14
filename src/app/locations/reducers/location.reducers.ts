@@ -1,30 +1,30 @@
 import { createReducer, on } from '@ngrx/store';
-import { LocationsApiActions, LocationCollectionApiActions } from '../actions';
+import { LocationsApiActions, LocationsActions } from '../actions';
 import { locationAdapter, locationInitialState } from '../states';
 
 export const locationsFeatureKey = 'locations';
 export const reducer = createReducer(
     locationInitialState,
     on(
-        LocationsApiActions.getLocations,
-        LocationCollectionApiActions.loadLocationsSuccess,
+        LocationsActions.getLocations,
+        LocationsApiActions.loadLocationsSuccess,
         (state, { locations }) => {
             return locationAdapter.addMany(locations, state);
         }
     ),
     on(
-        LocationsApiActions.addLocation,
-        LocationCollectionApiActions.addLocationSuccess,
+        LocationsActions.addLocation,
+        LocationsApiActions.addLocationSuccess,
         (state, { location }) => locationAdapter.addOne(location, state)
     ),
     on(
-        LocationsApiActions.updateLocation,
-        LocationCollectionApiActions.updateLocationSuccess,
+        LocationsActions.updateLocation,
+        LocationsApiActions.updateLocationSuccess,
         (state, { update }) => locationAdapter.updateOne(update, state)
     ),
     on(
-        LocationsApiActions.removeLocation,
-        LocationCollectionApiActions.removeLocationSuccess,
+        LocationsActions.removeLocation,
+        LocationsApiActions.removeLocationSuccess,
         (state, { id }) => locationAdapter.removeOne(id, state)
     ),
 );

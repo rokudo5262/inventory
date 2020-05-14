@@ -6,9 +6,10 @@ import { LocationsComponent } from './locations.component';
 import { NbCardModule, NbInputModule, NbButtonModule } from '@nebular/theme';
 import { ThemeModule } from '@app/@theme/theme.module';
 import { CookieService } from 'ngx-cookie-service';
-import { LocationDetailComponent } from '@app/locations/containers/location-detail/location-detail.component';
-import { LocationListComponent } from '@app/locations/containers/location-list/location-list.component';
-import { LocationAddComponent } from './containers/location-add/location-add.component';
+import { LocationDetailComponent } from '@app/locations/components/location-detail/location-detail.component';
+import { LocationListComponent } from '@app/locations/components/location-list/location-list.component';
+import { LocationAddComponent } from './components/location-add/location-add.component';
+import { LocationPageComponent } from './containers/location-page/location-page.component';
 import { StoreModule } from '@ngrx/store';
 import { FeatureKey, reducer } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
@@ -21,6 +22,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     LocationDetailComponent,
     LocationListComponent,
     LocationsComponent,
+    LocationPageComponent,
   ],
   imports: [
     CommonModule,

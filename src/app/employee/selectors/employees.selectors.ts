@@ -1,6 +1,6 @@
 import { createSelector } from '@ngrx/store';
 import { employeeAdapter } from '../states';
-import { selectEmployeesState } from './features.selectors';
+import { selectEmployeesState } from './employee-features.selectors';
 import { EmployeeReducer } from '../reducers';
 
 

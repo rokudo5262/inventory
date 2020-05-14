@@ -1,5 +1,5 @@
 import { createSelector } from '@ngrx/store';
-import { selectSalesTeamBinsState } from './features.selectors';
+import { selectSalesTeamBinsState } from './salesteam-features.selectors';
 import { salesteambinAdapter } from '../states';
 import { SalesTeamBinReducer } from '../reducers';
 

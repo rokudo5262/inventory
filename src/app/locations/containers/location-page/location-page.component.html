@@ -1,0 +1,19 @@
+<nb-card>
+    <nb-card-header>
+        <div class="row">
+            <div class="col-6"><h3>Locations List</h3></div>
+            <div class="col-6">
+              <button nbButton status="success" (click)="onCreate()" class="btnAdd">
+                <i class="fas fa-plus"></i>
+                <span id="1">&nbsp; Location</span>
+              </button>
+            </div>      
+          </div> 
+    </nb-card-header>
+    <nb-card-body>
+        <ng2-smart-table [settings]="settings" [source]="locations$ | async" 
+        (userRowSelect)="onUserRowSelect($event)"
+        (editConfirm)="onEditConfirm($event)"
+        (edit)="onEdit($event)"></ng2-smart-table>
+    </nb-card-body>
+</nb-card>

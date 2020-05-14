@@ -1,7 +1,7 @@
 import { createSelector } from '@ngrx/store';
 import { locationAdapter } from '../states';
 import { LocationReducer } from '../reducers';
-import { selectLocationsState } from './features.selectors';
+import { selectLocationsState } from './location-features.selectors';
 
 export const selectLocationEntitiesState = createSelector(
   selectLocationsState,

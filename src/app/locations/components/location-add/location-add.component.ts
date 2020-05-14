@@ -2,24 +2,13 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { ILocation } from '@appdata';
 import { Store } from '@ngrx/store';
-import { LocationsApiActions } from '@app/locations/actions';
 import { Router } from '@angular/router';
+import { LocationsActions } from '@app/locations/actions';
 
 @Component({
   selector: 'ngx-location-add',
   templateUrl: './location-add.component.html',
-  styles: [
-    `@include nb-install-component() {
-        input {
-          width: 100%;
-          margin-bottom: 20px;
-        }
-      }
-    button[nbButton]{
-      display: block;
-      float: right;
-      margin-left: 15px;
-    }`]
+  styleUrls: ['./location-add.component.scss'],
 })
 export class LocationAddComponent implements OnInit {
   public addLocationForm: FormGroup;
@@ -64,9 +53,9 @@ export class LocationAddComponent implements OnInit {
   }
   submit(item) {
     if (item.id === 0) {
-      this.store.dispatch(LocationsApiActions.addLocation({ location: item }));
+      this.store.dispatch(LocationsActions.addLocation({ location: item }));
     } else {
-      this.store.dispatch(LocationsApiActions.updateLocation({
+      this.store.dispatch(LocationsActions.updateLocation({
         update:
         {
           id: item.id,
@@ -77,7 +66,7 @@ export class LocationAddComponent implements OnInit {
     this.back();
   }
   delete(item) {
-    this.store.dispatch(LocationsApiActions.removeLocation({ id: item.id }));
+    this.store.dispatch(LocationsActions.removeLocation({ id: item.id }));
     this.back();
   }
   back() {

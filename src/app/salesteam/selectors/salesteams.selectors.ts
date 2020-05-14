@@ -1,5 +1,5 @@
 import { createSelector } from '@ngrx/store';
-import { selectSalesTeamsState } from './features.selectors';
+import { selectSalesTeamsState } from './salesteam-features.selectors';
 import { SalesTeamReducer } from '../reducers';
 import { salesteamAdapter } from '../states';
 export const selectSalesTeamEntitiesState = createSelector(

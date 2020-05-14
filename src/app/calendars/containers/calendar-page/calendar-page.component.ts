@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NbDialogService } from '@nebular/theme';
-import { CalendarAddComponent } from '../../components/calendar-add/calendar-add.omponent';
+import { CalendarAddComponent } from '../../components/calendar-add/calendar-add.component';
 
 @Component({
     selector: 'ngx-calendar-page',

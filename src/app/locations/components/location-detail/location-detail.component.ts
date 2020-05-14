@@ -3,10 +3,12 @@ import { Store, select } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
 import { LocationSelectors } from '../../selectors';
 import { ILocation } from '@app/@core/data/location';
-import { LocationsApiActions } from '@app/locations/actions';
+import { LocationsActions } from '@app/locations/actions';
 
 @Component({
+  selector: 'ngx-location-detail',
   templateUrl: './location-detail.component.html',
+  styleUrls: ['./location-detail.component.scss'],
 })
 export class LocationDetailComponent implements OnInit {
   location$;
@@ -19,6 +21,6 @@ export class LocationDetailComponent implements OnInit {
     this.location$ = this.store.pipe(select(LocationSelectors.selectCurrentLocation(this.id$)));
   }
   ngOnInit() {
-    this.store.dispatch(LocationsApiActions.getLocations({ locations: [] }));
+    this.store.dispatch(LocationsActions.getLocations({ locations: [] }));
   }
 }

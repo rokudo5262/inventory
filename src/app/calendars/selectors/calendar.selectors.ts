@@ -1,5 +1,5 @@
 import { createSelector } from '@ngrx/store';
-import { selectCalendarsState } from './features.selectors';
+import { selectCalendarsState } from './calendar-features.selectors';
 import { CalendarReducer } from '../reducers';
 import { calendarAdapter } from '../states';
 

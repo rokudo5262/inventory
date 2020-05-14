@@ -5,7 +5,6 @@ import { RoomGroupListComponent } from '../components/roomgroup-list/roomgroup-l
 import { RoomGroupPreviewComponent } from '../components/roomgroup-preview/roomgroup-preview.component';
 import { RoomGroupUpdateComponent } from '../components/roomgroup-update/roomgroup-update.component';
 
-
 export {
     RoomGroupAddComponent,
     RoomGroupDeleteComponent,

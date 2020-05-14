@@ -19,7 +19,7 @@ import { CalendarEffects } from './effects/calendar.effects';
 import { CalendarRoutingModule } from './calendar-routing.module';
 import { CalendarComponent } from './calendar.component';
 import { CalendarPageComponent } from './containers/calendar-page/calendar-page.component';
-import { CalendarAddComponent } from './components/calendar-add/calendar-add.omponent';
+import { CalendarAddComponent } from './components/calendar-add/calendar-add.component';
 import { CalendarViewComponent } from './components/calendar-view/calendar-view.component';
 import { CalendarDetailComponent } from './components/calendar-detail/calendar-detail.component';
 import { CalendarReviewComponent } from './components/calendar-review/calendar-review.component';

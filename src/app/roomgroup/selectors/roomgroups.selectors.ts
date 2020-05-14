@@ -1,7 +1,7 @@
 import { createSelector } from '@ngrx/store';
 import { RoomGroupReducer } from '../reducers';
 import { roomgroupAdapter } from '../states/roomgroup.state';
-import { selectRoomGroupsState } from './features.selectors';
+import { selectRoomGroupsState } from './roomgroup-features.selectors';
 
 export const selectRoomGroupEntitiesState = createSelector(
   selectRoomGroupsState,

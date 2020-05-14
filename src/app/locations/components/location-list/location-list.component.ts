@@ -2,17 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { LocationSelectors } from '../../selectors';
-import { LocationsApiActions } from '../../actions';
+import { LocationsActions } from '../../actions';
 import { ILocation } from '@app/@core/data/location';
 import { Observable } from 'rxjs';
 
 @Component({
+  selector: 'ngx-location-list',
   templateUrl: './location-list.component.html',
-  styles: [`
-        button[nbButton]{
-          margin: 0 0 0 25vw;
-        }
-  `],
+  styleUrls: ['./location-list.component.scss'],
 })
 export class LocationListComponent implements OnInit {
   settings = {
@@ -63,7 +60,7 @@ export class LocationListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.store.dispatch(LocationsApiActions.getLocations({ locations: [] }));
+    this.store.dispatch(LocationsActions.getLocations({ locations: [] }));
   }
 
   onCreate() {
@@ -75,7 +72,7 @@ export class LocationListComponent implements OnInit {
   }
 
   onEditConfirm(event) {
-    this.store.dispatch(LocationsApiActions.updateLocation({
+    this.store.dispatch(LocationsActions.updateLocation({
       update:
       {
         id: event.data.id,
