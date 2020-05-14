@@ -1,6 +1,7 @@
 export * from './actions';
-export * from './reducer';
-export * from './effect';
-export * from './selector';
-export * from './state';
-export * from './struture.module';
+export * from './reducers';
+export * from './services';
+export * from './effects';
+export * from './selectors';
+export * from './states';
+

@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { CommonModule } from '@angular/common';
-import { NbCardModule, NbInputModule, NbButtonModule, NbTooltipModule } from '@nebular/theme';
+import {
+    NbCardModule,
+    NbInputModule,
+    NbButtonModule,
+    NbTooltipModule
+} from '@nebular/theme';
 import { ThemeModule } from '@app/@theme/theme.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';

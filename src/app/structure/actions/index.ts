@@ -1,11 +1,11 @@
-import * as StructureCollectionApiActions from './collection-structure-api.actions';
-import * as StructureApiActions from './structure-api.action';
-import * as StructureValueApiActions from './structure-value-api.actions';
-import * as StructureValueCollectionApiActions from './collection-structure-value-api.actions';
+import * as StructuresApiActions from './structure-api.actions';
+import * as StructuresActions from './structure.action';
+import * as StructureValuesActions from './structure-value.actions';
+import * as StructureValuesApiActions from './structure-value-api.actions';
 
 export {
-    StructureApiActions,
-    StructureCollectionApiActions,
-    StructureValueApiActions,
-    StructureValueCollectionApiActions,
+    StructuresActions,
+    StructuresApiActions,
+    StructureValuesActions,
+    StructureValuesApiActions,
 };

@@ -120,6 +120,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Structure',
         link: './structure/structure',
       },
+      {
+        title: 'Structure Value',
+        link: './structure/structure-value',
+      },
     ]
   },
   {

@@ -94,7 +94,7 @@ const routes: Routes = [{
     },
     {
       path: 'structure',
-      loadChildren: () => import('../structure/struture.module')
+      loadChildren: () => import('../structure/structure.module')
         .then(m => m.StructureModule),
     },
     {

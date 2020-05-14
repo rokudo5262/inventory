@@ -1,0 +1,19 @@
+<nb-card>
+  <nb-card-header>
+    <div class="row">
+      <div class="col-md-6" style="font-size: 30px;">Structure List</div>
+      <div class="col-md-6" style="justify-content: flex-end;">
+        <button nbButton outline status="success" (click)="add(dialog)">Structure</button>
+        <button nbButton outline status="danger" (click)="onClick()">Delete</button>
+      </div>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="settings" [source]=" structures$ | async" (deleteConfirm)="delete($event)"
+      (userRowSelect)="onUserRowSelect($event)" (custom)="onCustomAction($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton outline status="primary" (click)="structurevalue()">Structure Value List</button>
+  </nb-card-footer>
+</nb-card>
