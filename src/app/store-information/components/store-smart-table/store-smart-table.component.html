@@ -5,12 +5,8 @@
         <div class="col-md-6" style="justify-content: flex-end;">
           <button nbButton status="success" (click)="open3(dialog)" ><i class="fas fa-plus"></i>Store</button>
         </div>
-        
-        
-      </div>
-     
+      </div>  
     </nb-card-header>
-  
     <nb-card-body>
       <ng2-smart-table [settings]="settings" [source]=" storeinformations$ | async" (userRowSelect)="navigateToStore($event)"
       (editConfirm)="edit($event)" (deleteConfirm)="delete($event)">

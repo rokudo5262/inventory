@@ -31,7 +31,7 @@ import { WarehouseModule } from './warehouse';
 import { CustomersModule } from './customers';
 import { LocationsModule } from './locations';
 import { RoomGroupModule } from './roomgroup';
-import { StoreInformationModule } from './store-information/store-infor.module';
+import { StoreInformationModule } from './store-information/store-information.module';
 import { UomsModule } from './UOMs';
 import { SalesTeamModule } from './salesteam/salesteam.module';
 import { ProductGroupModule } from './product-group';
@@ -39,7 +39,9 @@ import { CodeMasterModule } from './code-master';
 import { CalendarModule } from './calendars/calendar.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -54,7 +56,6 @@ import { CalendarModule } from './calendars/calendar.module';
     NbToastrModule.forRoot(),
     NbChatModule.forRoot({
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
-
     }),
     HttpClientModule,
     /**
@@ -98,7 +99,7 @@ import { CalendarModule } from './calendars/calendar.module';
     NbDialogService,
   ],
   bootstrap: [
-    AppComponent
+    AppComponent,
   ],
 })
 export class AppModule {

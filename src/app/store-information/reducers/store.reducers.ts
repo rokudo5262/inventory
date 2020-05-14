@@ -1,28 +1,27 @@
 import { createReducer, on } from '@ngrx/store';
-import { StoresApiActions, StoreCollectionApiActions } from '../actions';
+import { StoresApiActions, StoresActions } from '../actions';
 import { storeAdapter, storeInitialState } from '../states';
 
 export const storesFeatureKey = 'stores';
 export const reducer = createReducer(
     storeInitialState,
     on(
-        StoresApiActions.getStores,
-        StoreCollectionApiActions.loadStoreSuccess,
+        StoresActions.getStores,
+        StoresApiActions.loadStoreSuccess,
         (state, { storeinformations }) => storeAdapter.addMany(storeinformations, state)
     ),
     on(
-        StoresApiActions.addStore,
-        StoreCollectionApiActions.addStoreSuccess,
+        StoresActions.addStore,
+        StoresApiActions.addStoreSuccess,
         (state, { storeinformation }) => storeAdapter.addOne(storeinformation, state)
     ),
     on(
-        StoresApiActions.updateStore,
-        // StoreCollectionApiActions.updateStoreSuccess,
+        StoresActions.updateStore,
         (state, { update }) => storeAdapter.updateOne(update, state)
     ),
     on(
-        StoresApiActions.removeStore,
-        StoreCollectionApiActions.removeStoreSuccess,
+        StoresActions.removeStore,
+        StoresApiActions.removeStoreSuccess,
         (state, { id }) => storeAdapter.removeOne(id, state)
     )
 );

@@ -3,12 +3,14 @@ import { Store, select } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
 import { StoreSelectors } from '@app/store-information/selectors';
 import { StoreInformation } from '@app/@core/data/store';
-import { StoresApiActions } from '@app/store-information/actions';
+import { StoresActions } from '@app/store-information/actions';
 
 @Component({
+  selector: 'ngx-store-detail',
   templateUrl: './store-detail.component.html',
+  styleUrls: ['./store-detail.component.scss'],
 })
-export class StoreDetail1Component implements OnInit {
+export class StoreDetailComponent implements OnInit {
   storeinformation$;
   id$: number;
   constructor(
@@ -19,6 +21,6 @@ export class StoreDetail1Component implements OnInit {
     this.storeinformation$ = this.store.pipe(select(StoreSelectors.selectCurrentStore(this.id$)));
   }
   ngOnInit() {
-    this.store.dispatch(StoresApiActions.getStores({ storeinformations: [] }));
+    this.store.dispatch(StoresActions.getStores({ storeinformations: [] }));
   }
 }

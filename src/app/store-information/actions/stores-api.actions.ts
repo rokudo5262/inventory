@@ -1,20 +1,48 @@
 import { createAction, props } from '@ngrx/store';
-import { Update } from '@ngrx/entity';
 import { StoreInformation } from '@app/@core/data/store';
 
-export const addStore = createAction(
-  '[Stores/API] Add Store',
+
+/**
+ * Add Location to Collection Actions
+ */
+export const addStoreSuccess = createAction(
+  '[Collection/API] Add Store Success',
   props<{ storeinformation: StoreInformation }>(),
 );
-export const updateStore = createAction(
-  '[Stores/API] Update Store',
-  props<{ update: Update<StoreInformation> }>(),
+export const addStoreFailure = createAction(
+  '[Collection/API] Add Store Failure',
+  props<{ errorMsg: any }>(),
 );
-export const removeStore = createAction(
-  '[Stores/API] Remove Store',
+/**
+ * Remove Location from Collection Actions
+ */
+export const removeStoreSuccess = createAction(
+  '[Collection/API] Remove Store Success',
   props<{ id: number }>(),
 );
-export const getStores = createAction(
-  '[Stores/API] Get Stores',
+export const removeStoreFailure = createAction(
+  '[Collection/API] Remove Store Failure',
+  props<{ errorMsg: any }>(),
+);
+/**
+ * Update Location from Collection Actions
+ */
+export const updateStoreSuccess = createAction(
+  '[Collection/API] Update Store Success',
+  // props<{ update: Update<StoreInformation> }>(),
+);
+export const updateStoreFailure = createAction(
+  '[Collection/API] Update Store Failure',
+  props<{ errorMsg: any }>(),
+);
+/**
+ * Load Collection Actions
+ */
+export const loadStoreSuccess = createAction(
+  '[Collection/API] Load Store Success',
   props<{ storeinformations: StoreInformation[] }>(),
+);
+export const loadStoreFailure = createAction(
+  '[Collection/API] Load Stores Failure',
+  props<{ errorMsg: any }>(),
 );

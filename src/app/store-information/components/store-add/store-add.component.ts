@@ -3,12 +3,12 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { StoreInformation } from '@app/@core/data/store';
 import { NbDialogRef } from '@nebular/theme';
 import { Store } from '@ngrx/store';
-import { StoresApiActions } from '@app/store-information/actions';
+import { StoresActions } from '@app/store-information/actions';
 
 @Component({
   selector: 'ngx-store-add',
-  templateUrl: './add-store.component.html',
-  styleUrls: ['./add-store.component.scss'],
+  templateUrl: './store-add.component.html',
+  styleUrls: ['./store-add.component.scss'],
 })
 export class StoreAddComponent implements OnInit {
   public addStoreForm: FormGroup;
@@ -44,7 +44,7 @@ export class StoreAddComponent implements OnInit {
       item.openTime !== { hours: 1, minutes: 20 } &&
       item.closeTime !== { hours: 1, minutes: 20 } &&
       item.address !== '') {
-      this.store.dispatch(StoresApiActions.addStore({ storeinformation: item }));
+      this.store.dispatch(StoresActions.addStore({ storeinformation: item }));
     }
     this.close();
   }

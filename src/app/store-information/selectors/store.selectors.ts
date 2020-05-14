@@ -1,5 +1,5 @@
 import { createSelector } from '@ngrx/store';
-import { selectStoresState } from './features.selectors';
+import { selectStoresState } from './store-features.selectors';
 import { storeAdapter } from '../states';
 import { StoreReducer } from '../reducers';
 

@@ -93,17 +93,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'inbox-outline',
     link: './locations',
   },
-
-
   {
     title: 'Store Information',
     icon: 'shopping-bag-outline',
-    children: [
-      {
-        title: 'Store Information',
-        link: './store-information/store-information',
-      }
-    ]
+    link: './store-information/store-information',
   },
   {
     title: 'Code Master',

@@ -39,7 +39,7 @@ const routes: Routes = [{
     },
     {
       path: 'store-information',
-      loadChildren: () => import('../store-information/store-infor.module')
+      loadChildren: () => import('../store-information/store-information.module')
         .then(m => m.StoreInformationModule),
     },
     {

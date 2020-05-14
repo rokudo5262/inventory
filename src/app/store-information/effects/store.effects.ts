@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map, mergeMap, catchError, switchMap } from 'rxjs/operators';
-import { StoresApiActions, StoreCollectionApiActions } from '../actions';
+import { StoresApiActions, StoresActions } from '../actions';
 import { StoresService } from '../services/stores.service';
 import { EMPTY as empty, of } from 'rxjs';
 import { StoreInformation } from '@app/@core/data/store';
@@ -9,51 +9,47 @@ import { StoreInformation } from '@app/@core/data/store';
 @Injectable()
 export class StoreEffects {
     storeinformations$ = createEffect(() => this.action$.pipe(
-        ofType(StoresApiActions.getStores),
+        ofType(StoresActions.getStores),
         mergeMap(() => this.storesService.getStores()
             .pipe(
-                map((items: StoreInformation[]) => StoreCollectionApiActions
+                map((items: StoreInformation[]) => StoresApiActions
                     .loadStoreSuccess({ storeinformations: items })),
-                catchError(err => of(StoreCollectionApiActions
+                catchError(err => of(StoresApiActions
                     .loadStoreFailure({ errorMsg: err.message })))
             )))
     );
     removes$ = createEffect(() => this.action$.pipe(
-        ofType(StoresApiActions.removeStore),
+        ofType(StoresActions.removeStore),
         switchMap(({ id }) => {
             if (id <= 0) {
                 return empty;
             }
             return this.storesService.removeStore(id).pipe(
-                map((item: StoreInformation) => StoreCollectionApiActions
+                map((item: StoreInformation) => StoresApiActions
                     .removeStoreSuccess({ id: item ? item.id : 0 })),
-                catchError(error => of(StoreCollectionApiActions
+                catchError(error => of(StoresApiActions
                     .removeStoreFailure({ errorMsg: error.message })))
             );
         })
     ));
     update$ = createEffect(() => this.action$.pipe(
-        ofType(StoresApiActions.updateStore),
+        ofType(StoresActions.updateStore),
         switchMap(({ update }) =>
             this.storesService.updateStore(update.changes).pipe(
-                map(item => StoreCollectionApiActions
-                    .updateStoreSuccess(
-                    )),
-                catchError(error => of(StoreCollectionApiActions
+                map(item => StoresApiActions
+                    .updateStoreSuccess()),
+                catchError(error => of(StoresApiActions
                     .updateStoreFailure({ errorMsg: error.message })))
             ))
     ));
     adds$ = createEffect(() => this.action$.pipe(
-        ofType(StoresApiActions.addStore),
+        ofType(StoresActions.addStore),
         switchMap(({ storeinformation }) =>
             this.storesService.addStore(storeinformation)
                 .pipe(
-                    map((item: StoreInformation) => StoreCollectionApiActions
-                        .addStoreSuccess({
-                            storeinformation: item
-                        }
-                        )),
-                    catchError(error => of(StoreCollectionApiActions
+                    map((item: StoreInformation) => StoresApiActions
+                        .addStoreSuccess({ storeinformation: item })),
+                    catchError(error => of(StoresApiActions
                         .addStoreFailure({ errorMsg: error.message })))
                 ))
     ));
