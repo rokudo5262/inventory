@@ -15,9 +15,17 @@ export class LocationListComponent implements OnInit {
   settings = {
     hideSubHeader: true,
     mode: 'external',
-    actions: { delete: false },
+    actions: {
+      add: false,
+      edit: true,
+      delete: false,
+    },
     edit: {
       editButtonContent: '<i class="nb-compose"></i>',
+    },
+    delete: {
+      deleteButtonContent: '<i class="nb-trash"></i>',
+      confirmDelete: true,
     },
     columns: {
       locationCode: {
@@ -57,6 +65,7 @@ export class LocationListComponent implements OnInit {
     private route: Router,
   ) {
     this.locations$ = this.store.pipe(select(LocationSelectors.selectAllLocations));
+    this.locations$.subscribe(g => console.log(g.length));
   }
 
   ngOnInit() {

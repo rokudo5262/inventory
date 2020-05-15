@@ -22,7 +22,7 @@ import { StoreAddComponent } from './components/store-add/store-add.component';
 import { CommonModule } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
 import { StorePreviewComponent } from './components/store-preview/store-preview.component';
-import { StoreDetailComponent } from './containers/store-detail/store-detail.component';
+import { StoreDetailComponent } from './components/store-detail/store-detail.component';
 import { StoreSmartTableComponent } from './components/store-smart-table/store-smart-table.component';
 
 @NgModule({

@@ -81,6 +81,7 @@ export class SalesTeamListComponent implements OnInit {
     private route: Router,
   ) {
     this.salesteams$ = this.store.pipe(select(SalesTeamSelectors.selectAllSalesTeams));
+    this.salesteams$.subscribe(g => console.log(g.length));
   }
   ngOnInit() {
     this.store.dispatch(SalesTeamsActions.loadSalesTeams({ salesteams: [] }));

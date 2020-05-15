@@ -80,6 +80,7 @@ export class WarehouseSmartTableComponent implements OnInit {
     private store: Store<Warehouse>
     ) {
     this.warehouses$ = this.store.pipe(select(WarehouseSelectors.selectAllWarehouses));
+    this.warehouses$.subscribe(g => console.log(g.length));
   }
   ngOnInit() {
     this.store.dispatch(WarehousesApiActions.getWarehouses({ warehouses: [] }));

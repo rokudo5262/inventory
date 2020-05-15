@@ -1,9 +1,8 @@
 import { goodsgroupInitialState, goodsgroupAdapter } from '../states';
 import { createReducer, on } from '@ngrx/store';
 import {
-    AddGoodsGroupActions,
     GoodsGroupApiActions,
-    GoodsGroupCollectionApiActions
+    GoodsGroupActions,
 } from '../actions';
 
 export const goodsgroupFeatureKey = 'goods-group';
@@ -11,22 +10,22 @@ export const goodsgroupFeatureKey = 'goods-group';
 export const reducer = createReducer(
     goodsgroupInitialState,
     on(
-        GoodsGroupApiActions.getGoodsGroups,
-        GoodsGroupCollectionApiActions.loadGoodsGroupSuccess,
+        GoodsGroupActions.getGoodsGroups,
+        GoodsGroupApiActions.loadGoodsGroupSuccess,
         (state, { goodsgroups }) => goodsgroupAdapter.addMany(goodsgroups, state)
     ),
-    on(AddGoodsGroupActions.addGoodsGroup,
-        AddGoodsGroupActions.addgoodsgroupSuccess,
+    on(GoodsGroupActions.addGoodsGroup,
+        GoodsGroupApiActions.addgoodsgroupSuccess,
         (state, { addgoodsgroup }) => goodsgroupAdapter.addOne(addgoodsgroup, state)
     ),
     on(
-        GoodsGroupApiActions.updateGoodsGroup,
-        GoodsGroupCollectionApiActions.updateGoodsGroupSuccess,
+        GoodsGroupActions.updateGoodsGroup,
+        GoodsGroupApiActions.updateGoodsGroupSuccess,
         (state, { update }) => goodsgroupAdapter.updateOne(update, state)
     ),
     on(
-        GoodsGroupApiActions.removeGoodsGroup,
-        GoodsGroupCollectionApiActions.removeGoodsGroupSuccess,
+        GoodsGroupActions.removeGoodsGroup,
+        GoodsGroupApiActions.removeGoodsGroupSuccess,
         (state, { id }) => goodsgroupAdapter.removeOne(id, state)
     )
 );

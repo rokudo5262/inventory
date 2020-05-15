@@ -86,6 +86,7 @@ export class EmployeeResponsibilityListComponent implements OnInit {
     private dialogService: NbDialogService,
   ) {
     this.data$ = this.store.pipe(select(EmployeeResponsibilitySelectors.selectAllEmployeeResponsibilities));
+    this.data$.subscribe(g => console.log(g.length));
   }
   ngOnInit() {
     this.store.dispatch(EmployeeResponsibilitiesActions.loadEmployeeResponsibilities({ employeeresponsibilities: [] }));

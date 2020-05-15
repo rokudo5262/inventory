@@ -66,6 +66,7 @@ export class RoomGroupListComponent implements OnInit {
     private dialogService: NbDialogService,
   ) {
     this.roomgroups$ = this.store.pipe(select(RoomGroupSelectors.selectAllRoomGroups));
+    this.roomgroups$.subscribe(g => console.log(g.length));
   }
   ngOnInit() {
     this.store.dispatch(RoomGroupsActions.loadRoomGroups({ roomgroups: [] }));

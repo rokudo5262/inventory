@@ -168,6 +168,7 @@ export class ViewCustomersComponent implements OnInit {
     private dialogService: NbDialogService,
   ) {
     this.customers$ = this.store.pipe(select(CustomerSelectors.selectAllCustomers));
+    this.customers$.subscribe(g => console.log(g.length));
   }
   ngOnInit() {
     this.store.dispatch(CustomersApiActions.getCustomers({ customers: [] }));

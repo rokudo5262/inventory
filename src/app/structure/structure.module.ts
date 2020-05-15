@@ -37,6 +37,23 @@ import { environment } from 'environments/environment';
 import { StructureValueAddComponent } from './components/structure-value-add/structure-value-add.component';
 
 @NgModule({
+    declarations: [
+        // ================================
+        StructureComponent,
+        StructurePageComponent,
+        StructureSmartTableComponent,
+        StructureAddComponent,
+        StructureDetailComponent,
+        StructureEditComponent,
+        // ================================
+        StructureValuePageComponent,
+        StructureValueSmartTableComponent,
+        StructureValueAddComponent,
+        StructureValueEditComponent,
+        StructureValueDetailComponent,
+        StructureValueDialogComponent,
+        // ================================
+    ],
     imports: [
         StructureRoutingModule,
         CommonModule,
@@ -61,29 +78,12 @@ import { StructureValueAddComponent } from './components/structure-value-add/str
         StoreModule.forFeature(FeatureKey, reducer),
         EffectsModule.forFeature([StructureEffects, StructureValueEffects]),
     ],
-    declarations: [
-        // ================================
-        StructureComponent,
-        StructurePageComponent,
-        StructureSmartTableComponent,
-        StructureAddComponent,
-        StructureDetailComponent,
-        StructureEditComponent,
-        // ================================
-        StructureValuePageComponent,
-        StructureValueSmartTableComponent,
-        StructureValueAddComponent,
-        StructureValueEditComponent,
-        StructureValueDetailComponent,
-        StructureValueDialogComponent,
-        // ================================
-    ],
     providers: [
         CookieService,
     ],
     entryComponents: [
         StructureAddComponent,
-        // StructureValueAddComponent,
+        StructureValueAddComponent,
         StructureValueDialogComponent,
     ],
 })

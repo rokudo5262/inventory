@@ -1,0 +1,14 @@
+<nb-card>
+  <nb-card-header>Add Goods Group</nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="addGoodsGroupForm">
+      <input type="hidden" formControlName="id" class="control-form" name="id" nbInput fullWidt>
+      <input type="text" formControlName="code" class="control-form" name="code" nbInput fullWidth>
+      <input type="text" formControlName="name" class="control-form" name="name" nbInput fullWidth>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button class="cancel" nbButton status="danger" (click)="close()">Cancel</button>
+    <button nbButton status="success" (click)="submit(addGoodsGroupForm.value)">Add</button>
+  </nb-card-footer>
+</nb-card>

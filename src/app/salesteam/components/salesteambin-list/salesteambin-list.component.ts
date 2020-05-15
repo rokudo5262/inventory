@@ -70,6 +70,7 @@ export class SalesTeamBinListComponent implements OnInit {
     private dialogService: NbDialogService,
   ) {
     this.salesteambins$ = this.store.pipe(select(SalesTeamBinSelectors.selectAllSalesTeamBins));
+    this.salesteambins$.subscribe(g => console.log(g.length));
   }
   ngOnInit() {
     this.store.dispatch(SalesTeamBinsActions.loadSalesTeamBins({ salesteambins: [] }));

@@ -59,6 +59,7 @@ export class UomListComponent implements OnInit {
         private dialogService: NbDialogService,
     ) {
         this.uoms$ = this.store.pipe(select(UomSelectors.selectAllUoms));
+        this.uoms$.subscribe(g => console.log(g.length));
     }
 
     ngOnInit() {

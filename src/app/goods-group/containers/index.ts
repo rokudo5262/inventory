@@ -1,5 +1,5 @@
-import { AddGoodsGroupComponent } from '../components/add-goods-group/add-goods-group.component';
+import { GoodsGroupPageComponent } from '../containers/goods-group-page/goods-group-page.component';
 
 export {
-    AddGoodsGroupComponent,
+    GoodsGroupPageComponent,
 };

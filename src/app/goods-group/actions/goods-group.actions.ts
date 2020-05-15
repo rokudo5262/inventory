@@ -1,17 +1,22 @@
-import { props, createAction } from '@ngrx/store';
-import { GoodsGroup } from '@appdata';
+import { createAction, props } from '@ngrx/store';
+import { GoodsGroup } from '@app/@core/data';
+import { Update } from '@ngrx/entity';
 
-export enum GoodsGroupActionTypes {
-    AddGoodsGroupSuccess = '[Goods-Group/API] Add Goods Group Success',
-    AddGoodsGroupFailure = '[Goods-Group/API] Add Goods Group Failure',
-}
-
-export const addgoodsgroupSuccess = createAction(
-    GoodsGroupActionTypes.AddGoodsGroupSuccess, // Action Name
-    props<{ goodsgroups: GoodsGroup[]}>(), // action payload type
+export const addGoodsGroup = createAction(
+    '[GoodsGroup/API] Add Goods Groups',
+    props<{ addgoodsgroup: GoodsGroup }>(),
+);
+export const getGoodsGroups = createAction(
+    '[GoodsGroups/API] Get Goods Groups',
+    props<{ goodsgroups: GoodsGroup[] }>(),
 );
 
-export const addgoodsgroupFailure = createAction(
-    GoodsGroupActionTypes.AddGoodsGroupFailure, // action name
-    props<{ errorMsg: string}>(), // action payload type
+export const updateGoodsGroup = createAction(
+    '[GoodsGroup/API] Update Goods Group',
+    props<{ update: Update<GoodsGroup> }>(),
+);
+
+export const removeGoodsGroup = createAction(
+    '[GoodsGroup/API] Delete Goods Group',
+    props<{ id: number }>(),
 );

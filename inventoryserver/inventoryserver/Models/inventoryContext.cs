@@ -212,8 +212,6 @@ namespace inventoryserver.Models
         entity.Property(e => e.LastUpdatedDateTime)
             .HasColumnName("lastUpdatedDateTime")
             .HasColumnType("datetime");
-        entity.Property(e => e.Deleted)
-            .HasColumnName("deleted"); 
         entity.HasKey(e => e.Id);
         //entity.Property(e => e.RowVersion)
           //  .IsRowVersion()
@@ -708,16 +706,31 @@ namespace inventoryserver.Models
       modelBuilder.Entity<GoodsGroup>(entity =>
       {
         entity.Property(e => e.id).HasColumnName("id");
-
+        entity.HasKey(e => e.id);
         entity.Property(e => e.code)
             .IsRequired()
             .HasColumnName("code")
             .HasMaxLength(50);
-
         entity.Property(e => e.name)
             .IsRequired()
             .HasColumnName("name")
             .HasMaxLength(200);
+        entity.Property(e => e.Status)
+            .HasColumnName("status");
+        entity.Property(e => e.Deleted)
+            .HasColumnName("deleted");
+        entity.Property(e => e.CreatedBy)
+           .HasColumnName("createdBy")
+           .HasMaxLength(255);
+        entity.Property(e => e.CreatedDateTime)
+            .HasColumnName("createdDateTime")
+            .HasColumnType("datetime");
+        entity.Property(e => e.LastUpdatedBy)
+            .HasColumnName("lastUpdatedBy")
+            .HasMaxLength(255);
+        entity.Property(e => e.LastUpdatedDateTime)
+            .HasColumnName("lastUpdatedDateTime")
+            .HasColumnType("datetime");
       });
 
       modelBuilder.Entity<CodeMaster>(entity =>

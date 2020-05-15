@@ -73,6 +73,7 @@ export class StoreSmartTableComponent implements OnInit {
     private dialogService: NbDialogService
   ) {
     this.storeinformations$ = this.store.pipe(select(StoreSelectors.selectAllStores));
+    this.storeinformations$.subscribe(g => console.log(g.length));
   }
   ngOnInit() {
     this.store.dispatch(StoresActions.getStores({ storeinformations: [] }));

@@ -80,6 +80,7 @@ export class CalendarViewComponent implements OnInit {
         private store: Store<Calendar>,
     ) {
         this.calendars$ = this.store.pipe(select(CalendarSelectors.selectAllCalendars));
+        this.calendars$.subscribe(g => console.log(g.length));
     }
     ngOnInit() {
         this.store.dispatch(CalendarsActions.getCalendars({ calendars: [] }));

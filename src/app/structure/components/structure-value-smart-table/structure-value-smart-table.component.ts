@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { Router } from '@angular/router';
-import { NbDialogService } from '@nebular/theme';
 import { StructureValueSelectors } from '@app/structure/selectors';
 import { StructureValue } from '@app/@core/data/structure-value';
 import { StructureValuesActions } from '@app/structure/actions';
@@ -63,16 +62,13 @@ export class StructureValueSmartTableComponent implements OnInit {
   constructor(
     private store: Store<StructureValue>,
     private route: Router,
-    private dialogService: NbDialogService,
   ) {
     this.structurevalues$ = this.store.pipe(select(StructureValueSelectors.selectAllStructureValues));
+    this.structurevalues$.subscribe(g => console.log(g.length));
   }
   ngOnInit() {
     this.store.dispatch(StructureValuesActions.getStructureValues({ structurevalues: [] }));
   }
-  // add() {
-  //   this.dialogService.open(StructureValueAddComponent);
-  // }
   close() {
     this.dialogRef.close();
   }
@@ -83,9 +79,6 @@ export class StructureValueSmartTableComponent implements OnInit {
   onCustomAction(event) {
     this.route.navigate(['dashboard/structure/structure-value', event.data.id]);
   }
-  // onUserRowSelect(event) {
-  //   this.selectedRows = event.data.id;
-  // }
   delete(event) {
     if (window.confirm('Are you sure you want to delete ')) {
       this.store.dispatch(StructureValuesActions.deleteStructureValue({ id: event.data.id }));
@@ -99,7 +92,6 @@ export class StructureValueSmartTableComponent implements OnInit {
     console.log('selected list: ', this.selectedRows);
   }
   onClick() {
-    // It will console all the selected rows
     console.log(this.selectedRows);
     this.store.dispatch(StructureValuesActions.deleteStructureValues({ ids: this.selectedRows }));
   }

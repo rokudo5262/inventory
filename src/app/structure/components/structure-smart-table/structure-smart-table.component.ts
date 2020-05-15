@@ -62,8 +62,8 @@ export class StructureSmartTableComponent implements OnInit {
     private route: Router,
     private dialogService: NbDialogService,
   ) {
-
     this.structures$ = this.store.pipe(select(StructureSelectors.selectAllStructures));
+    this.structures$.subscribe(g => console.log(g.length));
   }
 
   ngOnInit() {

@@ -85,6 +85,7 @@ export class EmployeeListComponent implements OnInit {
     private dialogService: NbDialogService,
   ) {
     this.employees$ = this.store.pipe(select(EmployeeSelectors.selectAllEmployees));
+    this.employees$.subscribe(g => console.log(g.length));
   }
   ngOnInit() {
     this.store.dispatch(EmployeesActions.loadEmployees({ employees: [] }));

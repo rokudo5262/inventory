@@ -1,18 +1,23 @@
 Use inventory
 Go
 
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
 
 CREATE TABLE [dbo].[RoomGroup] (
-    [id]      [int] IDENTITY(1,1) not null PRIMARY KEY,
-    [name]    [nvarchar](max) null,
-    [note]    [nvarchar](max) null,
-	  [status]  [nvarchar](max) null,
-    [createdBy] [nvarchar] (255) null,
-    [createdDateTime] [datetime] null,
-    [lastUpdatedBy] [nvarchar] (255) null,
-    [lastUpdatedDateTime] [datetime] null,
-    [rowVersion] [timestamp] null,
-    [deleted] [bit] not null,
+    [id]                  [int] IDENTITY(1,1) not null PRIMARY KEY,
+    [name]                [nvarchar](255)         null,
+    [note]                [nvarchar](255)         null,
+	  [status]              [nvarchar](255)         null,
+    [createdBy]           [nvarchar](255)         null,
+    [createdDateTime]     [datetime]              null,
+    [lastUpdatedBy]       [nvarchar](255)         null,
+    [lastUpdatedDateTime] [datetime]              null,
+    [rowVersion]          [timestamp]             null,
+    [deleted]             [bit]               not null,
 );
 INSERT INTO RoomGroup( name, note, status ,deleted)
    VALUES

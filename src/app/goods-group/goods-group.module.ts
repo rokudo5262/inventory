@@ -10,9 +10,8 @@ import {
 import { ThemeModule } from '@app/@theme/theme.module';
 import { MiscellaneousModule } from '@dashboard/miscellaneous/miscellaneous.module';
 import { TablesModule } from '@dashboard/tables/tables.module';
-import { GoodsGroupPageComponent } from './components/goods-group-page.component';
+import { GoodsGroupPageComponent } from './containers/goods-group-page/goods-group-page.component';
 import { GoodsGroupRoutingModule } from './goods-group-routing.module';
-import { AddGoodsGroupComponent } from './containers';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
@@ -21,13 +20,12 @@ import { reducer, FeatureKey } from './reducers';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { GoodsGroupEffects } from './effects';
+import { GoodsGroupComponent } from './goods-group.component';
+import { GoodsGroupAddComponent } from './components/goods-group-add/goods-group-add.component';
+import { GoodsGroupDetailComponent } from './components/goods-group-detail/goods-group-detail.component';
+import { GoodsGroupPreviewComponent } from './components/goods-group-preview/goods-group-preview.component';
+import { GoodsGroupUpdateComponent } from './components/goods-group-update/goods-group-update.component';
 
-export const COMPONENTS = [
-  GoodsGroupPageComponent,
-];
-export const CONTAINERS = [
-  AddGoodsGroupComponent,
-];
 @NgModule({
   imports: [
     ThemeModule,
@@ -47,12 +45,19 @@ export const CONTAINERS = [
     StoreModule.forFeature(FeatureKey, reducer),
     EffectsModule.forFeature([GoodsGroupEffects])
   ],
-  declarations: [COMPONENTS, CONTAINERS],
+  declarations: [
+    GoodsGroupComponent,
+    GoodsGroupPageComponent,
+    GoodsGroupAddComponent,
+    GoodsGroupDetailComponent,
+    GoodsGroupPreviewComponent,
+    GoodsGroupUpdateComponent,
+  ],
   providers: [
     CookieService,
   ],
   entryComponents: [
-    AddGoodsGroupComponent,
+    GoodsGroupAddComponent,
   ],
 })
 export class GoodsGroupModule { }

@@ -8,9 +8,16 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[GoodsGroup](
-	[id] [bigint] IDENTITY(1,1) NOT NULL,
-	[code] [nvarchar](50) NOT NULL,
-	[name] [nvarchar](200) NOT NULL,
+	[id]                  [bigint] IDENTITY(1,1) NOT NULL,
+	[code]                [nvarchar](255)            NULL,
+	[name]                [nvarchar](255)            NULL,
+  [status]              [nvarchar](255)            NULL,
+  [deleted]             [bit]                  NOT NULL,
+  [createdBy]           [nvarchar](255)            NULL,
+	[createdDateTime]     [datetime]                 NULL,
+	[lastUpdatedBy]       [nvarchar](255)            NULL,
+	[lastUpdatedDateTime] [datetime]                 NULL,
+	
 PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -18,8 +25,16 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 GO
 
-insert into GoodsGroup(code, name) values ('M001', 'Milk')
-insert into GoodsGroup(code, name) values ('M002', 'Meat')
-insert into GoodsGroup(code, name) values ('D003', 'Drink')
-insert into GoodsGroup(code, name) values ('F004', 'Fish')
+insert into [dbo].[GoodsGroup](code,name,status,deleted)
+values
+('M001','Milk'   ,'Enable','0'),
+('M002','Meat'   ,'Enable','0'),
+('B003','Beer'   ,'Enable','0'),
+('E004','Egg'    ,'Enable','0'),
+('C005','Chicken','Enable','0'),
+('S006','Steak'  ,'Enable','0'),
+('C007','Cheese' ,'Enable','0'),
+('F008','Fish'   ,'Enable','0');
+
+ALTER TABLE [dbo].[GoodsGroup] ADD  CONSTRAINT [DF_GoodsGroup_deleted]  DEFAULT ((0)) FOR [deleted]
 GO

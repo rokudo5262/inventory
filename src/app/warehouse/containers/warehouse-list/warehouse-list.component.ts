@@ -21,6 +21,7 @@ export class ListComponent implements OnInit {
         private route: Router
     ) {
         this.warehouses$ = this.store.pipe(select(WarehouseSelectors.selectAllWarehouses));
+        this.warehouses$.subscribe(g => console.log(g.length));
     }
 
     ngOnInit() {

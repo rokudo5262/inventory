@@ -1,16 +1,16 @@
-import { OnInit, Component } from '@angular/core';
+import { OnInit, Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GoodsGroup } from '@app/@core/data';
 import { Store, select } from '@ngrx/store';
 import { GoodsGroupSelectors } from '@app/goods-group/selectors';
-import { GoodsGroupActions } from '@app/goods-group/actions';
 
 @Component({
-    selector: 'ngx-goods-group-detail',
-    templateUrl: './goods-group-detail.component.html',
-    styleUrls: ['./goods-group-detail.component.scss'],
+    selector: 'ngx-goods-group-preview',
+    templateUrl: './goods-group-preview.component.html',
+    styleUrls: ['./goods-group-preview.component.scss'],
 })
-export class GoodsGroupDetailComponent implements OnInit {
+export class GoodsGroupPreviewComponent implements OnInit {
+    @Input() goodsgroup: GoodsGroup;
     goodsgroup$;
     id$: string;
     constructor(
@@ -20,10 +20,8 @@ export class GoodsGroupDetailComponent implements OnInit {
     ) {
         this.id$ = this.router.snapshot.params.id;
         this.goodsgroup$ = this.store.pipe(select(GoodsGroupSelectors.selectCurrentGoodsGroup(this.id$)));
-        this.goodsgroup$.subscribe(g => console.log(g.length));
     }
     ngOnInit() {
-        this.store.dispatch(GoodsGroupActions.getGoodsGroups({ goodsgroups: [] }));
     }
     navigateToGoodsGroup(event) {
         this.route.navigate(['dashboard/goods-group']);

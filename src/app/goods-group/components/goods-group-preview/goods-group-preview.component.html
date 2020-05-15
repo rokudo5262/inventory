@@ -1,0 +1,33 @@
+<nb-card>
+  <nb-card-header>
+    <label>Goods Group Detail</label>
+  </nb-card-header>
+  <nb-card-body>
+      <div class="row">
+        <div class="col-xs-6 col-md-6">
+          <label>Goods Group Id</label>
+          <input nbInput fullWidth type="text" name="id" class="form-control" placeholder="id"
+            [(ngModel)]="goodsgroup.id">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Goods Group Code</label>
+          <input nbInput fullWidth type="text" name="code" class="form-control" placeholder="code"
+            [(ngModel)]="goodsgroup.code">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Goods Group Name</label>
+          <input nbInput fullWidth type="text" name="name" class="form-control" placeholder="name"
+            [(ngModel)]="goodsgroup.name">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Goods Group Status</label>
+          <input nbInput fullWidth type="text" name="status" class="form-control" placeholder="status"
+            [(ngModel)]="goodsgroup.status">
+        </div>
+      </div>
+  </nb-card-body>
+  <nb-card-footer>
+    <button class="cancel" nbButton outline status="success" (click)="navigateToGoodsGroup()">Back</button>
+    <button class="cancel" nbButton outline status="danger" (click)="close()">Edit</button>
+  </nb-card-footer>
+</nb-card>
