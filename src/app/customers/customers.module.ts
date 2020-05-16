@@ -27,7 +27,6 @@ import { StoreModule } from '@ngrx/store';
 import { FeatureKey, reducer } from './reducers';
 import { SortCustomersComponent } from './components/view-customers/sort-customers.component';
 import { ViewCustomersComponent } from './components/view-customers/view-customers.component';
-import { AddCustomersComponent } from './components/add-customers/add-customers.component';
 import { ModCustomersComponent } from './components/mod-customers/mod-customers.component';
 import { ImportCustomersComponent } from './components/view-customers/import-customers/import-customers.component';
 import { TabCustomerInfoComponent } from './components/mod-customers/tab-customer-info/tab-customer-info.component';
@@ -42,7 +41,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { CustomerEffects } from './effects/customer.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
-import { DetailCustomersComponent } from './components/detail-customers/detail-customers.component';
+import { CustomersAddComponent } from './components/customers-add/customers-add.component';
+import { CustomersDetailComponent } from './components/customers-detail/customers-detail.component';
 import { DetailsCustomerComponent } from './containers/detail-customers.component';
 
 export const CONTAINERS = [
@@ -53,9 +53,9 @@ export const CONTAINERS = [
 export const COMPONENTS = [
     SortCustomersComponent,
     ViewCustomersComponent,
-    AddCustomersComponent,
+    CustomersAddComponent,
     ModCustomersComponent,
-    DetailCustomersComponent,
+    CustomersDetailComponent,
     ImportCustomersComponent,
     TabCustomerInfoComponent,
     TabCustomerDebtComponent,

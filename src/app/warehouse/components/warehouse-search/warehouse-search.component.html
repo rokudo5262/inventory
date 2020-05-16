@@ -1,0 +1,4 @@
+<label>Search</label>
+<input nbInput [value]="query" placeholder="Warehouse Code" (keydown.enter)="onSearchId(search.value)">
+<input nbInput class="search" type="text" placeholder="Warehouse Name" (keydown.enter)="onSearchName(search2.value)">
+<span *ngIf="error">{{error}}</span>

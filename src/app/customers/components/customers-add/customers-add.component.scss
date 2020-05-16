@@ -1,0 +1,59 @@
+nb-layout-column {
+    background-color: white;
+}
+p {
+    font-size: 24px;
+    margin: 10px 0;
+}
+nb-radio-group {
+    justify-content: space-evenly;
+}
+form {
+    margin-top: 1vw;
+}
+.button {
+    float: right;
+}
+.btn {
+    margin-left: 10px;
+    width: 100px;
+}
+.avatar {
+    padding: 0;
+}
+.avatar img {
+    width: 140px;
+    height: 140px;
+    display: block;
+    margin: auto;
+}
+.btnUploadAvatar {
+    width: 140px;
+    display: block;
+    margin: auto;
+}
+.btn span {
+    margin-left: 5px;
+}
+.fa-image {
+    margin-right: 5px;
+}
+@media screen and (max-width: 992px) {
+    .avatar img {
+        clip-path: circle(70px at 50% 50%);
+    }
+    .btnUploadAvatar {
+        margin-bottom: 20px;
+    }
+}
+@media screen and (min-width: 576px) and (max-width: 991px) {
+    nb-radio-group {
+        display: block;
+        margin: 0 auto 0 10vw;
+    }
+}
+@media screen and (max-width: 575px) {
+    .button {
+        margin-right: 10px;
+    }
+}

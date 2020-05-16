@@ -8,12 +8,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Goods Group',
     icon: 'inbox-outline',
-    link: './goods-group',
+    link: './goods-group/library',
   },
   {
     title: 'Product Group',
     icon: 'layers-outline',
-    link: './product-group',
+    link: './product-group/library',
   },
   {
     title: 'Customers',
@@ -37,9 +37,9 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'UOMs',
+    title: 'Uoms',
     icon: 'activity-outline',
-    link: './UOMs',
+    link: './uoms',
   },
   {
     title: 'Calendars',
@@ -49,12 +49,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Room Group',
     icon: 'shopping-cart-outline',
+    link: './roomgroups/library',
+  },
+  {
+    title: 'SalesTeam',
+    icon: 'shopping-cart-outline',
     children: [
-      {
-        title: 'RoomGroup',
-        icon: 'shopping-cart-outline',
-        link: './roomgroups/library',
-      },
       {
         title: 'SalesTeam',
         icon: 'shopping-cart-outline',
@@ -65,38 +65,38 @@ export const MENU_ITEMS: NbMenuItem[] = [
         icon: 'shopping-cart-outline',
         link: './salesteambins/salesteambin',
       },
+    ],
+  },
+  {
+    title: 'Employee',
+    icon: 'shopping-cart-outline',
+    children: [
       {
         title: 'Employee',
         icon: 'shopping-cart-outline',
-        link: './employees/employee',
+        link: './employees/library',
       },
       {
         title: 'EmployeeResponsibility',
         icon: 'shopping-cart-outline',
-        link: './employeeresponsibilities/employeeresponsibility',
+        link: './employeeresponsibilities/library',
       },
     ],
   },
   {
     title: 'Warehouse',
     icon: 'cube-outline',
-    children: [
-      {
-        title: 'Warehouse',
-        link: './warehouse/warehousepage',
-      },
-    ],
+    link: './warehouse/library',
   },
-
   {
     title: 'Locations',
     icon: 'inbox-outline',
-    link: './locations',
+    link: './locations/library',
   },
   {
     title: 'Store Information',
     icon: 'shopping-bag-outline',
-    link: './store-information/store-information',
+    link: './store-information/library',
   },
   {
     title: 'Code Master',

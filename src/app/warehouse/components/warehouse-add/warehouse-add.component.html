@@ -1,0 +1,37 @@
+<nb-card>
+    <nb-card-header><label>Add Warehouse</label></nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="addWarehouseForm">
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                    <label for="warehouseName">Warehouse Name</label>
+                    <input type="text" formControlName="warehouseName" class="form-control" name="warehouseName"
+                        required>
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <label for="locationId">Location Id</label>
+                    <input type="number" formControlName="locationId" class="form-control" name="locationId" required>
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <label for="warehouseAddress">Address</label>
+                    <input type="text" formControlName="warehouseAddress" class="form-control" name="warehouseAddress"
+                        required>
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <label for="managerId">Warehouse Manager Id</label>
+                    <input type="number" formControlName="managerId" class="form-control" name="managerId" required>
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <label for="warehouseCode">Warehouse Code</label>
+                    <input type="text" formControlName="warehouseCode" class="form-control" name="warehouseCode"
+                        required>
+                </div>
+            </div>
+        </form>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton class="btn btn-success" type="submit" status="success"
+            (click)="onSubmit(addWarehouseForm.value)">Save</button>
+        <button nbButton id="cancel" (click)="close()" status="danger">Cancel</button>
+    </nb-card-footer>
+</nb-card>

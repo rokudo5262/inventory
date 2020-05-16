@@ -2,15 +2,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { GoodsGroupPageComponent } from './containers/goods-group-page/goods-group-page.component';
 import { GoodsGroupDetailComponent } from './components/goods-group-detail/goods-group-detail.component';
+import { GoodsGroupComponent } from './goods-group.component';
 
 const routes: Routes = [{
       path: '',
-      component: GoodsGroupPageComponent,
+      component: GoodsGroupComponent,
       children: [
-          { path: '', redirectTo: 'goods-group', pathMatch: 'full' },
+          { path: 'library', component: GoodsGroupPageComponent },
+          { path: 'goods-group/:id', component: GoodsGroupDetailComponent },
       ],
   },
-  { path: 'goods-group/:id', component: GoodsGroupDetailComponent },
   { path: '**', component: GoodsGroupPageComponent },
   ];
 @NgModule({

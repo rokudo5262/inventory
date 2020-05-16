@@ -1,21 +1,47 @@
 import { createAction, props } from '@ngrx/store';
 import { Customer } from '@appdata';
-import { Update } from '@ngrx/entity';
 
-export const addCustomer = createAction(
-    '[Customers/API] Add Customer',
-    props<{ customer: Customer }>(),
+/**
+ * Add Customer to Collection Actions
+ */
+export const addCustomerSuccess = createAction(
+  '[Collection/API] Add Customer Success',
+  props<{ customer: Customer }>(),
 );
-export const updateCustomer = createAction(
-    '[Customers/API] Update Customer',
-    props<{ update: Update<Customer> }>(),
+export const addCustomerFailure = createAction(
+  '[Collection/API] Add Customer Failure',
+  props<{ errorMsg: any }>(),
 );
-
-export const removeCustomer = createAction(
-    '[Customers/API] Remove Customer',
-    props<{ id: number }>(),
+/**
+ * Update Customer from Collection Actions
+ */
+export const updateCustomerSuccess = createAction(
+  '[Collection/API] Update Customer Success',
+  // props<{ customer: Customer }>(),
 );
-export const getCustomers = createAction(
-    '[Customers/API] Get Customers',
-    props<{ customers: Customer[] }>(),
+export const updateCustomerFailure = createAction(
+  '[Collection/API] Update Customer Failure',
+  props<{ errorMsg: any }>(),
+);
+/**
+ * Remove Customer from Collection Actions
+ */
+export const removeCustomerSuccess = createAction(
+  '[Collection/API] Remove Customer Success',
+  props<{ id: number }>(),
+);
+export const removeCustomerFailure = createAction(
+  '[Collection/API] Remove Customer Failure',
+  props<{ errorMsg: any }>(),
+);
+/**
+ * Load Collection Actions
+ */
+export const loadCustomersSuccess = createAction(
+  '[Collection/API] Load Customers Success',
+  props<{ customers: Customer[] }>(),
+);
+export const loadCustomersFailure = createAction(
+  '[Collection/API] Load Customers Failure',
+  props<{ errorMsg: any }>(),
 );

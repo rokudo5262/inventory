@@ -1,9 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Warehouse } from '@appdata';
-@Component({
-    selector: 'ngx-warehouse-detail',
-    template: `
-    <div>
+<div>
     <p>
         Id: {{ warehouse?warehouse.id:'' }}
     </p>
@@ -26,14 +21,3 @@ import { Warehouse } from '@appdata';
     Status: {{ warehouse?warehouse.warehouseStatus:'' }}
     </p>
   </div>
-    `,
-})
-
-export class WarehouseDComponent  implements OnInit {
-    @Input() warehouse: Warehouse;
-
-    constructor() { }
-
-    ngOnInit() {
-  }
-}

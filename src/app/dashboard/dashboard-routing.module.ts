@@ -23,7 +23,7 @@ const routes: Routes = [{
         .then(m => m.CustomersModule),
     },
     {
-      path: 'UOMs',
+      path: 'uoms',
       loadChildren: () => import('@app/UOMs/uoms.module')
         .then(m => m.UomsModule),
     },

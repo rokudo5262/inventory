@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Customer } from '@app/@core/data';
 import { CustomerSelectors } from '../selectors';
-import { CustomersApiActions } from '../actions';
+import { CustomersActions } from '../actions';
 
 @Component({
     template: `
@@ -12,7 +12,7 @@ import { CustomersApiActions } from '../actions';
             <h3>Customer Details</h3>
         </nb-card-header>
         <nb-card-body>
-            <ngx-detail-customers [customer]="customer$ | async"></ngx-detail-customers>
+            <ngx-customers-detail [customer]="customer$ | async"></ngx-customers-detail>
         </nb-card-body>
     </nb-card>
     `,
@@ -31,6 +31,6 @@ export class DetailsCustomerComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.store.dispatch(CustomersApiActions.getCustomers({ customers: [] }));
+        this.store.dispatch(CustomersActions.getCustomers({ customers: [] }));
     }
 }

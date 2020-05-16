@@ -7,7 +7,7 @@ import { Customer } from '@app/@core/data';
 import { Store, select } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { CustomerSelectors } from '@app/customers/selectors';
-import { CustomersApiActions } from '@app/customers/actions';
+import { CustomersActions } from '@app/customers/actions';
 import { Update } from '@ngrx/entity';
 
 @Component({
@@ -171,7 +171,7 @@ export class ViewCustomersComponent implements OnInit {
     this.customers$.subscribe(g => console.log(g.length));
   }
   ngOnInit() {
-    this.store.dispatch(CustomersApiActions.getCustomers({ customers: [] }));
+    this.store.dispatch(CustomersActions.getCustomers({ customers: [] }));
   }
   import() {
     this.dialogService.open(ImportCustomersComponent);
@@ -189,14 +189,14 @@ export class ViewCustomersComponent implements OnInit {
       id: event.data.id,
       changes: changes
     };
-    this.store.dispatch(CustomersApiActions.updateCustomer({ update: update }));
+    this.store.dispatch(CustomersActions.updateCustomer({ update: update }));
     event.confirm.resolve();
   }
   delete(event) {
     if (window.confirm
       ('Are you sure you want to delete customer' + ' ' + event.data.name + ' ' + event.data.id + '?')
     ) {
-      this.store.dispatch(CustomersApiActions.removeCustomer({ id: event.data.id }));
+      this.store.dispatch(CustomersActions.removeCustomer({ id: event.data.id }));
       event.confirm.resolve();
     } else {
       event.confirm.reject();

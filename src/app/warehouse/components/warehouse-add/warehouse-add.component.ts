@@ -7,22 +7,17 @@ import { WarehousesApiActions } from '@appwarehouse/actions';
 
 
 @Component({
-    selector: 'warehouse-new',
-    templateUrl: './warehouse-new.component.html',
-    styles: [`
-    button[nbButton]{
-        margin: 5px;
-    }
-    `],
+    selector: 'ngx-warehouse-add',
+    templateUrl: './warehouse-add.component.html',
+    styleUrls: ['./warehouse-add.component.scss'],
 })
-// [disabled]="!item.valid"
-export class WarehouseNewComponent implements OnInit {
+export class WarehouseAddComponent implements OnInit {
     public addWarehouseForm: FormGroup;
     public warehouse: Warehouse;
     @Output() response: EventEmitter<any> = new EventEmitter();
 
     constructor(
-        private dialogRef: NbDialogRef<WarehouseNewComponent>,
+        private dialogRef: NbDialogRef<WarehouseAddComponent>,
         private fb: FormBuilder,
         private store: Store<Warehouse>,
     ) {

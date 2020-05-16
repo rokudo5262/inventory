@@ -5,7 +5,7 @@ import { Store, select } from '@ngrx/store';
 import { NbDialogService } from '@nebular/theme';
 import { UomSelectors } from '@app/UOMs/selectors/uom.selectors';
 import { UomsActions } from '@app/UOMs/actions';
-import { UomAddComponent } from '../UOM-add/uom-add.component';
+import { UomAddComponent } from '../../components/uom-add/uom-add.component';
 import { Update } from '@ngrx/entity';
 
 @Component({

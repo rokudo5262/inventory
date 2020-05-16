@@ -3,15 +3,15 @@ import { Warehouse } from '@appdata';
 import { OnInit, Component } from '@angular/core';
 import { State } from '@app/reducers';
 import { Store, select } from '@ngrx/store';
-import { WarehouseSearchSelectors, WarehouseSelectors } from '../selectors';
-import { WarehouseListActions, FindWarehouseActions } from '../actions';
+import { WarehouseSearchSelectors, WarehouseSelectors } from '../../selectors';
+import { WarehouseListActions, FindWarehouseActions } from '../../actions';
 import { NbDialogService } from '@nebular/theme';
-import { WarehouseNewComponent } from './warehouse-new/warehouse-new.component';
+import { WarehouseAddComponent } from '../../components/warehouse-add/warehouse-add.component';
 
 @Component({
-    selector: 'warehouse-page',
-    templateUrl: './warehouses.component.html',
-    styleUrls: ['./warehouses.component.scss']
+    selector: 'ngx-warehouse-page',
+    templateUrl: './warehouse-page.component.html',
+    styleUrls: ['./warehouse-page.component.scss']
 })
 
 export class WarehousePageComponent implements OnInit {
@@ -34,12 +34,10 @@ export class WarehousePageComponent implements OnInit {
         this.searchQuery$ = this.store.pipe(select(WarehouseSearchSelectors.selectSearchWarehouseQuery));
         this.searchLoading$ = this.store.pipe(select(WarehouseSearchSelectors.selectSearchWarehouseLoading));
         this.searchErrors$ = this.store.pipe(select(WarehouseSearchSelectors.selectSearchWarehouseError));
-
-        // this.searchedWarehouses$.subscribe(warehouses => console.log('receive ', warehouses.length));
     }
 
     open() {
-        this.dialogService.open(WarehouseNewComponent);
+        this.dialogService.open(WarehouseAddComponent);
     }
 
     ngOnInit() {

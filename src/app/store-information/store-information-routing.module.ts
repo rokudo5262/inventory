@@ -8,7 +8,7 @@ const routes: Routes = [{
   path: '',
   component: StoreInformationComponent,
   children: [
-    { path: 'store-information', component: StoreListComponent },
+    { path: 'library', component: StoreListComponent },
     { path: 'store-information/:id', component: StoreDetailComponent },
   ],
 }];

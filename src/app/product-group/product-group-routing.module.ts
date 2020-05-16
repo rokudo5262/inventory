@@ -9,7 +9,7 @@ import { ViewGroupDetailComponent } from './components/product-group-detail/grou
 import { ViewProductDetailComponent } from './components/product-group-detail/product/product-list/view-product-detail/view-product-detail.component';
 
 const routes: Routes = [
-  { path: '', component: ProductGroupPageComponent },
+  { path: 'library', component: ProductGroupPageComponent },
   { path: 'product-group/Bundle', component: BundleGroupComponent },
   { path: 'product-group/Bundle/:lineID', component: ViewBundleDetailComponent },
   { path: 'product-group/Group', component: GroupPageComponent },

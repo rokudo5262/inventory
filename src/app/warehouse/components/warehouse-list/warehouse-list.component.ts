@@ -1,45 +1,32 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Warehouse } from '@appdata';
+import { Store, select } from '@ngrx/store';
+import { Router } from '@angular/router';
+import { WarehouseSelectors } from '@app/warehouse/selectors';
+import { WarehousesApiActions } from '@app/warehouse/actions';
+
 @Component({
     selector: 'ngx-warehouse-list',
-    template: `
-    <table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Location Id</th>
-            <th>Address</th>
-            <th>Warehouse Manager Id</th>
-            <th>Warehouse Code</th>
-            <th>Status</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let warehouse of warehouses"
-        (click)="navigateToWarehouse(warehouse.id)">
-            <td>{{ warehouse.id }}</td>
-            <td>{{ warehouse.warehouseName }}</td>
-            <td>{{ warehouse.locationId }}</td>
-            <td>{{ warehouse.warehouseAddress }}</td>
-            <td>{{ warehouse.managerId }}</td>
-            <td>{{ warehouse.warehouseCode }}</td>
-            <td>{{ warehouse.warehouseStatus }}</td>
-        </tr>
-    </tbody>
-    </table>
-    `,
+    templateUrl: './warehouse-list.component.html',
+    styleUrls: ['./warehouse-list.component.scss'],
 })
 
 export class WarehouseListComponent implements OnInit {
-    @Input() warehouses: Warehouse[];
-    @Output() warehouseSelected: EventEmitter<number> = new EventEmitter();
+    warehouses$: Observable<Warehouse[]>;
+    constructor(
+        private store: Store<Warehouse>,
+        private route: Router
+    ) {
+        this.warehouses$ = this.store.pipe(select(WarehouseSelectors.selectAllWarehouses));
+        this.warehouses$.subscribe(g => console.log(g.length));
+    }
 
-    constructor() { }
-
-    ngOnInit() { }
+    ngOnInit() {
+        this.store.dispatch(WarehousesApiActions.getWarehouses({warehouses: []}));
+    }
 
     navigateToWarehouse(id: number) {
-        this.warehouseSelected.emit(id);
+        this.route.navigate(['dashboard/warehouse/warehouse', id]);
     }
 }

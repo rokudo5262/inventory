@@ -5,7 +5,7 @@ import { LocationDetailComponent } from '@app/locations/components/location-deta
 import { LocationAddComponent } from './components/location-add/location-add.component';
 
 const routes: Routes = [
-  { path: '', component: LocationListComponent },
+  { path: 'library', component: LocationListComponent },
   { path: 'location/add', component: LocationAddComponent },
   { path: 'location/:id', component: LocationDetailComponent },
 ];

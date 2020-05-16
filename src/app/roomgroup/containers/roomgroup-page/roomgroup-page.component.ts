@@ -7,7 +7,7 @@ import { RoomGroupAddComponent } from '../../components/roomgroup-add/Roomgroup-
 @Component({
     selector: 'ngx-roomgroup-page',
     templateUrl: './roomgroup-page.component.html',
-    styleUrls: ['./roomgroup-page.component.scss']
+    styleUrls: ['./roomgroup-page.component.scss'],
 })
 
 export class RoomGroupPageComponent implements OnInit {

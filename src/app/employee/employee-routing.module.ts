@@ -9,8 +9,8 @@ const routes: Routes = [{
   path: '',
   component: EmployeeComponent,
   children: [
-    { path: 'employee', component: EmployeePageComponent },
-    { path: 'employeeresponsibility', component: EmployeeResponsibilityPageComponent },
+    { path: 'library', component: EmployeePageComponent },
+    { path: 'library', component: EmployeeResponsibilityPageComponent },
     { path: 'employee/:employeeCode', component: EmployeeDetailComponent },
     { path: 'employeeresponsibility/:lineId', component: EmployeeResponsibilityDetailComponent },
 

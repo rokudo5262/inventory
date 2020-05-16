@@ -1,7 +1,7 @@
+import * as CustomersActions from './customers.actions';
 import * as CustomersApiActions from './customers-api.actions';
-import * as CustomerCollectionApiActions from './collection-api.actions';
 
 export {
+    CustomersActions,
     CustomersApiActions,
-    CustomerCollectionApiActions,
 };

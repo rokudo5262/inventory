@@ -6,16 +6,9 @@ import { WarehousesApiActions } from '@app/warehouse/actions';
 import { WarehouseSelectors } from '@app/warehouse/selectors';
 
 @Component({
-    template: `
-    <nb-card>
-        <nb-card-header>
-            <h3>Warehouse Update</h3>
-        </nb-card-header>
-        <nb-card-body>
-            <ngx-warehouse-detail [warehouse]="warehouse$ | async"></ngx-warehouse-detail>
-        </nb-card-body>
-    </nb-card>
-    `
+    selector: 'ngx-warehouse-detail',
+    templateUrl: './warehouse-detail.component.html',
+    styleUrls: ['./warehouse-detail.component.scss'],
 })
 
 export class WarehouseDetailComponent implements OnInit {

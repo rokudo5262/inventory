@@ -8,13 +8,12 @@ import { WarehousesApiActions } from '../../actions';
 import { WarehouseSelectors } from '../../selectors';
 
 @Component({
-  selector: 'warehouse-smart-table',
+  selector: 'ngx-warehouse-smart-table',
   templateUrl: './warehouse-smart-table.component.html',
+  styleUrls: ['./warehouse-smart-table.component.scss'],
 })
 
 export class WarehouseSmartTableComponent implements OnInit {
-  // @Input() warehouses: Warehouse[];
-  // actionsSubscription: Subscription;
 
   settings = {
     edit: {
@@ -61,14 +60,6 @@ export class WarehouseSmartTableComponent implements OnInit {
     hideSubHeader: true,
   };
 
-  // source: LocalDataSource = new LocalDataSource();
-  // data: any = [];
-  // constructor(
-  //   private _route: Router,
-  //   private _store: Store<Warehouse[]>,
-  //   private service: WarehousesService, ) {
-  //   this.service.getWarehousesData().toPromise().then(item => { this.source.load(item); });
-  // }
   warehouses$: Observable<Warehouse[]>;
   update: Update<Warehouse> = {
     id: null,

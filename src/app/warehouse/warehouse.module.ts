@@ -5,7 +5,7 @@ import { ThemeModule } from '../@theme/theme.module';
 import { WarehouseRoutingModule } from './warehouse-routing.module';
 // Components
 import { WarehouseComponent } from './warehouse.component';
-import { WarehousePageComponent } from './containers/warehouses.component';
+import { WarehousePageComponent } from './containers/warehouse-page/warehouse-page.component';
 // import { FeatureKey, reducer } from './reducers';
 import {
     NbCardModule, NbButtonModule,
@@ -14,29 +14,18 @@ import {
 import { StoreModule } from '@ngrx/store';
 import { FeatureKey, reducer } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
-import { ListComponent } from './containers/warehouse-list/warehouse-list.component';
 import { WarehouseListComponent } from './components/warehouse-list/warehouse-list.component';
 import { WarehouseEffects } from './effects/warehouse.effects';
-import { WarehouseSmartTableComponent } from './containers/smart-table/warehouse-smart-table.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { CommonModule } from '@angular/common';
-import { WarehouseDetailComponent } from './containers/warehouse-detail/warehouse-detail.component';
-import { WarehouseDComponent } from './components/warehouse-detail.component';
-import { WarehouseNewComponent } from './containers/warehouse-new/warehouse-new.component';
+import { WarehouseDetailComponent } from './components/warehouse-detail/warehouse-detail.component';
+import { WarehouseAddComponent } from './components/warehouse-add/warehouse-add.component';
 import { CookieService } from 'ngx-cookie-service';
-export const CONTAINERS = [
-    WarehousePageComponent,
-    ListComponent,
-    WarehouseDetailComponent,
-    WarehouseNewComponent,
-];
-export const COMPONENTS = [
-    WarehouseComponent,
-    WarehouseDetailComponent,
-    WarehouseListComponent,
-    WarehouseSmartTableComponent,
-    WarehouseDComponent,
-];
+import { WarehouseSmartTableComponent } from './components/warehouse-smart-table/warehouse-smart-table.component';
+import { WarehousePreviewComponent } from './components/warehouse-preview/warehouse-preview.component';
+import { WarehouseNormalTableComponent } from './components/warehouse-normal-table/warehouse-normal-table.component';
+import { WarehouseSearchComponent } from './components/warehouse-search/warehouse-search.component';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -52,12 +41,22 @@ export const COMPONENTS = [
         StoreModule.forFeature(FeatureKey, reducer),
         EffectsModule.forFeature([WarehouseEffects]),
     ],
-    declarations: [CONTAINERS, COMPONENTS],
+    declarations: [
+        WarehouseComponent,
+        WarehousePageComponent,
+        WarehouseSearchComponent,
+        WarehouseListComponent,
+        WarehouseAddComponent,
+        WarehouseDetailComponent,
+        WarehouseNormalTableComponent,
+        WarehouseSmartTableComponent,
+        WarehousePreviewComponent,
+    ],
     providers: [
-        CookieService
+        CookieService,
     ],
     entryComponents: [
-        WarehouseNewComponent,
+        WarehouseAddComponent,
     ],
 })
 export class WarehouseModule {
