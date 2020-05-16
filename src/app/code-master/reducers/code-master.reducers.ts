@@ -1,13 +1,13 @@
 import { createReducer, on } from '@ngrx/store';
 import { codeMasterInitialState, codeMasterAdapter } from '../states';
-import { CodeMasterApiActions, CodeMasterListApiActions } from '../actions';
+import { CodeMasterApiActions, CodeMasterActions } from '../actions';
 
 export const codeMatersFeatureKey = 'codeMasters';
 
 export const reducer = createReducer(
     codeMasterInitialState,
     on(
-        CodeMasterListApiActions.loadCodeMasterSuccess,
+        CodeMasterApiActions.loadCodeMasterSuccess,
         (state, { codeMasters }) => {
             codeMasters = codeMasters;
             return codeMasterAdapter.addMany(
@@ -15,31 +15,31 @@ export const reducer = createReducer(
         }
     ),
     on(
-        CodeMasterListApiActions.addCodeMasterSuccess,
+        CodeMasterApiActions.addCodeMasterSuccess,
         (state, { codeMaster }) => codeMasterAdapter.addOne(codeMaster, state)
     ),
     on(
-        CodeMasterApiActions.updateCodeMaster,
-        CodeMasterListApiActions.updateCodeMasterSuccess,
+        CodeMasterActions.updateCodeMaster,
+        CodeMasterApiActions.updateCodeMasterSuccess,
         (state, { update }) => codeMasterAdapter.updateOne(update, state),
     ),
     on(
-        CodeMasterApiActions.updateDelete,
-        CodeMasterListApiActions.updateDeleteSuccess,
+        CodeMasterActions.updateDelete,
+        CodeMasterApiActions.updateDeleteSuccess,
         (state, { id }) => codeMasterAdapter.removeOne(id, state)
     ),
     on(
-        CodeMasterApiActions.updateDeletes,
-        CodeMasterListApiActions.updateDeletesSuccess,
+        CodeMasterActions.updateDeletes,
+        CodeMasterApiActions.updateDeletesSuccess,
         (state, { ids }) => codeMasterAdapter.removeMany(ids, state)
     ),
     on(
-        CodeMasterApiActions.updateSystems,
-        CodeMasterListApiActions.updateSystemsSuccess,
+        CodeMasterActions.updateSystems,
+        CodeMasterApiActions.updateSystemsSuccess,
         (state, { updates }) => codeMasterAdapter.updateMany(updates, state)
     ),
     on(
-        CodeMasterApiActions.getCodeMasters,
+        CodeMasterActions.getCodeMasters,
         (state, { }) => ({ ...state, })
     ),
 );

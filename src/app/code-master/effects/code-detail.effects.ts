@@ -3,58 +3,58 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map, mergeMap, catchError, switchMap } from 'rxjs/operators';
 import { of, EMPTY as empty } from 'rxjs';
 import { CodeDetailService } from '../services/code-detail.service';
-import { CodeDetailApiActions, CodeDetailListApiActions } from '../actions';
 import { CodeDetail } from '@appdata';
+import { CodeDetailActions, CodeDetailApiActions } from '../actions';
 
 @Injectable()
 export class CodeDetailEffects {
     codeDetails$ = createEffect(() => this.action$.pipe(
-        ofType(CodeDetailApiActions.getCodeDetails),
+        ofType(CodeDetailActions.getCodeDetails),
         mergeMap(() => this.codeDetailService.getCodeDetails()
             .pipe(
-                map((items: CodeDetail[]) => CodeDetailListApiActions
+                map((items: CodeDetail[]) => CodeDetailApiActions
                     .loadCodeDetailSuccess({ codeDetails: items })),
-                catchError(error => of(CodeDetailListApiActions
+                catchError(error => of(CodeDetailApiActions
                     .loadCodeDetailFailure({ errorMsg: error.message })))
             )
         )
     ));
     addCodeDetail$ = createEffect(() => this.action$.pipe(
-        ofType(CodeDetailApiActions.addCodeDetail),
+        ofType(CodeDetailActions.addCodeDetail),
         switchMap(({ codeDetail }) =>
             this.codeDetailService.addCodeDetail(codeDetail).pipe(
-                map((item: CodeDetail) => CodeDetailListApiActions
+                map((item: CodeDetail) => CodeDetailApiActions
                     .addCodeDetailSuccess({ codeDetail: item })),
-                catchError(error => of(CodeDetailListApiActions
+                catchError(error => of(CodeDetailApiActions
                     .addCodeDetailFailure({ errorMsg: error.message })))
             ))
     ));
     updateCodeDetail$ = createEffect(() => this.action$.pipe(
-        ofType(CodeDetailApiActions.updateCodeDetail),
+        ofType(CodeDetailActions.updateCodeDetail),
         switchMap(({ update }) =>
             this.codeDetailService.update(update.changes).pipe(
-                map(item => CodeDetailListApiActions
+                map(item => CodeDetailApiActions
                     .updateCodeDetailSuccess()),
-                catchError(error => of(CodeDetailListApiActions
+                catchError(error => of(CodeDetailApiActions
                     .updateCodeDetailFailure({ errorMsg: error.message })))
             ))
     ));
     updateDelete$ = createEffect(() => this.action$.pipe(
-        ofType(CodeDetailApiActions.updateDelete),
+        ofType(CodeDetailActions.updateDelete),
         switchMap(({ id }) => {
             if (id <= 0) {
                 return empty;
             }
             return this.codeDetailService.updateDelete(id).pipe(
-                map((item: CodeDetail) => CodeDetailListApiActions
+                map((item: CodeDetail) => CodeDetailApiActions
                     .updateDeleteSuccess({ id: item ? item.id : 0 })),
-                catchError(error => of(CodeDetailListApiActions
+                catchError(error => of(CodeDetailApiActions
                     .updateDeleteFailure({ errorMsg: error.message })))
             );
         })
     ));
     updateDeletes$ = createEffect(() => this.action$.pipe(
-        ofType(CodeDetailApiActions.updateDeletes),
+        ofType(CodeDetailActions.updateDeletes),
         switchMap(({ ids }) => {
             if (ids === []) {
                 return empty;
@@ -63,21 +63,21 @@ export class CodeDetailEffects {
                 map((items: CodeDetail[]) => {
                     const ids: number[] = [];
                     items.forEach(item => ids.push(item.id));
-                    return CodeDetailListApiActions
+                    return CodeDetailApiActions
                         .updateDeletesSuccess({ ids: ids });
                 }),
-                catchError(error => of(CodeDetailListApiActions
+                catchError(error => of(CodeDetailApiActions
                     .updateDeletesFailure({ errorMsg: error.message })))
             );
         })
     ));
     getCodeDetail$ = createEffect(() => this.action$.pipe(
-        ofType(CodeDetailApiActions.getCodeDetailsBaseoncodeMaster),
+        ofType(CodeDetailActions.getCodeDetailsBaseoncodeMaster),
         switchMap(({ id }) =>
             this.codeDetailService.getCodeDetailsss(id).pipe(
-                map((items: CodeDetail[]) => CodeDetailListApiActions
+                map((items: CodeDetail[]) => CodeDetailApiActions
                     .loadCodeDetailSuccess({ codeDetails: items })),
-                catchError(error => of(CodeDetailListApiActions
+                catchError(error => of(CodeDetailApiActions
                     .loadCodeDetailFailure({ errorMsg: error.message })))
             )
         )

@@ -1,0 +1,59 @@
+<nb-card>
+    <nb-card-header>
+        <label>Add Code Master</label>
+    </nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="addCodeMasterForm">
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                    <label i18n>Company Code</label>
+                    <input type="text" name="code" formControlName="companyCode" class="form-control" placeholder="code" nbInput readonly='readonly'>
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <label i18n>Master Code</label>
+                    <input type="text" name="code" formControlName="cMcode" class="form-control" placeholder="code" nbInput>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                  <label i18n>Master Name</label>
+                  <input type="text" name="code" formControlName="cMname" class="form-control" placeholder="code" nbInput>
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <label i18n>Standard Name</label>
+                    <input type="text" name="code" formControlName="standardName" class="form-control" placeholder="code" nbInput>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                    <label i18n>Status</label>
+                    <input type="text" name="code" formControlName="status" class="form-control" placeholder="code" nbInput>
+                </div>
+                <div class="col-xs-6 col-md-6">
+                  <label i18n>Source</label>
+                  <input type="text" name="code" formControlName="source" class="form-control" placeholder="code" nbInput>
+                </div>
+            </div> 
+            <div class="row">                
+                <div class="col-xs-12 col-md-12">
+                  <label i18n>Remark</label>
+                  <input type="text" name="code" formControlName="remark" class="form-control" placeholder="code" nbInput fullWidth>
+                </div>
+            </div>          
+            <input type="hidden" formControlName="id" class="form-control" name="id" value="on">
+            <input type="hidden" formControlName="systemCode" class="form-control" name="systemCode" value="on">
+            <input type="hidden" formControlName="createdBy" class="form-control" name="createdBy" value="on">
+            <input type="hidden" formControlName="createdDateTime" class="form-control" name="createdDateTime" value="on">
+            <input type="hidden" formControlName="lastUpdatedBy" class="form-control" name="lastUpdatedBy" value="on">
+            <input type="hidden" formControlName="rowVersion" class="form-control" name="rowVersion" value="on">
+        </form>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton id="cancel" (click)="close()" status="danger">
+            <i class="fas fa-ban"></i>&nbsp; Cancel
+            </button>
+        <button nbButton class="btn btn-success" type="submit" status="success"
+        (click)="onSubmit(addCodeMasterForm.value)">Save</button>
+        
+    </nb-card-footer>
+</nb-card>

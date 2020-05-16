@@ -1,16 +1,18 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { CodeMasterPageComponent } from './containers/code-master-page.component';
-import { CodeDetailPageComponent } from './containers/code-detail/code-detail-page.component';
-import { DetailComponent } from './containers/code-master/detail/detail.component';
+import { CodeMasterPageComponent } from './containers/code-master-page/code-master-page.component';
+import { CodeDetailPageComponent } from './containers/code-detail-page/code-detail-page.component';
 import { CodeMasterComponent } from './code-master.component';
+import { CodeMasterDetailComponent } from './components/code-master-detail/code-master-detail.component';
+import { CodeDetailDetailComponent } from './components/code-detail-detail/code-detail-detail.component';
 
 const routes: Routes = [{
   path: '', component: CodeMasterComponent,
   children: [
-    { path: 'codeMaster', component: CodeMasterPageComponent },
-    { path: 'codeMaster/:id', component: DetailComponent },
-    { path: 'codeDetail', component: CodeDetailPageComponent }
+    { path: 'codemaster', component: CodeMasterPageComponent },
+    { path: 'codemaster/:id', component: CodeMasterDetailComponent },
+    { path: 'codedetail', component: CodeDetailPageComponent },
+    { path: 'codedetail/:id', component: CodeDetailDetailComponent },
   ]
 }
 ];

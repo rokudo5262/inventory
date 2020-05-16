@@ -1,11 +1,11 @@
-import * as CodeMasterApiActions from './cm-api.actions';
-import * as CodeMasterListApiActions from './list-cm-api.actions';
-import * as CodeDetailApiActions from './cd-api.actions';
-import * as CodeDetailListApiActions from './list-cd-api.actions';
+import * as CodeMasterActions from './code-master.actions';
+import * as CodeMasterApiActions from './code-master-api.actions';
+import * as CodeDetailActions from './code-detail.actions';
+import * as CodeDetailApiActions from './code-detail-api.actions';
 
 export {
+    CodeMasterActions,
     CodeMasterApiActions,
-    CodeMasterListApiActions,
+    CodeDetailActions,
     CodeDetailApiActions,
-    CodeDetailListApiActions,
 };

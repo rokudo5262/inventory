@@ -104,11 +104,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Code Master',
-        link: './codeMaster/codeMaster',
+        link: './codemaster/codemaster',
       },
       {
         title: 'Code Detail',
-        link: './codeMaster/codeDetail',
+        link: './codemaster/codedetail',
       },
     ],
   },

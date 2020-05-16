@@ -1,39 +1,39 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map, mergeMap, catchError, switchMap } from 'rxjs/operators';
-import { CodeMasterApiActions, CodeMasterListApiActions } from '../actions';
 import { CodeMasterService } from '../services/code-master.service';
 import { CodeMaster } from '@appdata';
 import { of, EMPTY as empty } from 'rxjs';
 import { Update } from '@ngrx/entity';
+import { CodeMasterActions, CodeMasterApiActions } from '../actions';
 
 @Injectable()
 export class CodeMasterEffects {
     codeMasters$ = createEffect(() => this.action$.pipe(
-        ofType(CodeMasterApiActions.getCodeMasters),
+        ofType(CodeMasterActions.getCodeMasters),
         mergeMap(() => this.codeMasterService.getCodeMasters()
             .pipe(
-                map((items: CodeMaster[]) => CodeMasterListApiActions
+                map((items: CodeMaster[]) => CodeMasterApiActions
                     .loadCodeMasterSuccess({ codeMasters: items })),
-                catchError(error => of(CodeMasterListApiActions
+                catchError(error => of(CodeMasterApiActions
                     .loadCodeMasterFailure({ errorMsg: error.message })))
             ))
     ));
     addCodeMaster$ = createEffect(() => this.action$.pipe(
-        ofType(CodeMasterApiActions.addCodeMaster),
+        ofType(CodeMasterActions.addCodeMaster),
         switchMap(({ codeMaster }) =>
             this.codeMasterService.addCodeMaster(codeMaster).pipe(
-                map((item: CodeMaster) => CodeMasterListApiActions
+                map((item: CodeMaster) => CodeMasterApiActions
                     .addCodeMasterSuccess({ codeMaster: item })),
-                catchError(error => of(CodeMasterListApiActions
+                catchError(error => of(CodeMasterApiActions
                     .addCodeMasterFailure({ errorMsg: error.message })))
             ))
     ));
     updateCodeMaster$ = createEffect(() => this.action$.pipe(
-        ofType(CodeMasterApiActions.updateCodeMaster),
+        ofType(CodeMasterActions.updateCodeMaster),
         switchMap(({ update }) =>
             this.codeMasterService.update(update.changes).pipe(
-                map(item => CodeMasterListApiActions
+                map(item => CodeMasterApiActions
                     .updateCodeMasterSuccess(
                         {
                             update: {
@@ -42,26 +42,26 @@ export class CodeMasterEffects {
                             }
                         }
                     )),
-                catchError(error => of(CodeMasterListApiActions
+                catchError(error => of(CodeMasterApiActions
                     .updateCodeMasterFailure({ errorMsg: error.message })))
             ))
     ));
     updateDelete$ = createEffect(() => this.action$.pipe(
-        ofType(CodeMasterApiActions.updateDelete),
+        ofType(CodeMasterActions.updateDelete),
         switchMap(({ id }) => {
             if (id <= 0) {
                 return empty;
             }
             return this.codeMasterService.updateDelete(id).pipe(
-                map((item: CodeMaster) => CodeMasterListApiActions
+                map((item: CodeMaster) => CodeMasterApiActions
                     .updateDeleteSuccess({ id: item ? item.id : 0 })),
-                catchError(error => of(CodeMasterListApiActions
+                catchError(error => of(CodeMasterApiActions
                     .updateDeleteFailure({ errorMsg: error.message })))
             );
         })
     ));
     updateDeletes$ = createEffect(() => this.action$.pipe(
-        ofType(CodeMasterApiActions.updateDeletes),
+        ofType(CodeMasterActions.updateDeletes),
         switchMap(({ ids }) => {
             if (ids === []) {
                 return empty;
@@ -70,16 +70,16 @@ export class CodeMasterEffects {
                 map((items: CodeMaster[]) => {
                     const ids: number[] = [];
                     items.forEach(item => ids.push(item.id));
-                    return CodeMasterListApiActions
+                    return CodeMasterApiActions
                         .updateDeletesSuccess({ ids: ids });
                 }),
-                catchError(error => of(CodeMasterListApiActions
+                catchError(error => of(CodeMasterApiActions
                     .updateDeletesFailure({ errorMsg: error.message })))
             );
         })
     ));
     updateSystems$ = createEffect(() => this.action$.pipe(
-        ofType(CodeMasterApiActions.updateSystems),
+        ofType(CodeMasterActions.updateSystems),
         switchMap(({ updates }) => {
             if (updates === []) {
                 return empty;
@@ -97,10 +97,10 @@ export class CodeMasterEffects {
                             changes: item
                         }
                     ));
-                    return CodeMasterListApiActions
+                    return CodeMasterApiActions
                         .updateSystemsSuccess({ updates: updates });
                 }),
-                catchError(error => of(CodeMasterListApiActions
+                catchError(error => of(CodeMasterApiActions
                     .updateSystemsFailure({ errorMsg: error.message })))
             );
         })

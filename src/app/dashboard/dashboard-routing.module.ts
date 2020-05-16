@@ -78,12 +78,12 @@ const routes: Routes = [{
         .then(m => m.LocationsModule),
     },
     {
-      path: 'codeMaster',
+      path: 'codemaster',
       loadChildren: () => import('@appcodeMaster/code-master.module')
         .then(m => m.CodeMasterModule),
     },
     {
-      path: 'codeDetail',
+      path: 'codedetail',
       loadChildren: () => import('@appcodeMaster/code-master.module')
         .then(m => m.CodeMasterModule),
     },
