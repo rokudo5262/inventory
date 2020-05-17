@@ -104,7 +104,7 @@ const routes: Routes = [{
     },
     {
       path: '',
-      redirectTo: 'customers',
+      redirectTo: 'roomgroups',
       pathMatch: 'full',
     },
     {

@@ -60,6 +60,7 @@ export class CodeMasterListComponent implements OnInit {
         private route: Router,
         private store: Store<CodeMaster>) {
         this.codeMasters$ = this.store.pipe(select(CodeMasterSelectors.selectAllCodeMasters));
+        this.codeMasters$.subscribe(g => console.log(g.length));
     }
     ngOnInit() {
         this.onRefresh();
@@ -70,7 +71,7 @@ export class CodeMasterListComponent implements OnInit {
     }
 
     onEdit(event) {
-        this.route.navigate(['dashboard/codeMaster/codeMaster', event.data.id]);
+        this.route.navigate(['dashboard/codemaster/codemaster', event.data.id]);
     }
     public updateDeleteForm: FormGroup;
     selectedRows: [];
@@ -81,7 +82,7 @@ export class CodeMasterListComponent implements OnInit {
     onDelete() {
         alert('Are you sure you want to delete ' + this.selectedRows + '?');
         this.store.dispatch(CodeMasterActions.updateDeletes({ ids: this.selectedRows }));
-        // this.onRefresh();
+        this.onRefresh();
     }
     onSystem() {
         alert('Are you sure you want to have ' + this.selectedRows + 'had system mode ?');
@@ -93,13 +94,13 @@ export class CodeMasterListComponent implements OnInit {
             }
         ));
         this.store.dispatch(CodeMasterActions.updateSystems({ updates: updates }));
-        // this.onRefresh();
+        this.onRefresh();
     }
     onCreated() {
         this.dialogService.open(CodeMasterAddComponent)
             .onClose.subscribe(item => {
                 this.store.dispatch(CodeMasterActions.addCodeMaster({ codeMaster: item }));
-                // this.onRefresh();
+                this.onRefresh();
             });
     }
 }

@@ -4,7 +4,6 @@ import { GoodsGroup } from '@appdata';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { GoodsGroupActions } from '@app/goods-group/actions';
-import { GoodsGroupAddComponent } from '../goods-group-add/goods-group-add.component';
 
 @Component({
   selector: 'ngx-goods-group-update',
@@ -13,22 +12,25 @@ import { GoodsGroupAddComponent } from '../goods-group-add/goods-group-add.compo
 })
 
 export class GoodsGroupUpdateComponent implements OnInit {
-  public addGoodsGroupForm: FormGroup;
+  public updateGoodsGroupForm: FormGroup;
   public goodsgroup: GoodsGroup;
   @Output() response: EventEmitter<any> = new EventEmitter();
   constructor(
     private fb: FormBuilder,
     private store: Store<GoodsGroup>,
-    private ref: NbDialogRef<GoodsGroupAddComponent>,
+    private ref: NbDialogRef<GoodsGroupUpdateComponent>,
   ) { }
   ngOnInit() {
-    this.addForm();
+    this.updateForm();
   }
-  addForm = () => {
-    this.addGoodsGroupForm = this.fb.group({
-      id: [0, Validators.required],
-      code: ['', Validators.required],
-      name: ['', Validators.required],
+  updateForm = () => {
+    this.updateGoodsGroupForm = this.fb.group({
+      id: [this.goodsgroup ? this.goodsgroup.id : '', Validators.required],
+      code: [this.goodsgroup ? this.goodsgroup.code : '', Validators.required],
+      name: [this.goodsgroup ? this.goodsgroup.name : '', Validators.required],
+      deleted: [this.goodsgroup ? this.goodsgroup.deleted : '', Validators.required],
+      createdBy: [this.goodsgroup ? this.goodsgroup.createdBy : '', Validators.required],
+      lastUpdatedBy: [this.goodsgroup ? this.goodsgroup.lastUpdatedBy : '', Validators.required],
     });
   }
   close() {
@@ -36,7 +38,13 @@ export class GoodsGroupUpdateComponent implements OnInit {
   }
   submit(item) {
     if (item.code !== '' && item.name !== '') {
-      this.store.dispatch(GoodsGroupActions.addGoodsGroup({ addgoodsgroup: item }));
+      const update = {
+        id: item.id,
+        changes: item
+      };
+      this.store.dispatch(GoodsGroupActions.updateGoodsGroup({
+        update: update
+      }));
     }
     this.close();
   }

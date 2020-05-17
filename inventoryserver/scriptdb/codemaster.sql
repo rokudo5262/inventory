@@ -12,14 +12,14 @@ GO
 
 CREATE TABLE [dbo].[CodeMaster](
 	[id] [bigint] IDENTITY(1,1) NOT NULL,
-	[companyCode] [nvarchar](20) NOT NULL,
-	[cMCode] [nvarchar](20) NOT NULL,
-	[cMName] [nvarchar](255) NOT NULL,
-	[standardName] [nvarchar](255) NOT NULL,
-	[systemCode] [bit] NOT NULL,
-	[remark] [nvarchar](1000) NOT NULL,
-	[status] [nvarchar](10) NOT NULL,
-	[source] [nvarchar](10) NOT NULL,
+	[companyCode] [nvarchar](20)  NULL,
+	[cMCode] [nvarchar](20)  NULL,
+	[cMName] [nvarchar](255)  NULL,
+	[standardName] [nvarchar](255)  NULL,
+	[systemCode] [bit]  NULL,
+	[remark] [nvarchar](1000)  NULL,
+	[status] [nvarchar](10)  NULL,
+	[source] [nvarchar](10)  NULL,
 	CreatedBy nvarchar(40) NULL,
 	CreatedDateTime datetime NULL,
 	LastUpdatedBy nvarchar(40) NULL,
@@ -33,8 +33,9 @@ CREATE TABLE [dbo].[CodeMaster](
 ) ON [PRIMARY]
 GO
 
---insert into [CodeMaster] ([companyCode], [cMCode], [cMName], [standardName], [systemCode],[remark], [deleted])
---values ('uyen', 'WarehouseType', 'Loai chi nhanh', 'a', 0, '1a', 0),
---('huong', 'BinType', 'Loai kho', 'b', 0, '1b', 0),
---('tuan', 'RolePerson', 'chuc vu', 'c', 1, '1c', 0)
---Go
+insert into [CodeMaster] ([companyCode], [cMCode], [cMName], [standardName], [systemCode],[remark], [deleted])
+values
+('uyen' ,'WarehouseType',N'Loại Chi Nhánh','a',0,'1a', 0),
+('huong','BinType'      ,N'Loại Kho'      ,'b',0,'1b', 0),
+('tuan' ,'RolePerson'   ,N'Chức Vụ'       ,'c',1,'1c', 0);
+Go

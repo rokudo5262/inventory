@@ -19,11 +19,11 @@ export class CodeDetailListComponent implements OnInit {
         selectMode: 'multi',
         mode: 'inline',
         columns: {
-            cMCode: {
+            codeMasterId: {
                 title: 'Code Master Code',
                 type: 'string',
             },
-            cdCode: {
+            id: {
                 title: 'Code Detail Code',
                 type: 'string',
             },
@@ -56,12 +56,13 @@ export class CodeDetailListComponent implements OnInit {
         private route: Router,
         private store: Store<CodeDetail>, ) {
         this.codeDetails$ = this.store.pipe(select(CodeDetailSelectors.selectAllCodeDetails));
+        this.codeDetails$.subscribe(g => console.log(g.length));
     }
     ngOnInit() {
         this.store.dispatch(CodeDetailActions.getCodeDetails({ codeDetails: [] }));
     }
     navigateToCodeMaster() {
-        this.route.navigate(['dashboard/codeMaster/codeMaster']);
+        this.route.navigate(['dashboard/codemaster/codemaster']);
     }
     open() {
         this.dialogService.open(CodeDetailAddComponent);

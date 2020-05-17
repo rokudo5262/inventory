@@ -2,12 +2,10 @@ export interface GoodsGroup {
     id: number;
     code: string;
     name: string;
+    createdBy?: string;
+    createdDateTime?: Date;
+    lastUpdatedBy?: string;
+    lastUpdatedDateTime?: Date;
+    deleted: boolean;
 }
 
-// export function generatedGoodsGroup(): GoodsGroup {
-//     return {
-//         id: '1',
-//         name: 'goods-group',
-//         nameparent: 'nameparent',
-//     }
-// }

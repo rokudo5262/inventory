@@ -1,12 +1,27 @@
-.title {
-    font-size: 30px;
-    margin: auto 0;
+:host /deep/ .ng2-smart-action-multiple-select {
+    text-align: center;
+    width: 60px;
 }
-.row {
+:host /deep/ .ng2-smart-action-multiple-select > input {
+    width: 13px;
+    height: 13px;
+    display: unset;
+    padding: 0;
     margin: 0;
-    justify-content: space-between;
 }
-button[nbButton] {
-    margin: 0 5px;
+p {
+    float: left;
+    font-size: 24px;
+    margin: 10px 0;
+    font-weight: bold;
 }
-
+.button {
+    float: right;
+}
+.btn {
+    width: 120px;
+    margin-left: 10px;
+}
+.btn span {
+    margin-left: 5px;
+}

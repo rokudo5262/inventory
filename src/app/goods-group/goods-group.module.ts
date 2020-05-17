@@ -58,6 +58,7 @@ import { GoodsGroupUpdateComponent } from './components/goods-group-update/goods
   ],
   entryComponents: [
     GoodsGroupAddComponent,
+    GoodsGroupUpdateComponent,
   ],
 })
 export class GoodsGroupModule { }

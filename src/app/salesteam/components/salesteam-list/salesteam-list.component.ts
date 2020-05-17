@@ -14,14 +14,16 @@ import { Update } from '@ngrx/entity/src/models';
 })
 export class SalesTeamListComponent implements OnInit {
   settings = {
-    // selectMode: 'multi',
     hideSubHeader: false,
-    // edit: {
-    //   editButtonContent: '<i class="nb-edit"></i>',
-    //   saveButtonContent: '<i class="nb-checkmark"></i>',
-    //   cancelButtonContent: '<i class="nb-close"></i>',
-    //   confirmSave: true
-    // },
+    mode: 'external',
+    // selectMode: 'multi',
+    edit: {
+      editButtonContent: '<i class="nb-compose"></i>',
+      //   editButtonContent: '<i class="nb-edit"></i>',
+      //   saveButtonContent: '<i class="nb-checkmark"></i>',
+      //   cancelButtonContent: '<i class="nb-close"></i>',
+      //   confirmSave: true
+    },
     delete: {
       deleteButtonContent: '<i class="nb-trash"></i>',
       confirmDelete: true,
@@ -47,16 +49,6 @@ export class SalesTeamListComponent implements OnInit {
         type: 'string',
         editable: true,
       },
-      companyCode: {
-        title: 'Company Code',
-        type: 'string',
-        editable: true,
-      },
-      customerCode: {
-        title: 'Customer Code',
-        type: 'string',
-        editable: true,
-      },
       remark: {
         title: 'Remark',
         type: 'string',
@@ -71,7 +63,7 @@ export class SalesTeamListComponent implements OnInit {
     actions: {
       add: false,
       delete: true,
-      edit: false,
+      edit: true,
     }
   };
   salesteams$: Observable<SalesTeam[]>;

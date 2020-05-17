@@ -21,7 +21,7 @@ export class EmployeeResponsibilityPageComponent implements OnInit {
         this.dialogService.open(EmployeeResponsibilityAddComponent);
     }
     navigate() {
-        this.route.navigate(['dashboard/employees/employee']);
+        this.route.navigate(['dashboard/employees/library']);
     }
     ngOnInit() {
     }

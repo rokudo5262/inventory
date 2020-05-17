@@ -12,17 +12,17 @@ GO
 CREATE TABLE [dbo].[CodeDetail](
 	[id] [bigint] IDENTITY(1,1) NOT NULL,
   [codeMasterId] [bigint] NULL,
-	[companyCode] [nvarchar](20) NOT NULL,
-  [customerCode] [nvarchar](40) NOT NULL,
-	[cMCode] [nvarchar](20) NOT NULL,
-	[cDCode] [nvarchar](20) NOT NULL,
-	[cDName] [nvarchar](255) NOT NULL,
-	[standardName] [nvarchar](255) NOT NULL,
+	[companyCode] [nvarchar](20)  NULL,
+  [customerCode] [nvarchar](40)  NULL,
+	[cMCode] [nvarchar](20)  NULL,
+	[cDCode] [nvarchar](20)  NULL,
+	[cDName] [nvarchar](255)  NULL,
+	[standardName] [nvarchar](255)  NULL,
   numberValue decimal null,
   ordinal int null,
-	[remark] [nvarchar](1000) NOT NULL,
-  [status] [nvarchar](10) NOT NULL,
-  [source] [nvarchar](10) NOT NULL,
+	[remark] [nvarchar](1000)  NULL,
+  [status] [nvarchar](10)  NULL,
+  [source] [nvarchar](10)  NULL,
   CreatedBy nvarchar(40) NULL,
 	CreatedDateTime datetime NULL,
 	LastUpdatedBy nvarchar(40) NULL,
@@ -36,23 +36,29 @@ CREATE TABLE [dbo].[CodeDetail](
 ) ON [PRIMARY]
 GO
 
---ALTER TABLE [dbo].[CodeDetail]  WITH CHECK ADD  CONSTRAINT [FK_CodeDetail_CodeMaster_CodeMasterId] FOREIGN KEY([CodeMasterId])
---REFERENCES [dbo].[CodeMaster] ([id])
---GO
+ALTER TABLE [dbo].[CodeDetail]  WITH CHECK ADD  CONSTRAINT [FK_CodeDetail_CodeMaster_CodeMasterId] FOREIGN KEY([CodeMasterId])
+REFERENCES [dbo].[CodeMaster] ([id])
+GO
 
---ALTER TABLE [dbo].[CodeDetail] CHECK CONSTRAINT [FK_CodeDetail_CodeMaster_CodeMasterId]
---GO
+ALTER TABLE [dbo].[CodeDetail] CHECK CONSTRAINT [FK_CodeDetail_CodeMaster_CodeMasterId]
+GO
 
 
---insert into [CodeDetail] ([companyCode], [cMCode], [cDCode], [cDName], [standardName], [customerCode], [remark], [deleted], [CodeMasterId])
---values ('uyen', 'WarehouseType', 'MainWarehouse', 'Main Warehouse','a1' , 'customerCode', 're', 0, 1),
---('uyen', 'WarehouseType', 'SubWarehouse', 'Sub Warehouse','a2' , 'customerCode', 're', 0, 1),
---('uyen', 'WarehouseType', 'InTransit', 'InTransit','a3' , 'customerCode', 're', 0, 1),
-
---('huong', '"BinType"', 'MainBin', 'Main Bin','b1' , 'customerCode', 're', 0, 2),
---('huong', '"BinType"', 'SubBin', 'Sub Bin','b2' , 'customerCode', 're', 0, 2), 
-
---('tuan', 'RolePerson','Sale', 'Sale','a3' , 'customerCode', 're', 0, 3),
---('tuan', 'RolePerson','Delivery', 'Delivery','a3' , 'customerCode', 're', 0, 3)
---Go
+insert into [CodeDetail] ([companyCode], [cMCode], [cDCode], [cDName], [standardName], [customerCode], [remark], [deleted], [CodeMasterId])
+values
+('uyen' ,'WarehouseType','MainWarehouse', 'Main Warehouse','a1','customerCode','re', 0, 1),
+('uyen' ,'WarehouseType','SubWarehouse' , 'Sub Warehouse' ,'a2','customerCode','re', 0, 1),
+('uyen' ,'WarehouseType','InTransit'    ,'InTransit'      ,'a3','customerCode','re', 0, 1),
+('huong','BinType'      ,'MainBin'      ,'Main Bin'       ,'b1','customerCode','re', 0, 2),
+('huong','BinType'      ,'SubBin'       ,'Sub Bin'        ,'b2','customerCode','re', 0, 2), 
+('tuan' ,'RolePerson'   ,'Sale'         ,'Sale'           ,'a3','customerCode','re', 0, 3),
+('tuan' ,'RolePerson'   ,'Delivery'     ,'Delivery'       ,'a3','customerCode','re', 0, 3),
+('uyen' ,'WarehouseType','MainWarehouse', 'Main Warehouse','a1','customerCode','re', 0, 1),
+('uyen' ,'WarehouseType','SubWarehouse' , 'Sub Warehouse' ,'a2','customerCode','re', 0, 1),
+('uyen' ,'WarehouseType','InTransit'    ,'InTransit'      ,'a3','customerCode','re', 0, 1),
+('huong','BinType'      ,'MainBin'      ,'Main Bin'       ,'b1','customerCode','re', 0, 2),
+('huong','BinType'      ,'SubBin'       ,'Sub Bin'        ,'b2','customerCode','re', 0, 2), 
+('tuan' ,'RolePerson'   ,'Sale'         ,'Sale'           ,'a3','customerCode','re', 0, 3),
+('tuan' ,'RolePerson'   ,'Delivery'     ,'Delivery'       ,'a3','customerCode','re', 0, 3);
+Go
 

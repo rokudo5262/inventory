@@ -1,0 +1,110 @@
+<nb-card>
+    <nb-card-header>Add Location</nb-card-header>
+    <nb-card-body>
+      <form [formGroup]="addLocationForm" method="POST">
+        <input type="hidden" formControlName="id" class="form-control" name="id">
+        <div class="row">
+          <div class="col-xs-6 col-md-6">
+              <label i18n>Company Code</label>
+              <input type="text" name="code" formControlName="companyCode" class="form-control" placeholder="code" nbInput readonly='readonly'>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <label i18n>CustomerCode</label>
+            <input type="text" name="code" formControlName="customerCode" class="form-control" placeholder="code" nbInput readonly='readonly'>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 col-md-6">
+            <label i18n>Location Code</label>
+            <input *ngIf='!editor' type="text" name="code" formControlName="locationCode" class="form-control" placeholder="code" nbInput>
+            <input *ngIf='editor' type="text" name="code" formControlName="locationCode" class="form-control" placeholder="code" nbInput readonly='readonly'>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <label i18n>Location Type</label>
+            <input type="text" name="code" formControlName="locationType" class="form-control" placeholder="code" nbInput>
+          </div>
+        </div>  
+        <div class="row">
+          <div class="col-xs-6 col-md-6">
+            <label i18n>Location Name</label>
+            <input type="text" name="code" formControlName="locationName" class="form-control" placeholder="code" nbInput>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <label i18n>Phone</label>
+            <input type="text" name="code" formControlName="phone" class="form-control" placeholder="code" nbInput>
+          </div>
+        </div> 
+        <div class="row">
+          <div class="col-xs-6 col-md-6">
+            <label i18n>Address</label>
+            <input type="text" name="code" formControlName="address" class="form-control" placeholder="code" nbInput>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <label i18n>Remark</label>
+            <input type="text" name="code" formControlName="remark" class="form-control" placeholder="code" nbInput>
+          </div>
+        </div> 
+        <div class="row">
+          <div class="col-xs-6 col-md-6">
+            <label i18n>Status</label>
+            <input type="text" name="code" formControlName="status" class="form-control" placeholder="code" nbInput>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <label i18n>Source</label>
+            <input type="text" name="code" formControlName="source" class="form-control" placeholder="code" nbInput>
+          </div>
+        </div> 
+        <div class="row">
+          <div class="col-xs-6 col-md-6">
+            <label i18n>SalesRegionL1</label>
+            <input type="text" name="code" formControlName="salesRegionL1" class="form-control" placeholder="code" nbInput>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <label i18n>SalesRegionL1Name</label>
+            <input type="text" name="code" formControlName="salesRegionL1name" class="form-control" placeholder="code" nbInput>
+          </div>
+        </div> 
+        <div class="row">
+          <div class="col-xs-6 col-md-6">
+            <label i18n>SalesRegionL2</label>
+            <input type="text" name="code" formControlName="salesRegionL2" class="form-control" placeholder="code" nbInput>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <label i18n>SalesRegionL2Name</label>
+            <input type="text" name="code" formControlName="salesRegionL2name" class="form-control" placeholder="code" nbInput>
+          </div>
+        </div> 
+        <div class="row">
+          <div class="col-xs-6 col-md-6">
+            <label i18n>SalesRegionL3</label>
+            <input type="text" name="code" formControlName="salesRegionL3" class="form-control" placeholder="code" nbInput>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <label i18n>SalesRegionL3Name</label>
+            <input type="text" name="code" formControlName="salesRegionL3name" class="form-control" placeholder="code" nbInput>
+          </div>
+        </div> 
+        <div class="row">
+          <div class="col-xs-6 col-md-6">
+            <label i18n>SalesRegionL4</label>
+            <input type="text" name="code" formControlName="salesRegionL4" class="form-control" placeholder="code" nbInput>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <label i18n>SalesRegionL4Name</label>
+            <input type="text" name="code" formControlName="salesRegionL4name" class="form-control" placeholder="code" nbInput>
+          </div>
+        </div> 
+        <input type="hidden" formControlName="createdBy" class="form-control" name="status" value="on">
+        <input type="hidden" formControlName="lastUpdatedBy" class="form-control" name="status" value="on">
+        <input type="hidden" formControlName="deleted" class="form-control" name="status" value="on">
+        <input type="hidden" formControlName="block" class="form-control" name="status" value="on">
+        <input type="hidden" formControlName="rowVersion" class="form-control" name="status" value="on">
+        <input type="hidden" formControlName="createdDateTime" class="form-control" name="status" value="on">
+      </form>      
+    </nb-card-body>
+    <nb-card-footer>
+      <button class="cancel" nbButton status="danger" (click)="back()">Back</button>
+      <button nbButton status="warning" (click)="delete(addLocationForm.value)">Delete</button>
+      <button class="cancel" nbButton status="danger" (click)="edit()">Update</button>
+    </nb-card-footer>
+  </nb-card>

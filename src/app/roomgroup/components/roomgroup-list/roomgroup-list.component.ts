@@ -20,14 +20,18 @@ export class RoomGroupListComponent implements OnInit {
     hideSubHeader: false,
     // selectMode: 'multi',
     // edit: {
+    //   editButtonContent: '<i class="nb-compose"></i>',
     //   editButtonContent: '<i class="nb-edit"></i>',
     //   saveButtonContent: '<i class="nb-checkmark"></i>',
-    //   cancelButtonContent: '<i class="nb-close"></i>',
-    //   confirmSave: true
+    //   cancelButtonContent: '<i class="nb-close"></i>',,
     // },
     delete: {
       deleteButtonContent: '<i class="nb-trash"></i>',
       confirmDelete: true,
+    },
+    pager: {
+      display: true,
+      perPage: 20,
     },
     columns: {
       id: {
@@ -69,8 +73,11 @@ export class RoomGroupListComponent implements OnInit {
     this.roomgroups$.subscribe(g => console.log(g.length));
   }
   ngOnInit() {
-    this.store.dispatch(RoomGroupsActions.loadRoomGroups({ roomgroups: [] }));
+    this.onRefresh();
   }
+  onRefresh() {
+    this.store.dispatch(RoomGroupsActions.loadRoomGroups({ roomgroups: [] }));
+}
   open() {
     this.dialogService.open(RoomGroupAddComponent);
   }
@@ -95,21 +102,29 @@ export class RoomGroupListComponent implements OnInit {
       if (event.data.status === 'off') {
         this.store.dispatch(RoomGroupsActions.deleteRoomGroup({ id: event.data.id }));
         event.confirm.resolve();
+        this.back();
       } else {
         window.alert('Roomgroup status is ' + event.data.status + ' cannot delete');
         event.confirm.reject();
+        this.back();
       }
     } else {
       event.confirm.reject();
+      this.back();
     }
   }
   add(event) {
     if (window.confirm('Are you sure you want to add roomgroup:' + event.data.id + '?')) {
       this.store.dispatch(RoomGroupsActions.addRoomGroup({ roomgroup: event }));
       event.confirm.resolve();
+      this.back();
     } else {
       event.confirm.reject();
+      this.back();
     }
+  }
+  back() {
+    this.route.navigate(['dashboard/roomgroups/library']);
   }
   close() {
     this.dialogRef.close();

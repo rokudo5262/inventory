@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GoodsGroup } from '@app/@core/data';
 import { Store, select } from '@ngrx/store';
 import { GoodsGroupSelectors } from '@app/goods-group/selectors';
+import { NbDialogService } from '@nebular/theme';
+import { GoodsGroupUpdateComponent } from '../goods-group-update/goods-group-update.component';
 
 @Component({
     selector: 'ngx-goods-group-preview',
@@ -16,6 +18,7 @@ export class GoodsGroupPreviewComponent implements OnInit {
     constructor(
         private router: ActivatedRoute,
         private store: Store<GoodsGroup>,
+        private dialogService: NbDialogService,
         private route: Router,
     ) {
         this.id$ = this.router.snapshot.params.id;
@@ -24,6 +27,13 @@ export class GoodsGroupPreviewComponent implements OnInit {
     ngOnInit() {
     }
     navigateToGoodsGroup(event) {
-        this.route.navigate(['dashboard/goods-group']);
-      }
+        this.route.navigate(['dashboard/goods-group/lilbrary']);
+    }
+    edit() {
+        this.dialogService.open(GoodsGroupUpdateComponent, {
+            context: {
+                goodsgroup: this.goodsgroup
+            }
+        });
+    }
 }

@@ -15,14 +15,18 @@ import { FeatureKey, reducer } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { LocationEffects } from './effects/location.effects';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { LocationPreviewComponent } from './components/location-preview/location-preview.component';
+import { LocationUpdateComponent } from './components/location-update/location-update.component';
 
 @NgModule({
   declarations: [
+    LocationsComponent,
     LocationAddComponent,
     LocationDetailComponent,
     LocationListComponent,
-    LocationsComponent,
+    LocationPreviewComponent,
     LocationPageComponent,
+    LocationUpdateComponent,
   ],
   imports: [
     CommonModule,
@@ -42,6 +46,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
   ],
   entryComponents: [
     LocationAddComponent,
+    LocationUpdateComponent,
   ],
 })
 export class LocationsModule { }

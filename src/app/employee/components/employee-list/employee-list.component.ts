@@ -16,13 +16,15 @@ import { EmployeeAddComponent } from '../employee-add/employee-add.component';
 export class EmployeeListComponent implements OnInit {
   settings = {
     hideSubHeader: false,
+    mode: 'external',
     // selectMode: 'multi',
-    // edit: {
-    //   editButtonContent: '<i class="nb-edit"></i>',
-    //   saveButtonContent: '<i class="nb-checkmark"></i>',
-    //   cancelButtonContent: '<i class="nb-close"></i>',
-    //   confirmSave: true
-    // },
+    edit: {
+      editButtonContent: '<i class="nb-compose"></i>',
+      //   editButtonContent: '<i class="nb-edit"></i>',
+      //   saveButtonContent: '<i class="nb-checkmark"></i>',
+      //   cancelButtonContent: '<i class="nb-close"></i>',
+      //   confirmSave: true
+    },
     delete: {
       deleteButtonContent: '<i class="nb-trash"></i>',
       confirmDelete: true,
@@ -74,7 +76,7 @@ export class EmployeeListComponent implements OnInit {
     actions: {
       add: false,
       delete: true,
-      edit: false,
+      edit: true,
     }
   };
   employees$: Observable<Employee[]>;

@@ -1,14 +1,28 @@
 <nb-card>
-  <nb-card-header>Add Goods Group</nb-card-header>
+  <nb-card-header>
+    <label>Update Goods Group</label>
+  </nb-card-header>
   <nb-card-body>
-    <form [formGroup]="addGoodsGroupForm">
-      <input type="hidden" formControlName="id" class="control-form" name="id" nbInput fullWidt>
-      <input type="text" formControlName="code" class="control-form" name="code" nbInput fullWidth>
-      <input type="text" formControlName="name" class="control-form" name="name" nbInput fullWidth>
+    <form [formGroup]="updateGoodsGroupForm"method="POST" >
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <input type="hidden" formControlName="id" class="control-form" name="id" nbInput fullWidth>
+          <input type="hidden" formControlName="createdBy" class="control-form" name="createdBy" nbInput fullWidth>
+          <input type="hidden" formControlName="updatedBy" class="control-form" name="updatedBy" nbInput fullWidth>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Goods Group Code</label>
+          <input type="text" formControlName="code" class="control-form" name="code" nbInput fullWidth>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Goods Group Name</label>
+          <input type="text" formControlName="name" class="control-form" name="name" nbInput fullWidth>
+        </div>
+      </div>
     </form>
   </nb-card-body>
   <nb-card-footer>
     <button class="cancel" nbButton status="danger" (click)="close()">Cancel</button>
-    <button nbButton status="success" (click)="submit(addGoodsGroupForm.value)">Add</button>
+    <button nbButton status="success" (click)="submit(updateGoodsGroupForm.value)">Update</button>
   </nb-card-footer>
 </nb-card>

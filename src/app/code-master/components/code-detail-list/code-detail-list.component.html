@@ -2,23 +2,23 @@
     <nb-card-header>
         <div class="row">
             <div class="title">
-                Code Detail
+                <label>Code Detail List</label>
             </div>
             <div class="button">
-                <button nbButton (click)="open()">
+                <button nbButton outline (click)="open()">
                     <i class="fas fa-plus"></i>&nbsp; Code Detail
-                </button>
-                <button nbButton status="danger" (click)="onDelete()">
-                    <i class="far fa-trash-alt"></i>&nbsp; Delete
-                </button>
-                <button nbButton (click)="navigateToCodeMaster()" status="success">
-                    Code Master
                 </button>
             </div>
         </div>
     </nb-card-header>
     <nb-card-body>
-        <ng2-smart-table [settings]="settings" [source]="codeDetails$ | async" (userRowSelect)="onUserRowSelect($event)">
+        <ng2-smart-table [settings]="settings" [source]="codeDetails$ | async"
+            (userRowSelect)="onUserRowSelect($event)">
         </ng2-smart-table>
     </nb-card-body>
+    <nb-card-footer>
+        <button nbButton outline (click)="navigateToCodeMaster()" status="success">
+            Code Master List
+        </button>
+    </nb-card-footer>
 </nb-card>

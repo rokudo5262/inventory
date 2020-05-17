@@ -17,14 +17,16 @@ import { SalesTeamBinSelectors } from '@app/salesteam/selectors/salesteambins.se
 })
 export class SalesTeamBinListComponent implements OnInit {
   settings = {
-    // selectMode: 'multi',
     hideSubHeader: false,
-    // edit: {
-    //   editButtonContent: '<i class="nb-edit"></i>',
-    //   saveButtonContent: '<i class="nb-checkmark"></i>',
-    //   cancelButtonContent: '<i class="nb-close"></i>',
-    //   confirmSave: true
-    // },
+    mode: 'external',
+    // selectMode: 'multi',
+    edit: {
+      editButtonContent: '<i class="nb-compose"></i>',
+      //   editButtonContent: '<i class="nb-edit"></i>',
+      //   saveButtonContent: '<i class="nb-checkmark"></i>',
+      //   cancelButtonContent: '<i class="nb-close"></i>',
+      //   confirmSave: true
+    },
     delete: {
       deleteButtonContent: '<i class="nb-trash"></i>',
       confirmDelete: true,
@@ -59,7 +61,7 @@ export class SalesTeamBinListComponent implements OnInit {
     actions: {
       add: false,
       delete: true,
-      edit: false,
+      edit: true,
     }
   };
   salesteambins$: Observable<SalesTeamBin[]>;

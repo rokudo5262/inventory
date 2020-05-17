@@ -2,17 +2,11 @@
     <nb-card-header>
         <div class="row">
             <div class="title">
-                <span>Code Master</span>
+                <label>Code Master</label>
             </div>
             <div class="btn">
-                <button nbButton (click)="onCreated()">
-                    <i class="fas fa-plus"></i>&nbsp; Code Master
+                <button nbButton (click)="onCreated()">Add
                 </button>
-
-                <button nbButton status="danger" (click)="onDelete($event)">
-                    <i class="far fa-trash-alt"></i>&nbsp; Delete
-                </button>
-
                 <button nbButton status="success" (click)="onSystem($event)">
                     <i class="fas fa-sync-alt"></i>&nbsp; System
                 </button>                
@@ -24,4 +18,7 @@
             (userRowSelect)="onUserRowSelect($event)">
         </ng2-smart-table>
     </nb-card-body>
+    <nb-card-footer>
+        
+    </nb-card-footer>
 </nb-card>

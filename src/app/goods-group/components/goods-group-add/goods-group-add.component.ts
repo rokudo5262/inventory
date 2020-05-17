@@ -28,7 +28,9 @@ export class GoodsGroupAddComponent implements OnInit {
       id: [0, Validators.required],
       code: ['', Validators.required],
       name: ['', Validators.required],
-
+      deleted: [false, Validators.required],
+      createdBy: ['', Validators.required],
+      lastUpdatedBy: ['', Validators.required],
     });
   }
   close() {

@@ -24,8 +24,7 @@ namespace inventoryserver.Controllers
     [HttpGet]
     public ActionResult<IEnumerable<CodeMaster>> GetCodeMaster()
     {
-      var result = _context.CodeMaster.Where(x => !x.Deleted).ToList();      
-      return result;
+      return  _context.CodeMaster.ToList();
     }
     [HttpGet("{id}")]
     public ActionResult<CodeMaster> GetCodeMaster(long id)

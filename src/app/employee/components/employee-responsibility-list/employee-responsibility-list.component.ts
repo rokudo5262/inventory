@@ -17,13 +17,15 @@ import { EmployeeResponsibilityAddComponent } from '../employee-responsibility-a
 export class EmployeeResponsibilityListComponent implements OnInit {
   settings = {
     hideSubHeader: false,
+    mode: 'external',
     // selectMode: 'multi',
-    // edit: {
-    //   editButtonContent: '<i class="nb-edit"></i>',
-    //   saveButtonContent: '<i class="nb-checkmark"></i>',
-    //   cancelButtonContent: '<i class="nb-close"></i>',
-    //   confirmSave: true
-    // },
+    edit: {
+      editButtonContent: '<i class="nb-compose"></i>',
+      //   editButtonContent: '<i class="nb-edit"></i>',
+      //   saveButtonContent: '<i class="nb-checkmark"></i>',
+      //   cancelButtonContent: '<i class="nb-close"></i>',
+      //   confirmSave: true
+    },
     delete: {
       deleteButtonContent: '<i class="nb-trash"></i>',
       confirmDelete: true,
@@ -75,7 +77,7 @@ export class EmployeeResponsibilityListComponent implements OnInit {
     actions: {
       add: false,
       delete: true,
-      edit: false,
+      edit: true,
     }
   };
   data$: Observable<EmployeeResponsibility[]>;
@@ -94,7 +96,7 @@ export class EmployeeResponsibilityListComponent implements OnInit {
   open() {
     this.dialogService.open(EmployeeResponsibilityAddComponent);
   }
-  navigateToRoomGroup(event) {
+  navigateToEmployeeResponsibility(event) {
     this.route.navigate(['dashboard/employeeresponsibilities/employeeresponsibility', event.data.lineId]);
   }
   edit(event) {

@@ -3,7 +3,8 @@ import { RoomGroup } from '@app/@core/data/roomgroup';
 import { NbDialogService } from '@nebular/theme';
 import { Router } from '@angular/router';
 import { RoomGroupUpdateComponent } from '../roomgroup-update/roomgroup-update.component';
-import { RoomGroupDeleteComponent } from '../roomgroup-delete/roomgroup-delete.component';
+import { Store } from '@ngrx/store';
+import { RoomGroupsActions } from '@app/roomgroup/actions';
 @Component({
   selector: 'ngx-roomgroup-preview',
   templateUrl: './roomgroup-preview.component.html',
@@ -16,12 +17,10 @@ export class RoomGroupPreviewComponent implements OnInit {
   constructor(
     private route: Router,
     private dialogService: NbDialogService,
+    private store: Store<RoomGroup>,
   ) { }
 
   ngOnInit() {
-  }
-  back() {
-    this.route.navigate(['dashboard/roomgroups/library']);
   }
 
   edit() {
@@ -31,11 +30,11 @@ export class RoomGroupPreviewComponent implements OnInit {
       }
     });
   }
-  delete() {
-    this.dialogService.open(RoomGroupDeleteComponent, {
-      context: {
-        roomgroup: this.roomgroup
-      }
-    });
+  delete(item) {
+    this.store.dispatch(RoomGroupsActions.deleteRoomGroup({ id: item.id }));
+    this.back();
+  }
+  back() {
+    this.route.navigate(['dashboard/roomgroups/library']);
   }
 }

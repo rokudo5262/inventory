@@ -738,17 +738,14 @@ namespace inventoryserver.Models
         entity.Property(e => e.Id).HasColumnName("id");
 
         entity.Property(e => e.CMcode)
-            .IsRequired()
             .HasColumnName("cMCode")
             .HasMaxLength(20);
 
         entity.Property(e => e.CMname)
-            .IsRequired()
             .HasColumnName("cMName")
             .HasMaxLength(255);
 
         entity.Property(e => e.CompanyCode)
-            .IsRequired()
             .HasColumnName("companyCode")
             .HasMaxLength(20);
 
@@ -763,28 +760,23 @@ namespace inventoryserver.Models
         entity.Property(e => e.LastUpdatedDateTime).HasColumnType("datetime");
 
         entity.Property(e => e.Remark)
-            .IsRequired()
             .HasColumnName("remark")
             .HasMaxLength(1000);
 
         entity.Property(e => e.RowVersion)
-            .IsRequired()
             .HasColumnName("rowVersion")
             .IsRowVersion()
             .IsConcurrencyToken();
 
         entity.Property(e => e.Source)
-            .IsRequired()
             .HasColumnName("source")
             .HasMaxLength(10);
 
         entity.Property(e => e.StandardName)
-            .IsRequired()
             .HasColumnName("standardName")
             .HasMaxLength(255);
 
         entity.Property(e => e.Status)
-            .IsRequired()
             .HasColumnName("status")
             .HasMaxLength(10);
 
@@ -801,32 +793,31 @@ namespace inventoryserver.Models
             .HasMaxLength(20);
 
         entity.Property(e => e.CDname)
-            .IsRequired()
             .HasColumnName("cDName")
             .HasMaxLength(255);
 
         entity.Property(e => e.CMcode)
-            .IsRequired()
             .HasColumnName("cMCode")
             .HasMaxLength(20);
 
         entity.Property(e => e.CodeMasterId).HasColumnName("codeMasterId");
 
         entity.Property(e => e.CompanyCode)
-            .IsRequired()
             .HasColumnName("companyCode")
             .HasMaxLength(20);
 
-        entity.Property(e => e.CreatedBy).HasMaxLength(40);
+        entity.Property(e => e.CreatedBy)
+        .HasMaxLength(40);
 
-        entity.Property(e => e.CreatedDateTime).HasColumnType("datetime");
+        entity.Property(e => e.CreatedDateTime)
+        .HasColumnType("datetime");
 
         entity.Property(e => e.CustomerCode)
-            .IsRequired()
             .HasColumnName("customerCode")
             .HasMaxLength(40);
 
-        entity.Property(e => e.Deleted).HasColumnName("deleted");
+        entity.Property(e => e.Deleted)
+        .HasColumnName("deleted");
 
         entity.Property(e => e.LastUpdatedBy).HasMaxLength(40);
 
@@ -839,28 +830,23 @@ namespace inventoryserver.Models
         entity.Property(e => e.Ordinal).HasColumnName("ordinal");
 
         entity.Property(e => e.Remark)
-            .IsRequired()
             .HasColumnName("remark")
             .HasMaxLength(1000);
 
         entity.Property(e => e.RowVersion)
-            .IsRequired()
             .HasColumnName("rowVersion")
             .IsRowVersion()
             .IsConcurrencyToken();
 
         entity.Property(e => e.Source)
-            .IsRequired()
             .HasColumnName("source")
             .HasMaxLength(10);
 
         entity.Property(e => e.StandardName)
-            .IsRequired()
             .HasColumnName("standardName")
             .HasMaxLength(255);
 
         entity.Property(e => e.Status)
-            .IsRequired()
             .HasColumnName("status")
             .HasMaxLength(10);
       });
@@ -1386,47 +1372,38 @@ namespace inventoryserver.Models
         entity.Property(e => e.Id).HasColumnName("id");
 
         entity.Property(e => e.CompanyCode)
-            .IsRequired()
             .HasColumnName("companyCode")
             .HasMaxLength(20);
 
         entity.Property(e => e.ApplyForCode)
-            .IsRequired()
             .HasColumnName("applyForCode")
             .HasMaxLength(40);
 
         entity.Property(e => e.CustomerCode)
-            .IsRequired()
             .HasColumnName("customerCode")
             .HasMaxLength(40);
 
         entity.Property(e => e.ApplyForName)
-            .IsRequired()
             .HasColumnName("applyForName")
             .HasMaxLength(255);
 
         entity.Property(e => e.Description)
-            .IsRequired()
             .HasColumnName("description")
             .HasMaxLength(500);
 
         entity.Property(e => e.Remark)
-            .IsRequired()
             .HasColumnName("remark")
             .HasMaxLength(1000);
 
         entity.Property(e => e.Status)
-            .IsRequired()
             .HasColumnName("status")
             .HasMaxLength(1);
 
         entity.Property(e => e.Source)
-            .IsRequired()
             .HasColumnName("source")
             .HasMaxLength(1);
 
         entity.Property(e => e.CreatedBy)
-            .IsRequired()
             .HasColumnName("createdBy")
             .HasMaxLength(40);
 
@@ -1445,7 +1422,6 @@ namespace inventoryserver.Models
         entity.Property(e => e.Deleted).HasColumnName("deleted");
 
         entity.Property(e => e.RowVersion)
-            .IsRequired()
             .HasColumnName("rowVersion")
             .IsRowVersion()
             .IsConcurrencyToken();
@@ -1457,65 +1433,52 @@ namespace inventoryserver.Models
         entity.Property(e => e.Id).HasColumnName("id");
 
         entity.Property(e => e.CompanyCode)
-            .IsRequired()
             .HasColumnName("companyCode")
             .HasMaxLength(20);
 
         entity.Property(e => e.ApplyForCode)
-            .IsRequired()
             .HasColumnName("applyForCode")
             .HasMaxLength(40);
 
         entity.Property(e => e.ApplyForCustomerCode)
-            .IsRequired()
             .HasColumnName("applyForCustomerCode")
             .HasMaxLength(40);
 
         entity.Property(e => e.CustomerCode)
-            .IsRequired()
             .HasColumnName("customerCode")
             .HasMaxLength(40);
 
         entity.Property(e => e.SalesTeamCode)
-            .IsRequired()
             .HasColumnName("salesTeamCode")
             .HasMaxLength(40);
 
         entity.Property(e => e.Type)
-            .IsRequired()
             .HasColumnName("type")
             .HasMaxLength(40);
 
         entity.Property(e => e.PrimaryCustomerHierarchyCode)
-            .IsRequired()
             .HasColumnName("primaryCustomerHierarchyCode")
             .HasMaxLength(40);
 
         entity.Property(e => e.PrimaryCustomerHierarchyLevel)
-            .IsRequired()
             .HasColumnName("primaryCustomerHierarchyLevel");
 
         entity.Property(e => e.RegionCode)
-            .IsRequired()
             .HasColumnName("regionCode")
             .HasMaxLength(40);
 
         entity.Property(e => e.RegionLevel)
-            .IsRequired()
             .HasColumnName("regionLevel");
 
         entity.Property(e => e.Source)
-            .IsRequired()
             .HasColumnName("source")
             .HasMaxLength(1);
 
         entity.Property(e => e.CreatedBy)
-            .IsRequired()
             .HasColumnName("createdBy")
             .HasMaxLength(40);
 
         entity.Property(e => e.CreatedBy)
-            .IsRequired()
             .HasColumnName("createdBy")
             .HasMaxLength(40);
 
@@ -1534,48 +1497,39 @@ namespace inventoryserver.Models
         entity.Property(e => e.Deleted).HasColumnName("deleted");
 
         entity.Property(e => e.RowVersion)
-            .IsRequired()
             .HasColumnName("rowVersion")
             .IsRowVersion()
             .IsConcurrencyToken();
 
         entity.Property(e => e.Description)
-            .IsRequired()
             .HasColumnName("description")
             .HasMaxLength(255);
 
         entity.Property(e => e.DepotCode)
-            .IsRequired()
             .HasColumnName("depotCode")
             .HasMaxLength(40);
 
         entity.Property(e => e.SalesRouteCode)
-            .IsRequired()
             .HasColumnName("salesRouteCode")
             .HasMaxLength(40);
 
         entity.Property(e => e.SalesRegionL1)
-            .IsRequired()
             .HasColumnName("salesRegionL1")
             .HasMaxLength(40);
 
         entity.Property(e => e.SalesRegionL2)
-            .IsRequired()
             .HasColumnName("salesRegionL2")
             .HasMaxLength(40);
 
         entity.Property(e => e.SalesRegionL3)
-            .IsRequired()
             .HasColumnName("salesRegionL3")
             .HasMaxLength(40);
 
         entity.Property(e => e.SalesRegionL4)
-            .IsRequired()
             .HasColumnName("salesRegionL4")
             .HasMaxLength(40);
 
         entity.Property(e => e.SalesRegionL5)
-            .IsRequired()
             .HasColumnName("salesRegionL5")
             .HasMaxLength(40);
       });
@@ -1585,22 +1539,18 @@ namespace inventoryserver.Models
         entity.Property(e => e.Id).HasColumnName("id");
 
         entity.Property(e => e.CompanyCode)
-            .IsRequired()
             .HasColumnName("companyCode")
             .HasMaxLength(20);
 
         entity.Property(e => e.ApplyForCode)
-            .IsRequired()
             .HasColumnName("applyForCode")
             .HasMaxLength(40);
 
         entity.Property(e => e.ApplyForCustomerCode)
-            .IsRequired()
             .HasColumnName("applyForCustomerCode")
             .HasMaxLength(40);
 
         entity.Property(e => e.ApplyForSecondaryCustomerCode)
-            .IsRequired()
             .HasColumnName("applyForSecondaryCustomerCode")
             .HasMaxLength(40);
 
