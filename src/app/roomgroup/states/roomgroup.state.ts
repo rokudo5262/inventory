@@ -12,12 +12,6 @@ export const roomgroupAdapter: EntityAdapter<RoomGroup> = createEntityAdapter<Ro
 export const roomgroupInitialState: RoomGroupState = roomgroupAdapter.getInitialState({
   selectedRoomGroupID: null,
   entities: {
-    0: {
-      id: 0,
-      bame: '',
-      bote: '',
-      status: '',
-      deleted: false,
-    },
+    0: { },
   },
 });
