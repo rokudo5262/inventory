@@ -28,9 +28,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'environments/environment';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [ AppComponent ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -47,13 +45,6 @@ import { environment } from 'environments/environment';
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
     HttpClientModule,
-    /**
-    * StoreModule.forRoot is imported once in the root module, accepting a reducer
-    * function or object map of reducer functions. If passed an object of
-    * reducers, combineReducers will be run creating your application
-    * meta-reducer. This returns all providers for an @ngrx/store
-    * based application.
-    */
     StoreModule.forRoot(ROOT_REDUCERS, {
       metaReducers,
       runtimeChecks: {
@@ -63,9 +54,6 @@ import { environment } from 'environments/environment';
         strictActionSerializability: true,
       },
     }),
-    /**
-    * @ngrx/router-store keeps router state up-to-date in the store.
-    */
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states

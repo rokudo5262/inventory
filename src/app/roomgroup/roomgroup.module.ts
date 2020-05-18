@@ -25,7 +25,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CookieService } from 'ngx-cookie-service';
 import { RoomGroupComponent } from '@app/roomgroup/roomgroup.component';
 import { RoomGroupEffects } from '@app/roomgroup/effects';
-import {RoomGroupListComponent} from './components/roomgroup-list/roomgroup-list.component';
+import { RoomGroupListComponent} from './components/roomgroup-list/roomgroup-list.component';
 import { RoomGroupAddComponent } from './components/roomgroup-add/Roomgroup-add.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { RoomGroupPageComponent } from './containers/roomgroup-page/roomgroup-page.component';
