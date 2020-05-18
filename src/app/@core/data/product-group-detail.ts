@@ -27,7 +27,6 @@ export interface ProductGroupDetail {
     max: number;
     type: string;
     source: string;
-    deleted: boolean;
     hierarchyL01Name: string;
     hierarchyL02Name: string;
     hierarchyL03Name: string;
@@ -42,4 +41,9 @@ export interface ProductGroupDetail {
     categoryL06: string;
     categoryL07: string;
     categoryL08: string;
+    createdBy?: string;
+    createdDateTime?: Date;
+    lastUpdatedBy?: string;
+    lastUpdatedDateTime?: Date;
+    deleted: boolean;
 }

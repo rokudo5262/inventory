@@ -1,6 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { ProductGroupPageComponent } from './containers/product-group-page.component';
+import { ProductGroupPageComponent } from './containers/product-group-page/product-group-page.component';
 import { BundleGroupComponent } from './components/product-group-detail/bundle/bundle-group.component';
 import { GroupPageComponent } from './components/product-group-detail/group/group-page.component';
 import { ProductPageComponent } from './components/product-group-detail/product/product-page.component';
@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'product-group/Group/:lineID', component: ViewGroupDetailComponent },
   { path: 'product-group/Product', component: ProductPageComponent },
   { path: 'product-group/Product/:lineID', component: ViewProductDetailComponent },
+  { path: '', redirectTo: 'library', pathMatch: 'full' },
 ];
 
 @NgModule({

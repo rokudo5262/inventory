@@ -13,7 +13,7 @@ const routes: Routes = [{
     { path: 'library', component: EmployeeResponsibilityPageComponent },
     { path: 'employee/:employeeCode', component: EmployeeDetailComponent },
     { path: 'employeeresponsibility/:lineId', component: EmployeeResponsibilityDetailComponent },
-
+    { path: '', redirectTo: 'library', pathMatch: 'full' },
   ],
 }];
 @NgModule({

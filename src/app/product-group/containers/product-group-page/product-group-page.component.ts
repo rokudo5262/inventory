@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'ngx-product-group-page',
-    template: `<ngx-view-product-group> </ngx-view-product-group>`,
+    templateUrl: './product-group-page.component.html',
+    styleUrls: ['./product-group-page.component.scss'],
 })
 export class ProductGroupPageComponent { }

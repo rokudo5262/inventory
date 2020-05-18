@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'library', component: LocationListComponent },
   { path: 'location/add', component: LocationAddComponent },
   { path: 'location/:id', component: LocationDetailComponent },
+  { path: '', redirectTo: 'library', pathMatch: 'full' },
 ];
 
 @NgModule({

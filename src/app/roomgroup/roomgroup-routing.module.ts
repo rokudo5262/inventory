@@ -9,6 +9,7 @@ const routes: Routes = [{
   children: [
     { path: 'library', component: RoomGroupPageComponent },
     { path: 'roomgroup/:id', component: RoomGroupDetailComponent },
+    { path: '', redirectTo: 'library', pathMatch: 'full' },
   ],
 }];
 @NgModule({

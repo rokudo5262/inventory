@@ -23,20 +23,9 @@ import {
 } from '@nebular/theme';
 import { StoreModule } from '@ngrx/store';
 import { ROOT_REDUCERS, metaReducers } from '@app/reducers';
-import { BooksModule } from '@appbooks/books.module';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'environments/environment';
-import { WarehouseModule } from './warehouse';
-import { CustomersModule } from './customers';
-import { LocationsModule } from './locations';
-import { RoomGroupModule } from './roomgroup';
-import { StoreInformationModule } from './store-information/store-information.module';
-import { UomsModule } from './UOMs';
-import { SalesTeamModule } from './salesteam/salesteam.module';
-import { ProductGroupModule } from './product-group';
-import { CodeMasterModule } from './code-master';
-import { CalendarModule } from './calendars/calendar.module';
 
 @NgModule({
   declarations: [
@@ -82,18 +71,7 @@ import { CalendarModule } from './calendars/calendar.module';
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
-    BooksModule,
-    CustomersModule,
-    StoreInformationModule,
-    WarehouseModule,
-    RoomGroupModule,
-    SalesTeamModule,
     CoreModule.forRoot(),
-    LocationsModule,
-    UomsModule,
-    ProductGroupModule,
-    CodeMasterModule,
-    CalendarModule,
   ],
   providers: [
     NbDialogService,

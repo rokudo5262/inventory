@@ -108,7 +108,6 @@ namespace inventoryserver.Models
 
         entity.Property(e => e.Status).HasMaxLength(10);
       });
-
       modelBuilder.Entity<Customer>(entity =>
       {
         entity.Property(e => e.Id).HasColumnName("id");
@@ -123,7 +122,6 @@ namespace inventoryserver.Models
             .HasColumnName("phone")
             .HasMaxLength(10);
       });
-
       modelBuilder.Entity<UOM>(entity =>
       {
         entity.Property(e => e.Id).IsRequired();
@@ -144,7 +142,6 @@ namespace inventoryserver.Models
 
         entity.Property(e => e.Deleted).IsRequired();
       });
-
       modelBuilder.Entity<Calendar>(entity =>
       {
         entity.Property(e => e.Id).IsRequired();
@@ -187,7 +184,6 @@ namespace inventoryserver.Models
 
         entity.Property(e => e.Deleted).IsRequired();
       });
-
       modelBuilder.Entity<RoomGroup>(entity =>
       {
         entity.Property(e => e.Id)
@@ -647,7 +643,6 @@ namespace inventoryserver.Models
             .OnDelete(DeleteBehavior.ClientSetNull)
             .HasConstraintName("FK_EmployeeResponsibility_Employee");
       });
-
       modelBuilder.Entity<StoreInformation>(entity =>
       {
         entity.Property(e => e.Id).HasColumnName("id");
@@ -732,7 +727,6 @@ namespace inventoryserver.Models
             .HasColumnName("lastUpdatedDateTime")
             .HasColumnType("datetime");
       });
-
       modelBuilder.Entity<CodeMaster>(entity =>
       {
         entity.Property(e => e.Id).HasColumnName("id");
@@ -782,7 +776,6 @@ namespace inventoryserver.Models
 
         entity.Property(e => e.SystemCode).HasColumnName("systemCode");
       });
-
       modelBuilder.Entity<CodeDetail>(entity =>
       {
         entity.Property(e => e.Id).HasColumnName("id");
@@ -891,8 +884,7 @@ namespace inventoryserver.Models
             .HasColumnName("type")
             .HasMaxLength(40);
       });
-
-        modelBuilder.Entity<StructureValue>(entity =>
+      modelBuilder.Entity<StructureValue>(entity =>
         {
           entity.Property(e => e.Id).HasColumnName("id");
 
@@ -941,13 +933,12 @@ namespace inventoryserver.Models
         });
       modelBuilder.Entity<ProductGroup>(entity =>
       {
-        entity.Property(e => e.Id).HasColumnName("id");
+        entity.Property(e => e.Id)
+        .HasColumnName("id");
         entity.Property(e => e.CompanyCode)
-          .HasColumnName("companyCode")
-          .HasMaxLength(20);
+          .HasColumnName("companyCode");
         entity.Property(e => e.ProductGroupCode)
-          .HasColumnName("productGroupCode")
-          .HasMaxLength(40);
+          .HasColumnName("productGroupCode");
         entity.Property(e => e.CustomerCode)
           .HasColumnName("customerCode")
           .HasMaxLength(40);
@@ -958,22 +949,24 @@ namespace inventoryserver.Models
           .HasColumnName("groupType")
           .HasMaxLength(40);
         entity.Property(e => e.Description)
-          .HasColumnName("description")
-          .HasMaxLength(1000);
-        entity.Property(e => e.CreateBy)
-          .HasColumnName("createBy")
+          .HasColumnName("description");
+        entity.Property(e => e.CreatedBy)
+          .HasColumnName("createdBy")
           .HasMaxLength(40);
-        entity.Property(e => e.CreateDateTime) .HasColumnName("createDateTime");
-        entity.Property(e => e.LastUpdateBy)
-          .HasColumnName("lastUpdateBy")
+        entity.Property(e => e.CreatedDateTime)
+          .HasColumnName("createdDateTime");
+        entity.Property(e => e.LastUpdatedBy)
+          .HasColumnName("lastUpdatedBy")
           .HasMaxLength(40);
-        entity.Property(e => e.LastUpdateDateTime) .HasColumnName("lastUpdateDateTime");
-        entity.Property(e => e.Deleted).HasColumnName("deleted");
+        entity.Property(e => e.LastUpdatedDateTime)
+          .HasColumnName("lastUpdatedDateTime");
+        entity.Property(e => e.Deleted)
+          .HasColumnName("deleted");
       });
-
       modelBuilder.Entity<ProductGroupDetail>(entity =>
       {
-        entity.Property(e => e.Id).HasColumnName("id");
+        entity.Property(e => e.Id)
+        .HasColumnName("id");
         entity.Property(e => e.CompanyCode)
           .HasColumnName("companyCode")
           .HasMaxLength(20);
@@ -1052,23 +1045,30 @@ namespace inventoryserver.Models
           .HasMaxLength(40);
         entity.Property(e => e.Source)
           .HasColumnName("source");
-        entity.Property(e => e.CreateBy)
-          .HasColumnName("createBy")
+        entity.Property(e => e.CreatedBy)
+          .HasColumnName("createdBy")
           .HasMaxLength(40);
-        entity.Property(e => e.CreateDateTime)
-          .HasColumnName("createDateTime");
-        entity.Property(e => e.LastUpdateBy)
-          .HasColumnName("lastUpdateBy")
+        entity.Property(e => e.CreatedDateTime)
+          .HasColumnName("createDDateTime");
+        entity.Property(e => e.LastUpdatedBy)
+          .HasColumnName("lastUpdatedBy")
           .HasMaxLength(40);
-        entity.Property(e => e.LastUpdateDateTime)
-          .HasColumnName("lastUpdateDateTime");
-        entity.Property(e => e.Deleted).HasColumnName("deleted");
-        entity.Property(e => e.HierarchyL01Name).HasColumnName("hierarchyL01Name");
-        entity.Property(e => e.HierarchyL02Name).HasColumnName("hierarchyL02Name");
-        entity.Property(e => e.HierarchyL03Name).HasColumnName("hierarchyL03Name");
-        entity.Property(e => e.HierarchyL04Name).HasColumnName("hierarchyL04Name");
-        entity.Property(e => e.HierarchyL05Name).HasColumnName("hierarchyL05Name");
-        entity.Property(e => e.ProductName).HasColumnName("productName");
+        entity.Property(e => e.LastUpdatedDateTime)
+          .HasColumnName("lastUpdatedDateTime");
+        entity.Property(e => e.Deleted)
+        .HasColumnName("deleted");
+        entity.Property(e => e.HierarchyL01Name)
+        .HasColumnName("hierarchyL01Name");
+        entity.Property(e => e.HierarchyL02Name)
+        .HasColumnName("hierarchyL02Name");
+        entity.Property(e => e.HierarchyL03Name)
+        .HasColumnName("hierarchyL03Name");
+        entity.Property(e => e.HierarchyL04Name)
+        .HasColumnName("hierarchyL04Name");
+        entity.Property(e => e.HierarchyL05Name)
+        .HasColumnName("hierarchyL05Name");
+        entity.Property(e => e.ProductName)
+        .HasColumnName("productName");
         entity.Property(e => e.CategoryL01)
           .HasColumnName("categoryL01")
           .HasMaxLength(40);
@@ -1312,7 +1312,6 @@ namespace inventoryserver.Models
             .IsRowVersion()
             .IsConcurrencyToken();
       });
-
       modelBuilder.Entity<SecondaryCustomerShipToAddress>(entity =>
       {
         entity.Property(e => e.Id).HasColumnName("id");
@@ -1366,7 +1365,6 @@ namespace inventoryserver.Models
 
         entity.Property(e => e.Source).HasMaxLength(1);
       });
-
       modelBuilder.Entity<ApplyForHeader>(entity =>
       {
         entity.Property(e => e.Id).HasColumnName("id");
@@ -1427,7 +1425,6 @@ namespace inventoryserver.Models
             .IsConcurrencyToken();
 
       });
-
       modelBuilder.Entity<ApplyForCustomer>(entity =>
       {
         entity.Property(e => e.Id).HasColumnName("id");
@@ -1533,7 +1530,6 @@ namespace inventoryserver.Models
             .HasColumnName("salesRegionL5")
             .HasMaxLength(40);
       });
-
       modelBuilder.Entity<ApplyForSecondaryCustomer>(entity =>
       {
         entity.Property(e => e.Id).HasColumnName("id");

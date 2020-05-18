@@ -9,7 +9,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[ProductGroupDetail](
-	[Id] [int] IDENTITY(1,1) NOT NULL, 
+	[Id] [int] IDENTITY(1,1) Primary Key NOT NULL, 
 	[CompanyCode] [nvarchar](20) NULL,
 	[ProductGroupCode] [nvarchar](40) NULL,
 	[CustomerCode] [nvarchar](40) NULL,
@@ -31,16 +31,16 @@ CREATE TABLE [dbo].[ProductGroupDetail](
 	[ProductCode] [nvarchar](40) NULL,
 	[UOM] [nvarchar](40) NULL,
 	[Quantity] [decimal](18, 0) NULL,
-	[Desciption] [nvarchar](1000) NULL,
+	[Desciption] [nvarchar](255) NULL,
 	[CompareType] [nvarchar](1) NULL,
 	[Min] [decimal](18, 0) NULL,
 	[Max] [decimal](18, 0) NULL,
 	[Type] [nvarchar](40) NULL,
 	[Source] [nvarchar](1) NULL,
-	[CreateBy] [nvarchar](40) NULL,
-	[CreateDateTime] [datetime] NULL,
-	[LastUpdateBy] [nvarchar](40) NULL,
-	[LastUpdateDateTime] [datetime] NULL,
+	[CreatedBy] [nvarchar](40) NULL,
+	[CreatedDateTime] [datetime] NULL,
+	[LastUpdatedBy] [nvarchar](40) NULL,
+	[LastUpdatedDateTime] [datetime] NULL,
 	[Deleted] [bit] NULL,
 	[HierarchyL01Name] [nvarchar](1) NULL,
 	[HierarchyL02Name] [nvarchar](1) NULL,
@@ -55,15 +55,9 @@ CREATE TABLE [dbo].[ProductGroupDetail](
 	[CategoryL05] [nvarchar](40) NULL,
 	[CategoryL06] [nvarchar](40) NULL,
 	[CategoryL07] [nvarchar](40) NULL,
-	[CategoryL08] [nvarchar](40) NULL
-PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+	[CategoryL08] [nvarchar](40) NULL,
+)
+Go
+
+ALTER TABLE [dbo].[ProductGroupDetail] ADD  CONSTRAINT [DF_ProductGroupDetail_deleted]  DEFAULT ((0)) FOR [deleted]
 GO
-
-ALTER TABLE [dbo].[ProductGroupDetail] ADD  DEFAULT (getdate()) FOR [CreateDateTime]
-GO
-
-

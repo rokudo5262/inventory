@@ -10,6 +10,7 @@ const routes: Routes = [{
       children: [
           { path: 'library', component: GoodsGroupPageComponent },
           { path: 'goods-group/:id', component: GoodsGroupDetailComponent },
+          { path: '', redirectTo: 'library', pathMatch: 'full' },
       ],
   },
   { path: '**', component: GoodsGroupPageComponent },

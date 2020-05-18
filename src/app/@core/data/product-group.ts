@@ -8,6 +8,10 @@ export interface ProductGroup {
     productGroupName: string;
     groupType: string;
     description: string;
+    createdBy?: string;
+    createdDateTime?: Date;
+    lastUpdatedBy?: string;
+    lastUpdatedDateTime?: Date;
     deleted: boolean;
     productGroupDetail: ProductGroupDetail[];
 }

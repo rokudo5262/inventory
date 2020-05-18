@@ -10,6 +10,7 @@ const routes: Routes = [{
   children: [
     { path: 'library', component: StoreListComponent },
     { path: 'store-information/:id', component: StoreDetailComponent },
+    { path: '', redirectTo: 'library', pathMatch: 'full' },
   ],
 }];
 @NgModule({

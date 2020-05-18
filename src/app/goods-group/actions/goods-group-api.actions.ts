@@ -22,28 +22,28 @@ export const addgoodgroupFailure = createAction(
 );
 // Load Goods Group
 export const loadGoodsGroupSuccess = createAction(
-    '[Collection/API] Load Goods Groups Success',
+    '[Goods-Group/API] Load Goods Groups Success',
     props<{ goodsgroups: GoodsGroup[] }>(),
 );
 export const loadGoodsGroupFailure = createAction(
-    '[Collection/API] Load Goods Groups Failure',
+    '[Goods-Group/API] Load Goods Groups Failure',
     props<{ errorMsg: any }>(),
 );
 // Update Goods Group
 export const updateGoodsGroupSuccess = createAction(
-    '[Collection/API] Update Goods Group Success',
+    '[Goods-Group/API] Update Goods Group Success',
     props<{ update: Update<GoodsGroup> }>(),
 );
 export const updateGoodsGroupFailure = createAction(
-    '[Collection/API] Update Goods Group Failure',
+    '[Goods-Group/API] Update Goods Group Failure',
     props<{ errorMsg: any }>(),
 );
 // Remove Goods Group
 export const removeGoodsGroupSuccess = createAction(
-    '[Collection/API] Delete Goods Group Success',
+    '[Goods-Group/API] Delete Goods Group Success',
     props<{ id: number }>(),
 );
 export const removeGoodsGroupFailure = createAction(
-    '[Collection/API] Delete Goods Group Failure',
+    '[Goods-Group/API] Delete Goods Group Failure',
     props<{ errorMsg: any }>(),
 );

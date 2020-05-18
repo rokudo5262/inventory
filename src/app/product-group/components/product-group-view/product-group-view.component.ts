@@ -1,27 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { NbDialogService } from '@nebular/theme';
-import { AddProductGroupComponent } from './add-product-group.component';
 import { Router } from '@angular/router';
 import { ProductGroup } from '@app/@core/data';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ProductGroupSelectors } from '@app/product-group/selectors';
 import { ProductGroupApiActions } from '@app/product-group/actions';
+import { ProductGroupAddComponent } from '../product-group-add/product-group-add.component';
 
 @Component({
-    selector: 'ngx-view-product-group',
-    templateUrl: './view-product-group.component.html',
-    styles: [`
-        .row{
-            margin: 0 ;
-            justify-content: space-between;
-        }
-        [nbButton] {
-            margin: 5px;
-        }
-    `],
+    selector: 'ngx-product-group-view',
+    templateUrl: './product-group-view.component.html',
+    styleUrls: ['./product-group-view.component.scss'],
 })
-export class ViewProductGroupComponent implements OnInit {
+export class ProductGroupViewComponent implements OnInit {
     settings = {
         hideSubHeader: false,
         actions: {
@@ -37,7 +29,6 @@ export class ViewProductGroupComponent implements OnInit {
                 title: 'Group Type',
                 type: 'string',
                 width: '15%',
-                // editable: false,
             },
             productGroupCode: {
                 title: 'Product Group Code',
@@ -67,7 +58,7 @@ export class ViewProductGroupComponent implements OnInit {
         this.route.navigate(['dashboard/product-group/product-group', event.data.groupType]);
     }
     open() {
-        this.dialog.open(AddProductGroupComponent);
+        this.dialog.open(ProductGroupAddComponent);
     }
     delete(event) {
         if (window.confirm('Are you sure you want to delete?')) {

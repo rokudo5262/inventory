@@ -17,7 +17,8 @@ const routes: Routes = [{
     { path: 'structure', component: StructurePageComponent },
     { path: 'structure-value', component: StructureValuePageComponent },
     { path: 'structure/:id', component: StructureDetailComponent },
-    { path: 'structure-value/:id', component: StructureValueDetailComponent }
+    { path: 'structure-value/:id', component: StructureValueDetailComponent },
+    { path: '', redirectTo: 'library', pathMatch: 'full' },
   ],
 }];
 @NgModule({

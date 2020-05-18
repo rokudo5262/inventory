@@ -13,6 +13,7 @@ const routes: Routes = [{
     { path: 'salesteam/:salesTeamCode', component: SalesTeamDetailComponent },
     { path: 'salesteambin', component: SalesTeamBinPageComponent },
     { path: 'salesteambin/:lineId', component: SalesTeamBinDetailComponent },
+    { path: '', redirectTo: 'salesteam', pathMatch: 'full' },
   ],
 }];
 @NgModule({

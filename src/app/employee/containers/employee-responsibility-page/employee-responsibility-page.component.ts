@@ -1,6 +1,4 @@
 import { OnInit, Component } from '@angular/core';
-import { EmployeeResponsibility } from '@app/@core/data';
-import { Observable } from 'rxjs';
 import { NbDialogService } from '@nebular/theme';
 import { EmployeeResponsibilityAddComponent } from '@app/employee/components/employee-responsibility-add/employee-responsibility-add.component';
 import { Router } from '@angular/router';
@@ -12,7 +10,6 @@ import { Router } from '@angular/router';
 })
 
 export class EmployeeResponsibilityPageComponent implements OnInit {
-    employeeresponsibilities$: Observable<EmployeeResponsibility[]>;
     constructor(
         private route: Router,
         private dialogService: NbDialogService,

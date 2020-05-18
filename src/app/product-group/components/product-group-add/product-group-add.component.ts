@@ -1,41 +1,23 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ProductGroup } from '@app/@core/data';
 import { Store } from '@ngrx/store';
+import { ProductGroup } from '@app/@core/data/product-group';
 import { AddProductGroupActions } from '@app/product-group/actions';
 
 @Component({
-    selector: 'ngx-add-product-group',
-    templateUrl: './add-product-group.component.html',
-    styles: [`
-        input {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        nb-select.size-medium {
-            margin: 0 10 10 10 !important;
-        }
-        button[nbButton]{
-            display: block;
-            float: right;
-            margin-left: 15px;
-        }
-    `],
+    selector: 'ngx-product-group-add',
+    templateUrl: './product-group-add.component.html',
+    styleUrls: ['./product-group-add.component.scss'],
 })
-export class AddProductGroupComponent implements OnInit {
+export class ProductGroupAddComponent implements OnInit {
     @Output() response: EventEmitter<any> = new EventEmitter();
     selectedOption: string;
     printedOption: string;
-    // options = [
-    //     {name: 'Bundle', value: 1},
-    //     {name: 'Group', value: 2},
-    //     {name: 'Product', value: 3},
-    // ];
     public addProductGroupForm: FormGroup;
     public productgroup: ProductGroup;
     constructor(
-        private ref: NbDialogRef<AddProductGroupComponent>,
+        private ref: NbDialogRef<ProductGroupAddComponent>,
         private fb: FormBuilder,
         private store: Store<ProductGroup>,
     ) { }
