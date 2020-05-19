@@ -26,6 +26,7 @@ import { ROOT_REDUCERS, metaReducers } from '@app/reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'environments/environment';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [ AppComponent ],
@@ -41,10 +42,10 @@ import { environment } from 'environments/environment';
     NbDialogModule.forRoot(),
     NbWindowModule.forRoot(),
     NbToastrModule.forRoot(),
+    RouterModule,
     NbChatModule.forRoot({
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
-    HttpClientModule,
     StoreModule.forRoot(ROOT_REDUCERS, {
       metaReducers,
       runtimeChecks: {

@@ -33,6 +33,11 @@ const routes: Routes = [{
         .then(m => m.CalendarModule),
     },
     {
+      path: 'orders',
+      loadChildren: () => import('@app/orders/orders.module')
+        .then(m => m.OrdersModule),
+    },
+    {
       path: 'states',
       loadChildren: () => import('./states/states.module')
         .then(m => m.StatesModule),

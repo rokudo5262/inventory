@@ -23,6 +23,6 @@ export * from './structure';
 export * from './structure-value';
 export * from './store';
 export * from './af-header';
-
 export * from './af-customer';
 export * from './af-secondary';
+export * from './orders';

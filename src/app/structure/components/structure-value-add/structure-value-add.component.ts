@@ -4,9 +4,9 @@ import { NbDialogRef } from '@nebular/theme';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Structure } from '@app/@core/data/structure';
-import { StructuresActions, StructureValuesActions } from '@app/structure';
 import { StructureSelectors } from '@app/structure/selectors/structure.selectors';
 import { StructureValue } from '@app/@core/data/structure-value';
+import { StructuresActions, StructureValuesActions } from '@app/structure/actions';
 
 @Component({
   selector: 'ngx-structure-value-add',

@@ -13,6 +13,7 @@ namespace inventoryserver.Models
         : base(options)
     {
     }
+    public virtual DbSet<Orders> Orders { get; set; }
     public virtual DbSet<Location> Location { get; set; }
     public virtual DbSet<Warehouse> Warehouse { get; set; }
     public virtual DbSet<StoreInformation> StoreInformation { get; set; }
@@ -34,12 +35,58 @@ namespace inventoryserver.Models
     public virtual DbSet<ApplyForCustomer> ApplyForCustomer { get; set; }
     public virtual DbSet<SecondaryCustomer> SecondaryCustomer { get; set; }
     public virtual DbSet<SecondaryCustomerShipToAddress> SecondaryCustomerShipToAddress { get; set; }
-
     public virtual DbSet<ApplyForHeader> ApplyForHeader { get; set; }
 
     public virtual DbSet<ApplyForSecondaryCustomer> ApplyForSecondaryCustomer { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+      modelBuilder.Entity<Orders>(entity =>
+      {
+        entity.HasKey(e => e.OrderCode);
+        entity.Property(e => e.OrderCode).HasColumnName("orderCode");
+
+        entity.Property(e => e.CreatedBy)
+            .HasColumnName("createdBy")
+            .HasMaxLength(255);
+
+        entity.Property(e => e.CreatedDateTime)
+            .HasColumnName("createdDateTime")
+            .HasColumnType("datetime");
+
+        entity.Property(e => e.CustomerCode).HasColumnName("customerCode");
+
+        entity.Property(e => e.Deleted)
+            .HasColumnName("deleted")
+            .HasDefaultValueSql("((0))");
+
+        entity.Property(e => e.Remark)
+            .HasColumnName("remark")
+            .HasMaxLength(255);
+
+        entity.Property(e => e.RequiedDay)
+            .HasColumnName("requiedDay")
+            .HasMaxLength(255);
+
+        entity.Property(e => e.ShippedDay)
+            .HasColumnName("shippedDay")
+            .HasColumnType("datetime");
+
+        entity.Property(e => e.StaffCode).HasColumnName("staffCode");
+
+        entity.Property(e => e.Status)
+            .HasColumnName("status")
+            .HasMaxLength(255);
+
+        entity.Property(e => e.StoreCode).HasColumnName("storeCode");
+
+        entity.Property(e => e.UpdatedDateTime)
+            .HasColumnName("updatedDateTime")
+            .HasColumnType("datetime");
+
+        entity.Property(e => e.Updatedby)
+            .HasColumnName("updatedby")
+            .HasMaxLength(255);
+      });
       modelBuilder.Entity<Location>(entity =>
       {
         entity.Property(e => e.Address).HasMaxLength(255);
@@ -1663,7 +1710,6 @@ namespace inventoryserver.Models
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-
     
   }
 }

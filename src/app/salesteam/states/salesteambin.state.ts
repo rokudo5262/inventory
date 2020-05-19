@@ -13,15 +13,7 @@ export const SalesTeamBinInitialState: SalesTeamBinState = salesteambinAdapter.g
   selectedSalesTeamBinlineId: null,
   entities: {
     0: {
-      lineId: 0,
-      locationCode: '',
-      bitCode: '',
-      bitName: '',
-      binType: '',
-      salesTeamCode: '',
-      companyCode: '',
-      customerCode: '',
-      deleted: false,
+
     },
   },
 });

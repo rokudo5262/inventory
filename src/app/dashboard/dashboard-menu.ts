@@ -47,6 +47,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: './calendars/library',
   },
   {
+    title: 'orders',
+    icon: 'activity-outline',
+    link: './orders',
+  },
+  {
     title: 'Room Group',
     icon: 'shopping-cart-outline',
     link: './roomgroups/library',

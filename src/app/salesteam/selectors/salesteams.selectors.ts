@@ -22,5 +22,5 @@ export const SalesTeamSelectors = {
 };
 export const selectCurrentSalesTeam = (salesTeamCode) => createSelector(
   selectSalesTeamEntities,
-  (salesteams) => salesteams[salesTeamCode]
+  (salesteams) => salesteams[salesTeamCode],
 );

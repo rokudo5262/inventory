@@ -1,0 +1,35 @@
+<nb-card>
+  <nb-card-header>
+    <label>Add Order</label>
+  </nb-card-header>
+  <nb-card-body>
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <input type="hidden" formControlName="id" class="form-control" name="id">
+          <input type="hidden" formControlName="createdBy" class="form-control" name="createdBy">
+          <input type="hidden" formControlName="lastUpdatedBy" class="form-control" name="lastUpdatedBy">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Roomgroup Name</label>
+          <input type="text" name="name" formControlName="name" class="form-control" placeholder="name">
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <label>Roomgroup Note</label>
+          <input type="text" name="note" formControlName="note" class="form-control" placeholder="note">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-6">
+          <label>Roomgroup Status</label>
+          <nb-select aria-required placeholder="Status" formControlName="status" name="status" fullWidth>
+            <nb-option value="on">On</nb-option>
+            <nb-option value="off">Off</nb-option>
+          </nb-select>
+        </div>
+      </div>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton status="danger" (click)="close()">Close</button>
+    <button nbButton status="success" (click)="submit(addRoomGroupForm.value)">Save</button>
+  </nb-card-footer>
+</nb-card>
