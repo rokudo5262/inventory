@@ -6,6 +6,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
+    title: 'Book',
+    icon: 'inbox-outline',
+    link: './books/library',
+  },
+  {
     title: 'Goods Group',
     icon: 'inbox-outline',
     link: './goods-group/library',

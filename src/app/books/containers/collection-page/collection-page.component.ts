@@ -4,17 +4,13 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { BookCollectionSelectors } from '@appbooks/selectors';
 import { State } from '@appbooks/reducers';
-import { BookCollectionActions } from '../actions';
+import { BookCollectionActions } from '../../actions';
 
 @Component({
     selector: 'books-collection-page',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    template: `
-    <mat-card>
-        <mat-card-title>My Collection</mat-card-title>
-    </mat-card>
-    <bc-book-preview-list [books]="books$ | async"></bc-book-preview-list>
-    `,
+    templateUrl: './collection-page.component.html',
+    styleUrls: ['./collection-page.component.scss'],
 })
 export class CollectionPageComponent implements OnInit {
     books$: Observable<Book[]>;

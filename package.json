@@ -2,6 +2,9 @@
   "name": "ngx-admin",
   "version": "4.0.1",
   "license": "MIT",
+  "jest": {
+    "verbose": true
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akveo/ngx-admin.git"

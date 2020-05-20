@@ -25,6 +25,7 @@ import { ApplyForModule } from '@appapplyfor';
 import { EmployeeModule } from '@app/employee/employee.module';
 import { CalendarModule } from '@app/calendars/calendar.module';
 import { OrdersModule } from '@app/orders/orders.module';
+import { BooksModule } from '@app/books';
 
 @NgModule({
   imports: [
@@ -55,6 +56,7 @@ import { OrdersModule } from '@app/orders/orders.module';
     CodeMasterModule,
     ProductGroupModule,
     OrdersModule,
+    BooksModule,
   ],
   declarations: [
     DashboardComponent,

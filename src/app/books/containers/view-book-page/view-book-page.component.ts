@@ -14,10 +14,8 @@ import { Subscription } from 'rxjs';
 @Component({
     selector: 'ngx-bc-view-book-page',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    template: `
-    <h1>View</h1>
-        <ngx-bc-selected-book-page></ngx-bc-selected-book-page>
-    `,
+    templateUrl: './view-book-page.component.html',
+    styleUrls: ['./view-book-page.component.scss'],
 })
 export class ViewBookPageComponent implements OnDestroy {
     actionsSubscription: Subscription;

@@ -25,12 +25,13 @@ import { CookieService } from 'ngx-cookie-service';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { StoreModule } from '@ngrx/store';
 import { OrdersComponent } from './orders.component';
-import { OrdersPageComponent } from './containers';
+import { OrdersPageComponent, OrdersDetailComponent } from './containers';
 import { OrdersAddComponent } from './components/orders-add/orders-add.component';
 import { OrdersSmartTableComponent } from './components/orders-smart-table/orders-smart-table.component';
 import { OrdersRoutingModule } from './orders-routing.module';
 import { OrdersEffect } from './effects/orders.effect';
 import { FeatureKey, reducer } from './reducers';
+import { OrdersUpdateComponent } from './components';
 
 @NgModule({
     imports: [
@@ -67,9 +68,12 @@ import { FeatureKey, reducer } from './reducers';
         OrdersPageComponent,
         OrdersAddComponent,
         OrdersSmartTableComponent,
+        OrdersUpdateComponent,
+        OrdersDetailComponent,
     ],
     entryComponents: [
         OrdersAddComponent,
+        OrdersUpdateComponent,
     ],
     providers: [
         CookieService,

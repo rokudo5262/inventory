@@ -3,14 +3,15 @@ import { Store, select } from '@ngrx/store';
 import { State } from '@app/reducers';
 import { Observable } from 'rxjs';
 import { OnInit, ChangeDetectionStrategy, Component } from '@angular/core';
-import { BookCollectionActions, FindBookActions } from '../actions';
-import { BookCollectionSelectors, BookSearchSelectors } from '../selectors';
+import { BookCollectionActions, FindBookActions } from '../../actions';
+import { BookCollectionSelectors, BookSearchSelectors } from '../../selectors';
 import { take } from 'rxjs/operators';
 
 @Component({
     selector: 'books-library-page',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    templateUrl: 'library.component.html',
+    templateUrl: './library.component.html',
+    styleUrls: ['./library.component.scss'],
 })
 export class LibraryPageComponent implements OnInit {
     books$: Observable<Book[]>;

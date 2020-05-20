@@ -4,12 +4,8 @@ import { Book } from '@appdata';
 
 @Component({
     selector: 'ngx-bc-selected-book-page',
-    template: `
-        <ngx-bc-book-detail
-            [book]="book$ | async"
-        >
-        </ngx-bc-book-detail>
-    `,
+    templateUrl: './selected-book-page.component.html',
+    styleUrls: ['./selected-book-page.component.scss'],
 })
 export class SelectedBookPageComponent {
     book$: Observable<Book>;
