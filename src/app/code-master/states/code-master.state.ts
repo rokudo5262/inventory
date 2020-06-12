@@ -14,14 +14,6 @@ export const codeMasterInitialState: CodeMasterState = codeMasterAdapter.getInit
     selectedCodeMasterID: null,
     entities: {
         0: {
-            id: 0,
-            companyCode: '',
-            cMCode: '',
-            cMName: '',
-            standardName: '',
-            systemCode: 0,
-            remark: '',
-            deleted: 0,
         }
     }
 });

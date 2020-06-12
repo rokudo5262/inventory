@@ -18,10 +18,6 @@ export const locationInitialState: LocationState = locationAdapter.getInitialSta
     selectedLocationID: null,
     entities: {
         0: {
-            id: 0,
-            code: '',
-            name: '',
-            status: ''
         },
     }
 });

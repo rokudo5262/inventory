@@ -18,15 +18,6 @@ export const codeDetailInitialState: CodeDetailState = codeDetailAdapter.getInit
     selectedCodeDetailID: null,
     entities: {
         0: {
-            id: 0,
-            companyCode: '',
-            cMCode: '',
-            cDCode: '',
-            cDName: '',
-            standardName: '',
-            customerCode: '',
-            remark: '',
-            deleted: 0,
         }
     }
 });
